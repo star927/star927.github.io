@@ -1,5 +1,5 @@
 {% comment %}
-  Get the last 5 posts from lastmod list.
+  获取最近更新的5篇文章，若没有最后更新日期则按照文章发布日期来考虑
 {% endcomment %}
 
 {% assign MAX_SIZE = 5 %}
@@ -11,8 +11,12 @@
     {% capture elem %}
       {{- post.last_modified_at | date: "%Y%m%d%H%M%S" -}}::{{- forloop.index0 -}}
     {% endcapture %}
-    {% assign all_list = all_list | push: elem %}
+  {% else %}
+    {% capture elem %}
+      {{- post.date | date: "%Y%m%d%H%M%S" -}}::{{- forloop.index0 -}}
+    {% endcapture %}
   {% endif %}
+  {% assign all_list = all_list | push: elem %}
 {% endfor %}
 
 {% assign all_list = all_list | sort | reverse %}

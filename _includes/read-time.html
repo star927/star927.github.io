@@ -14,10 +14,11 @@
 {% unless read_time > 0 %}
   {% assign read_time = min_time %}
 {% endunless %}
-
+{%- comment -%}
 {% capture read_prompt %}
   {{- site.data.locales[lang].post.read_time.prompt -}}
 {% endcapture %}
+{%- endcomment -%}
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"

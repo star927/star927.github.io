@@ -1,10 +1,9 @@
 ---
-layout: post
 title:  VSCode Notes
 description: Configuration and FAQ about VSCode
-author: HuXin
+last_modified_at: 2021-08-13 12:00
 tags: VScode
-categories: notes
+categories: Notes VScode
 ---
 
 ## 1 实用插件

@@ -16,27 +16,39 @@ layout: default
       <div class="post-meta text-muted d-flex flex-column">
         <!-- Published date and author -->
         <div>
+          <!-- 作者 -->
+          <i class="fas fa-user"></i>
           <span class="semi-bold">
             {{ page.author | default: site.social.name }}
           </span>
+
+          <!-- 发表时间 -->
+          <span>|</span>
+          <i class="fas fa-calendar-alt"></i>
           {% capture _preposition %}{{ site.data.locales[lang].post.published }}{% endcapture %}
           {% include timeago.html date=page.date tooltip=true preposition=_preposition %}
-        </div>
 
-        <div>
-          <!-- lastmod -->
+          <!-- 最后更新时间 -->
           {% if page.last_modified_at %}
-          <span>
+            <span>|</span>
+            <i class="fas fa-edit"></i>
             {{ site.data.locales[lang].post.updated }}
             {% include timeago.html date=page.last_modified_at class="lastmod" tooltip=true %}
-          </span>
           {% endif %}
+          
+          <!-- 字数统计 -->
+          <span>|</span>
+          <i class="fas fa-chart-line"></i>
+          {{ content | strip_html | number_of_words: "auto" }}{{ site.data.locales[lang].post.words }}
 
           <!-- read time -->
+          <span>|</span>
+          <i class="far fa-clock"></i>
           {% include read-time.html content=content prompt=true %}
-
+          
           <!-- page views -->
           {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
+          <span>|</span>
           <span id="pv" class="pageviews">
             <i class="fas fa-spinner fa-spin fa-fw"></i>
           </span>
@@ -65,26 +77,25 @@ layout: default
 
         <!-- categories -->
         {% if page.categories.size > 0 %}
-
-        <div class="post-meta mb-3">
-          <i class="far fa-folder-open fa-fw mr-1"></i>
-          {% for category in page.categories %}
-            <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
-            {%- unless forloop.last -%}, {%- endunless -%}
-          {% endfor %}
-        </div>
+          <div class="post-meta mb-3">
+            <i class="far fa-folder-open fa-fw mr-1"></i>
+            {% for category in page.categories %}
+              <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
+              {%- unless forloop.last -%}, {%- endunless -%}
+            {% endfor %}
+          </div>
         {% endif %}
 
         <!-- tags -->
         {% if page.tags.size > 0 %}
-        <div class="post-tags">
-          <i class="fa fa-tags fa-fw mr-1"></i>
-          {% for tag in page.tags %}
-          <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
-            class="post-tag no-text-decoration" >
-            {{- tag -}}
-          </a>
-          {% endfor %}
+          <div class="post-tags">
+            <i class="fa fa-tags fa-fw mr-1"></i>
+            {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+              class="post-tag no-text-decoration" >
+              {{- tag -}}
+            </a>
+            {% endfor %}
           </div>
         {% endif %}
 
