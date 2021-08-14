@@ -53,6 +53,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 
 # ↑ --------------------------
 
+busuanzi: true # 是否用不算子进行网站计数
 
 google_analytics:
   id: ''              # fill in your Google Analytics ID
@@ -93,6 +94,15 @@ disqus:
   shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
+
+gitalk:
+  comments: true
+  clientId: 599fdb7a7f2573dd06e0 
+  clientSecret: 913f451d090de7fe5ec7b96337b03209fbd5b046
+  repo: https://github.com/star927/star927.github.io
+  owner: star927
+  admin: star927
+  distractionFreeMode: true
 
 # ------------ The following options are not recommended to be modified ------------------
 
