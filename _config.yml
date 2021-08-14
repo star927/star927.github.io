@@ -96,7 +96,7 @@ disqus:
 paginate: 10
 
 gitalk:
-  comments: true
+  enable: true
   clientId: 599fdb7a7f2573dd06e0 
   clientSecret: 913f451d090de7fe5ec7b96337b03209fbd5b046
   repo: star927.github.io
