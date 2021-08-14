@@ -99,7 +99,7 @@ gitalk:
   comments: true
   clientId: 599fdb7a7f2573dd06e0 
   clientSecret: 913f451d090de7fe5ec7b96337b03209fbd5b046
-  repo: https://github.com/star927/star927.github.io
+  repo: star927.github.io
   owner: star927
   admin: star927
   distractionFreeMode: true
