@@ -102,7 +102,7 @@ gitalk:
   repo: star927.github.io
   owner: star927
   admin: star927
-  distractionFreeMode: true
+  distractionFreeMode: false
 
 # ------------ The following options are not recommended to be modified ------------------
 
