@@ -1,8 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
 <script>
   (function() {
-    // This script is built on clipboard.js, cf: https://clipboardjs.com/
-    // 1. find all code blocks defined under snippet class
+    /* This script is built on clipboard.js, cf: https://clipboardjs.com/ */
+    /* 1. find all code blocks defined under snippet class */
     var snippets = document.querySelectorAll('.rouge-code');
     [].forEach.call(snippets, function(snippet) {
       if (snippet.closest('.highlighter-rouge') !== null) {
@@ -22,7 +22,7 @@
       showTooltip(e.trigger, fallbackMessage(e.action));
     });
 
-    // 2. add event listener for all created copy button
+    /* 2. add event listener for all created copy button */
     var btns = document.querySelectorAll('.highlighter-rouge .btn');
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener('mouseleave', clearTooltip);
