@@ -41,12 +41,12 @@ layout: default
           <i class="fas fa-chart-line"></i>
           {{ content | strip_html | number_of_words: "auto" }}{{ site.data.locales[lang].post.words }}
 
-          <!-- read time -->
+          <!-- 阅读时间 -->
           <span>|</span>
           <i class="far fa-clock"></i>
           {% include read-time.html content=content prompt=true %}
           
-          <!-- page views -->
+          <!-- 谷歌分析 -->
           {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
           <span>|</span>
           <span id="pv" class="pageviews">
@@ -75,7 +75,7 @@ layout: default
 
       <div class="post-tail-wrapper text-muted">
 
-        <!-- categories -->
+        <!-- 该文章的分类 -->
         {% if page.categories.size > 0 %}
           <div class="post-meta mb-3">
             <i class="far fa-folder-open fa-fw mr-1"></i>
@@ -86,7 +86,7 @@ layout: default
           </div>
         {% endif %}
 
-        <!-- tags -->
+        <!-- 该文章的标签 -->
         {% if page.tags.size > 0 %}
           <div class="post-tags">
             <i class="fa fa-tags fa-fw mr-1"></i>

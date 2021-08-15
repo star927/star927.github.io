@@ -4,6 +4,7 @@ description: Configuration and FAQ about VSCode
 last_modified_at: 2021-08-13 12:00
 tags: VScode
 categories: Notes VScode
+code-clipboard: true
 ---
 
 ## 1 实用插件
