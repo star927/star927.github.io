@@ -53,10 +53,12 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 
 # ↑ --------------------------
 
-busuanzi: true # 是否用不算子进行网站计数
+busuanzi: false # 是否用不算子进行网站计数
+
+baidu_analytics: true
 
 google_analytics:
-  id: ''              # fill in your Google Analytics ID
+  id: 'G-S0K32JYJC3'              # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
