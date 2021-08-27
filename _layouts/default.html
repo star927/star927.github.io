@@ -44,6 +44,11 @@ layout: compress
       {% include code-clipboard.html %}
     {% endif %}
 
+    <!-- leancloud 统计 -->
+    {% if site.leancloud.enable %}
+      {% include leancloud-analytics.html %}
+    {% endif %}
+
     <div id="mask"></div>
 
     <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">

@@ -64,6 +64,11 @@ google_analytics:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
     cache_path:       # the local PV cache data, friendly to visitors from GFW region
 
+leancloud:
+  enable: true
+  app_id: W6unxo6674psf9a5FpaCh1t0-gzGzoHsz
+  app_key: EfT0wnzvXVdiEEtwt9FUMQnd
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
