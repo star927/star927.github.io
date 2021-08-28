@@ -55,7 +55,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 
 busuanzi: false # 是否用不算子进行网站计数
 
-baidu_analytics: true
+baidu_analytics: false
 
 google_analytics:
   id: 'G-S0K32JYJC3'              # fill in your Google Analytics ID
@@ -113,7 +113,7 @@ valine:
   enable: true
   app_id: W6unxo6674psf9a5FpaCh1t0-gzGzoHsz
   app_key: EfT0wnzvXVdiEEtwt9FUMQnd
-  placeholder: '欢迎留言！'
+  placeholder: '欢迎留言！(填写邮箱可获得回复提醒)'
   avatar: 'retro'
 
 paginate: 10

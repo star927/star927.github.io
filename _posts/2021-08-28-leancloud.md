@@ -1,12 +1,12 @@
 ---
-title:  在个人博客中利用LeanCloud统计文章阅读量
-tags: Blog LeanCloud Jekyll
+title: Jekyll博客中利用LeanCloud统计文章阅读量
 categories: Blog LeanCloud
+tags: Blog LeanCloud Jekyll
 ---
 
 ## 1、配置LeanCloud
 
-- 进入官网<https://www.leancloud.cn/>，注册/登录账号。
+- 进入LeanCloud官网<https://www.leancloud.cn/>，注册或登录账号。
 
 - 创建应用，应用名称可自行设定。
 
@@ -32,7 +32,7 @@ categories: Blog LeanCloud
 
 ## 2、修改博客配置文件
 
-需要修改/新增的文件如下：
+需要修改或新增的文件如下：
 
 ```
 .
@@ -53,13 +53,11 @@ leancloud:
   app_key: ******
 ```
 
-`enable`是一个总开关，控制LeanCould统计功能是否开始，`app_id`和`app_key`对应LeanCloud的`App ID`和`App Key`
+`enable`是一个总开关，控制LeanCould统计功能是否开启，`app_id`和`app_key`对应LeanCloud的`App ID`和`App Key`
 
 ### 2.2 leancloud-analytics.html
 
 创建`leancloud-analytics.html`文件，放在`_includes`文件夹下，代码如下：
-
-> 可点击链接直接下载<https://cdn.jsdelivr.net/gh/star927/star927.github.io/_includes/leancloud-analytics.html>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
@@ -171,12 +169,10 @@ leancloud:
 
 将下面代码添加进`_layouts/default.html`文件中，这样每一篇博客中都会加载`leancloud-analytics.html`文件。
 
-```
-{% raw %}
-{% if site.leancloud.enable %}
+```liquid
+{% raw %}{% if site.leancloud.enable %}
   {% include leancloud-analytics.html %}
-{% endif %}
-{% endraw %}
+{% endif %}{% endraw %}
 ```
 
 ### 2.4 post.html
