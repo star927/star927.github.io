@@ -30,7 +30,7 @@ categories: Blog LeanCloud
 
 ![服务开关](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-5.png)
 
-### 2、修改博客配置文件
+## 2、修改博客配置文件
 
 需要修改/新增的文件如下：
 
