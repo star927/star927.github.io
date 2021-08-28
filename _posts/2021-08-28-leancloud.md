@@ -1,5 +1,5 @@
 ---
-title: Jekyll博客中利用LeanCloud统计文章阅读量
+title: Jekyll博客中基于LeanCloud统计文章阅读量
 categories: Blog LeanCloud
 tags: Blog LeanCloud Jekyll
 ---
