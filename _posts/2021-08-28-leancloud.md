@@ -1,10 +1,10 @@
 ---
 title: Jekyll博客中基于LeanCloud统计文章阅读量
-categories: Blog LeanCloud
+categories: Blog
 tags: Blog LeanCloud Jekyll
 ---
 
-## 1、配置LeanCloud
+## 1 配置LeanCloud
 
 - 进入LeanCloud官网<https://www.leancloud.cn/>，注册或登录账号。
 
@@ -30,7 +30,7 @@ tags: Blog LeanCloud Jekyll
 
 ![服务开关](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-5.png)
 
-## 2、修改博客配置文件
+## 2 修改博客配置文件
 
 需要修改或新增的文件如下：
 
@@ -44,20 +44,22 @@ tags: Blog LeanCloud Jekyll
     └── post.html
 ```
 
-### 2.1 _config.yml
+### _config.yml
 
 ```yml
 leancloud:
   enable: true 
-  app_id: ****** 
-  app_key: ******
+  app_id: xxxxxx 
+  app_key: xxxxxx
 ```
 
 `enable`是一个总开关，控制LeanCould统计功能是否开启，`app_id`和`app_key`对应LeanCloud的`App ID`和`App Key`
 
-### 2.2 leancloud-analytics.html
+### leancloud-analytics.html
 
 创建`leancloud-analytics.html`文件，放在`_includes`文件夹下，代码如下：
+
+> 代码参考于<https://blog.csdn.net/u013553529/article/details/63357382>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
@@ -165,7 +167,7 @@ leancloud:
 </script>
 ```
 
-### 2.3 default.html
+### default.html
 
 将下面代码添加进`_layouts/default.html`文件中，这样每一篇博客中都会加载`leancloud-analytics.html`文件。
 
@@ -175,11 +177,11 @@ leancloud:
 {% endif %}{% endraw %}
 ```
 
-### 2.4 post.html
+### post.html
 
 想在每篇博客中显示该篇文章的阅读量，可将下面代码添加在`_layouts/post.html`合适的位置。
 
-```
+```html
 {% raw %}{% if site.leancloud.enable %}{% endraw %}
   <span>|</span>
   <i class="far fa-eye"></i>
