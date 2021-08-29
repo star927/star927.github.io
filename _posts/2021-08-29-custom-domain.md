@@ -1,5 +1,5 @@
 ---
-title: Github Pages绑定个人域名
+title: GitHub Pages绑定个人域名
 categories: Blog
 tags: Blog Jekyll
 ---
