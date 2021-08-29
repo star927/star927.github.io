@@ -78,7 +78,10 @@ layout: default
             {% if page.image.width %}width="{{ page.image.width }}"{% endif %}
             {% if page.image.height %}height="{{ page.image.height }}"{% endif %}>
         {% endif %}
-
+        
+        {% if page.code_line_numbers == false %}
+          {% include no-linenos.html content=content %}
+        {% endif %}
         {{ content }}
 
       </div>
