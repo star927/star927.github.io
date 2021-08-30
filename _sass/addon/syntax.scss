@@ -2,12 +2,12 @@
 * The syntax highlight.
 */
 
-@import "colors/light-syntax-plus";
+@import "colors/light-syntax";
 @import "colors/dark-syntax";
 
 html:not([mode]),
 html[mode=light] {
-  @include light-syntax-plus;
+  @include light-syntax;
 }
 
 html[mode=dark] {
@@ -21,7 +21,7 @@ html[mode=dark] {
   }
 
   html[mode=light] {
-    @include light-syntax-plus;
+    @include light-syntax;
   }
 }
 

@@ -16,7 +16,7 @@
     });
     clipboardSnippets.on('success', function(e) {
       e.clearSelection();
-      showTooltip(e.trigger, 'Copied!');
+      showTooltip(e.trigger, '复制成功！');
     });
     clipboardSnippets.on('error', function(e) {
       showTooltip(e.trigger, fallbackMessage(e.action));
@@ -42,7 +42,7 @@
 
     function showToolhint(e) {
       e.currentTarget.setAttribute('class', 'btn tooltipped tooltipped-s');
-      e.currentTarget.setAttribute('aria-label', 'copy to clipboard');
+      e.currentTarget.setAttribute('aria-label', '复制');
     }
 
     function fallbackMessage(action) {

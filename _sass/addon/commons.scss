@@ -304,35 +304,49 @@ footer {
 
 /* --- Begin of Markdown table style --- */
 
-.table-wrapper { // it will be created by Liquid
-  overflow-x: auto;
+.table-wrapper {
+  // https://github.com/NichtsHsu/nichtshsu.github.io/blob/master/_sass/addon/commons.scss
+  // it will be created by Liquid
+  display: block;
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(var(--tb-shade-color), 0.12), 0 3px 10px rgba(var(--tb-shade-color), 0.08);
 
   > table {
+    display: table;
     min-width: 100%;
-    overflow-x: auto;
+    border-collapse: separate;
+    table-layout: auto;
     border-spacing: 0;
 
-    thead {
-      border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+    > thead > tr >,
+    > tbody > tr > {
+      th,
+      td {
+        min-width: 120px;
+        padding-top: 0.5rem;
+        padding-right: 0.75rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        border-bottom: 1px solid rgba(var(--tb-shade-color), 0.1);
+        border-left: 1px solid rgba(var(--tb-shade-color), 0.1);
+      }
+
       th {
-        @extend %table-cell;
+        text-align: center;
+      }
+
+      th:first-of-type,
+      td:first-of-type {
+        border-left: 0;
       }
     }
 
-    tbody {
-      tr {
-        border-bottom: 1px solid var(--tb-border-color);
-        &:nth-child(2n) {
-          background-color: var(--tb-even-bg);
-        }
-        &:nth-child(2n + 1) {
-          background-color: var(--tb-odd-bg);
-        }
-        td {
-          @extend %table-cell;
-        }
-      }
+    > tbody > tr:last-child > td {
+      border-bottom: 0;
     }
   }
 }
@@ -1293,10 +1307,6 @@ $sidebar-display: "sidebar-display";
 
   #search-result-wrapper {
     margin-top: 3rem;
-  }
-
-  div.post-content .table-wrapper > table {
-    min-width: 70%;
   }
 
   /* button 'back-to-Top' position */
