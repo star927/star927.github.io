@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js'></script>
 <script>
   (function() {
     /* This script is built on clipboard.js, cf: https://clipboardjs.com/ */
@@ -6,7 +6,7 @@
     var snippets = document.querySelectorAll('.rouge-code');
     [].forEach.call(snippets, function(snippet) {
       if (snippet.closest('.highlighter-rouge') !== null) {
-        snippet.firstChild.insertAdjacentHTML('beforebegin', '<button class="btn" data-clipboard-snippet><i class="far fa-copy"></i></button>');
+        snippet.firstChild.insertAdjacentHTML('beforebegin', '<button class="btn" data-clipboard-snippet><i class="fas fa-clipboard"></i></button>');
       }
     });
     var clipboardSnippets = new ClipboardJS('[data-clipboard-snippet]', {
@@ -17,6 +17,7 @@
     clipboardSnippets.on('success', function(e) {
       e.clearSelection();
       showTooltip(e.trigger, '复制成功！');
+      e.trigger.firstChild.setAttribute('class', 'fas fa-clipboard-check');
     });
     clipboardSnippets.on('error', function(e) {
       showTooltip(e.trigger, fallbackMessage(e.action));
@@ -33,6 +34,7 @@
     function clearTooltip(e) {
       e.currentTarget.setAttribute('class', 'btn');
       e.currentTarget.removeAttribute('aria-label');
+      e.currentTarget.firstChild.setAttribute('class', 'fas fa-clipboard');
     }
 
     function showTooltip(elem, msg) {
