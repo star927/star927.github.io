@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac - Collection - Hu Xin</title>
+    <link>https://example.org/collections/mac/</link>
+    <description>Hu Xin</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 May 2023 09:32:00 -0500</lastBuildDate>
+    <atom:link href="https://example.org/collections/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac Notes</title>
+      <link>https://example.org/posts/mac-notes/</link>
+      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate><author>1469025384@qq.com (Hu Xin)</author>
+      <guid>https://example.org/posts/mac-notes/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <category domain="https://example.org/categories/notes/">Notes</category>
+      <description>Tips Homebrew brew是mac系统中程序包的管理程序，通过brew安装的程序默认都是/opt/homebrew/Cellar下，然后在/opt/hom</description>
+    </item>
+  </channel>
+</rss>

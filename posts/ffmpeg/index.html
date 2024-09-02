@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>FFmpeg Notes - Hu Xin</title><meta name="author" content="Hu Xin">
+<meta name="description" content="简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &gt; output.txt 2&gt;&amp;1 常见参数 -i: 设定输入"><meta name="keywords" content='FFmpeg'>
+  <meta itemprop="name" content="FFmpeg Notes">
+  <meta itemprop="description" content="简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &gt; output.txt 2&gt;&amp;1 常见参数 -i: 设定输入">
+  <meta itemprop="datePublished" content="2023-05-03T09:32:00-05:00">
+  <meta itemprop="dateModified" content="2023-05-03T09:32:00-05:00">
+  <meta itemprop="wordCount" content="7348">
+  <meta itemprop="keywords" content="FFmpeg"><meta property="og:url" content="https://example.org/posts/ffmpeg/">
+  <meta property="og:site_name" content="Hu Xin">
+  <meta property="og:title" content="FFmpeg Notes">
+  <meta property="og:description" content="简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &gt; output.txt 2&gt;&amp;1 常见参数 -i: 设定输入">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-05-03T09:32:00-05:00">
+    <meta property="article:modified_time" content="2023-05-03T09:32:00-05:00">
+    <meta property="article:tag" content="FFmpeg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FFmpeg Notes">
+  <meta name="twitter:description" content="简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &gt; output.txt 2&gt;&amp;1 常见参数 -i: 设定输入">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://example.org/posts/ffmpeg/" title="FFmpeg Notes - Hu Xin" /><link rel="prev" type="text/html" href="https://example.org/posts/mac-notes/" title="Mac Notes" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "FFmpeg Notes",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/example.org\/posts\/ffmpeg\/"
+    },"genre": "posts","keywords": "FFmpeg","wordcount":  7348 ,
+    "url": "https:\/\/example.org\/posts\/ffmpeg\/","datePublished": "2023-05-03T09:32:00-05:00","dateModified": "2023-05-03T09:32:00-05:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Hu Xin"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Hu Xin"><span class="header-title-text">Hu Xin</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item has-children">
+              <a
+                class="menu-link"
+                href="/collections/"
+                
+                
+              ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> Collections</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/linux/"
+                          
+                          
+                        ><i class="fa-brands fa-linux fa-fw fa-sm" aria-hidden="true"></i> Linux</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/mac/"
+                          
+                          
+                        ><i class="fa-brands fa-apple fa-fw fa-sm" aria-hidden="true"></i> Mac</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Hu Xin"><span class="header-title-text">Hu Xin</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/collections/"
+                    
+                    
+                  ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> Collections</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/linux/"
+                          
+                          
+                        ><i class="fa-brands fa-linux fa-fw fa-sm" aria-hidden="true"></i> Linux</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/mac/"
+                          
+                          
+                        ><i class="fa-brands fa-apple fa-fw fa-sm" aria-hidden="true"></i> Mac</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>FFmpeg Notes</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="Author"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    Hu Xin</a></span><span class="post-included-in">&nbsp;included in <a href="/categories/blog/" class="post-category" title="Category - Blog"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Blog</a>&ensp;<a href="/categories/notes/" class="post-category" title="Category - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="published on 2023-05-03 09:32:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-05-03">2023-05-03</time></span>&nbsp;<span title="7348 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 7400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>15 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a>
+      <ul>
+        <li><a href="#基本命令格式">基本命令格式</a></li>
+        <li><a href="#输出视频信息到文件">输出视频信息到文件</a></li>
+        <li><a href="#常见参数">常见参数</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+    <li><a href="#视频处理">视频处理</a>
+      <ul>
+        <li><a href="#视频格式转换">视频格式转换</a></li>
+        <li><a href="#更改视频分辨率">更改视频分辨率</a></li>
+        <li><a href="#提取音频">提取音频</a></li>
+        <li><a href="#提取帧">提取帧</a>
+          <ul>
+            <li><a href="#提取i帧关键帧">提取I帧(关键帧)</a></li>
+          </ul>
+        </li>
+        <li><a href="#更改视频画面长宽比">更改视频画面长宽比</a></li>
+        <li><a href="#设置darsar">设置DAR\SAR</a></li>
+        <li><a href="#裁剪画面">裁剪画面</a></li>
+        <li><a href="#旋转与翻转画面">旋转与翻转画面</a></li>
+        <li><a href="#视频拼接">视频拼接</a></li>
+        <li><a href="#视频截取片段">视频截取片段</a></li>
+        <li><a href="#视频封面">视频封面</a>
+          <ul>
+            <li><a href="#添加封面">添加封面</a></li>
+            <li><a href="#替换封面">替换封面</a></li>
+            <li><a href="#删除封面">删除封面</a></li>
+          </ul>
+        </li>
+        <li><a href="#音频视频合并">音频视频合并</a></li>
+        <li><a href="#去除视频某些信息">去除视频某些信息</a></li>
+        <li><a href="#更改视频帧率">更改视频帧率</a></li>
+        <li><a href="#压缩视频-crf参数">压缩视频-crf参数</a></li>
+        <li><a href="#设置视频码率">设置视频码率</a></li>
+        <li><a href="#设置视频大小">设置视频大小</a></li>
+        <li><a href="#preset参数">preset参数</a></li>
+        <li><a href="#h264编码profile">H264编码profile</a></li>
+        <li><a href="#视频补帧提高帧率">视频补帧提高帧率</a></li>
+        <li><a href="#视频黑边检测">视频黑边检测</a>
+          <ul>
+            <li><a href="#-cropdetecthttpsffmpegorgffmpeg-filtershtmlcropdetect"><a href="https://ffmpeg.org/ffmpeg-filters.html#cropdetect">-cropdetect</a></a></li>
+            <li><a href="#-bboxhttpsffmpegorgffmpeg-filtershtmlbbox"><a href="https://ffmpeg.org/ffmpeg-filters.html#bbox">-bbox</a></a></li>
+            <li><a href="#tips-1">Tips</a></li>
+          </ul>
+        </li>
+        <li><a href="#黑屏检测">黑屏检测</a></li>
+        <li><a href="#黑帧检测">黑帧检测</a></li>
+        <li><a href="#metadata">metadata</a></li>
+        <li><a href="#图片合成视频">图片合成视频</a></li>
+      </ul>
+    </li>
+    <li><a href="#音频处理">音频处理</a>
+      <ul>
+        <li><a href="#导出音频信息">导出音频信息</a></li>
+        <li><a href="#修改音频信息">修改音频信息</a></li>
+        <li><a href="#压缩音频">压缩音频</a></li>
+        <li><a href="#查看音量">查看音量</a></li>
+        <li><a href="#调整音量">调整音量</a></li>
+        <li><a href="#绘制音量波形图">绘制音量波形图</a></li>
+      </ul>
+    </li>
+    <li><a href="#ffprobe">ffprobe</a>
+      <ul>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#参数介绍">参数介绍</a>
+          <ul>
+            <li><a href="#-show_format"><code>-show_format</code></a></li>
+            <li><a href="#-show_streams"><code>-show_streams</code></a></li>
+            <li><a href="#-show_frames"><code>-show_frames</code></a></li>
+            <li><a href="#-show_entries"><code>-show_entries</code></a></li>
+            <li><a href="#-output_format--of"><code>-output_format, -of</code>:</a></li>
+            <li><a href="#-select_streams"><code>-select_streams</code></a></li>
+            <li><a href="#-count_frames"><code>-count_frames</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a>
+      <ul>
+        <li><a href="#压缩视频">压缩视频</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="简介" class="heading-element"><span>简介</span>
+  <a href="#%e7%ae%80%e4%bb%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="基本命令格式" class="heading-element"><span>基本命令格式</span>
+  <a href="#%e5%9f%ba%e6%9c%ac%e5%91%bd%e4%bb%a4%e6%a0%bc%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg <span class="o">[</span>全局参数<span class="o">]</span> <span class="o">[</span>输入文件参数<span class="o">]</span> -i <span class="o">[</span>输入文件<span class="o">]</span> <span class="o">[</span>输出文件参数<span class="o">]</span> <span class="o">[</span>输出文件<span class="o">]</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="输出视频信息到文件" class="heading-element"><span>输出视频信息到文件</span>
+  <a href="#%e8%be%93%e5%87%ba%e8%a7%86%e9%a2%91%e4%bf%a1%e6%81%af%e5%88%b0%e6%96%87%e4%bb%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i vedio.mp4 &gt; output.txt 2&gt;<span class="p">&amp;</span><span class="m">1</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="常见参数" class="heading-element"><span>常见参数</span>
+  <a href="#%e5%b8%b8%e8%a7%81%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><code>-i</code>: 设定输入流
+<code>-v,-loglevel</code>: 设置log等级
+<code>-hide_banner</code>: 输出信息中隐藏<code>ffmpeg</code>自身的相关信息
+<code>-y</code>: yes
+<code>-ss</code>: 开始处理的视频时间
+<code>-to</code>: 结束处理的视频时间
+<code>-t</code>: 处理视频的时间，如果同时使用了参数<code>-to</code>，<code>-t</code>优先级更高
+<code>-r</code>: 设定帧速率，默认为25
+<code>-s</code>: 设定画面的宽与高
+<code>-aspect</code>: 设定画面的比例
+<code>-b</code>: 设置平均码率
+<code>-b:v</code>: 设定视频平均码率
+<code>-c,-codec</code>: 设置编解码器
+<code>-c:v,-codec:v,-vcodec</code>: 设置视频编解码器
+<code>-c:v:1,-codec:v:1,-vcodec:1</code>: 设置第二个视频流的编解码器
+<code>-c copy</code>: 使用原来的编解码器，不重新编解码
+<code>-vn</code>: 不处理视频
+<code>-vf,-filter:v</code>: 处理视频</p>
+<p>在ffmpeg中，v表示视频，a表示音频。比如<code>-v:n</code>表示设置视频编解码器，<code>-v:a</code>表示设置音频解码器</p>
+<h3 id="tips" class="heading-element"><span>Tips</span>
+  <a href="#tips" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>假如不知道某些参数可以设定成哪些值，有时可以通过随便指定一个值，在ffmpeg的报错信息中就可以看到正确的取值有哪些了，如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i test.mp4 -crf <span class="m">18</span> -preset anything nothing.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在输出中可以就看到如下信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Possible presets: ultrafast superfast veryfast faster fast medium slow slower veryslow placebo</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="参考" class="heading-element"><span>参考</span>
+  <a href="#%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><a href="https://ffmpeg.org/ffmpeg.html"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg Documentation-官网</a></li>
+<li><a href="https://blog.csdn.net/newchenxf/article/details/51384360"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg常用命令-CSDN</a></li>
+<li><a href="https://fooyou.github.io/document/2015/12/03/modify-id3-tags-using-ffmpeg.html"target="_blank" rel="external nofollow noopener noreferrer">使用ffmpeg修改mp3的ID3 tag（添加歌词、专辑等信息）</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1871779"target="_blank" rel="external nofollow noopener noreferrer">FFmpeg -crf参数优化-腾讯云社区</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html"target="_blank" rel="external nofollow noopener noreferrer">FFmpeg 视频处理入门教程-阮一峰</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/67878761"target="_blank" rel="external nofollow noopener noreferrer">FFmpeg 命令示例-知乎</a></li>
+<li><a href="https://www.jianshu.com/p/f33910818a1c"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg-给视频添加字幕-简书</a></li>
+<li><a href="https://blog.csdn.net/starandsea/article/details/121183546"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg去除视频黑边命令-CSDN</a></li>
+<li><a href="https://blog.csdn.net/vblittleboy/article/details/8982857"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg与x264编码指南-CSDN</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/506499639"target="_blank" rel="external nofollow noopener noreferrer">ffmpeg输出信息中个参数的含义-知乎</a></li>
+<li><a href="https://www.cnblogs.com/yongdaimi/p/10676309.html"target="_blank" rel="external nofollow noopener noreferrer">I帧、P帧、B帧、GOP、IDR 和PTS, DTS之间的关系 </a></li>
+</ul>
+<h2 id="视频处理" class="heading-element"><span>视频处理</span>
+  <a href="#%e8%a7%86%e9%a2%91%e5%a4%84%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="视频格式转换" class="heading-element"><span>视频格式转换</span>
+  <a href="#%e8%a7%86%e9%a2%91%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.avi output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.avi -c:v libx265 output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.avi -c copy output.mp4 <span class="c1"># 只是转一下容器，内部编码格式不变，命令执行速度较快</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>ffmpeg</code>的输出视频默认使用<code>profile</code>为<code>High</code>的<code>H264</code>视频编码器和<code>profile</code>为<code>LC</code>的<code>AAC</code>音频编码器</p>
+<p><code>H265</code>编码，比<code>H264</code>压缩效率更高，更节省空间，但<code>H265</code>压缩算法编解码更费时，并且兼容性比<code>H264</code>兼容性弱</p>
+<h3 id="更改视频分辨率" class="heading-element"><span>更改视频分辨率</span>
+  <a href="#%e6%9b%b4%e6%94%b9%e8%a7%86%e9%a2%91%e5%88%86%e8%be%a8%e7%8e%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>-1:1080 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该命令也可以用于拉伸图片</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.png -vf <span class="nv">scale</span><span class="o">=</span>1920:1080 output.png</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="提取音频" class="heading-element"><span>提取音频</span>
+  <a href="#%e6%8f%90%e5%8f%96%e9%9f%b3%e9%a2%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 output.mp3
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vn -c:a copy output.aac</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="提取帧" class="heading-element"><span>提取帧</span>
+  <a href="#%e6%8f%90%e5%8f%96%e5%b8%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 在时间为00:27:10出截图一帧</span>
+</span></span><span class="line"><span class="cl">ffmpeg -ss 00:27:10 -i input.mp4 -vframes <span class="m">1</span> output.png
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:27:10 -vframes <span class="m">1</span> output.png
+</span></span><span class="line"><span class="cl"><span class="c1"># 从00:27:10开始一直到视频结尾</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:27:10 output.png frame/output-%3d.png
+</span></span><span class="line"><span class="cl"><span class="c1"># 截取15帧, 放在frame文件夹下</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:27:10 -vframes <span class="m">15</span> frame/output-%2d.png
+</span></span><span class="line"><span class="cl"><span class="c1">#	从00:01:30开始，每秒提取2帧，持续时长00:00:30，共60帧</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:03:00 -r <span class="m">2</span> -t 00:00:30 frame/output-%3d.jpg
+</span></span><span class="line"><span class="cl"><span class="c1">#	整个视频，每分钟提取一帧</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -r 1/60 frame/output-%3d.png</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>jpg</code>和<code>png</code>都可以作为输出图片的格式，但<code>png</code>的图片更清晰</p>
+<h4 id="提取i帧关键帧" class="heading-element"><span>提取I帧(关键帧)</span>
+  <a href="#%e6%8f%90%e5%8f%96i%e5%b8%a7%e5%85%b3%e9%94%ae%e5%b8%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="k">select</span><span class="o">=</span><span class="s1">&#39;eq(pict_type\,I)&#39;</span> -vsync <span class="m">2</span> -f image2 frame/output-%03d.png</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述命令是按照顺序对提取的帧进行编号命名。查看上述每帧的在视频中的播放时刻和在视频所有帧中的序号，可使用下述命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ffprobe input.mp4 -show_entries frame=media_type,pict_type,pts_time -of csv | grep video | grep -n I &gt; ~/Desktop/frames_I.txt</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>media_type</code>: 帧的类型，可能的值是<code>video</code>或<code>audio</code>
+<code>pict_type</code>: 视频帧的图片类型
+<code>pts_time</code>: 帧的播放时刻
+<code>grep -n</code>: 以<code>csv</code>文件的形式显示结果，那么一行就是一帧的信息，用<code>grep</code>显示的行号即为该帧在所有帧的序号</p>
+<h3 id="更改视频画面长宽比" class="heading-element"><span>更改视频画面长宽比</span>
+  <a href="#%e6%9b%b4%e6%94%b9%e8%a7%86%e9%a2%91%e7%94%bb%e9%9d%a2%e9%95%bf%e5%ae%bd%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -aspect 16:9 -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置darsar" class="heading-element"><span>设置DAR\SAR</span>
+  <a href="#%e8%ae%be%e7%bd%aedarsar" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>
+<p>PAR - pixel aspect ratio，单个像素的宽高比</p>
+</li>
+<li>
+<p>DAR - display aspect ratio，画面显示宽高比</p>
+</li>
+<li>
+<p>SAR - Sample aspect ratio，采样纵横比， 表示横向的像素点数和纵向的像素点数的比值，即为我们通常提到的分辨率宽高比。就是对图像采集时，横向采集与纵向采集构成的点阵，横向点数与纵向点数的比值。</p>
+</li>
+<li>
+<p>$PAR\times SAR = DAR$​</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg-h -i input.mp4 -vf <span class="nv">setsar</span><span class="o">=</span><span class="nv">sar</span><span class="o">=</span>1/1,setdar<span class="o">=</span><span class="nv">dar</span><span class="o">=</span>9/16 output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg-h -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1280:720,setsar<span class="o">=</span><span class="nv">sar</span><span class="o">=</span>1/1,setdar<span class="o">=</span><span class="nv">dar</span><span class="o">=</span>16/9 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="裁剪画面" class="heading-element"><span>裁剪画面</span>
+  <a href="#%e8%a3%81%e5%89%aa%e7%94%bb%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">crop</span><span class="o">=</span>1200:1600:6:280 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote><p>crop=width,height,x,y</p>
+<p>输出画面宽为width，高为height，x和y是裁剪后的画面左上角第一个像素在原画面中的坐标，例：原始画面1212 × 2160，裁剪后1200 × 1600</p>
+</blockquote><h3 id="旋转与翻转画面" class="heading-element"><span>旋转与翻转画面</span>
+  <a href="#%e6%97%8b%e8%bd%ac%e4%b8%8e%e7%bf%bb%e8%bd%ac%e7%94%bb%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 顺时针旋转90度</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;transpose=1&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 逆时针旋转90度</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;transpose=2&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 水平翻转</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf hflip output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 垂直翻转</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf vflip output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 旋转180度，顺时针旋转90度2次</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;transpose=1,transpose=1&#34;</span> output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述命令会对视频进行重新编解码，下述命令只是修改视频的<code>rotation</code>属性。用<code>HUAWEI P60 Pro</code>拍摄的视频，不论是横屏拍摄还是竖屏拍摄，通过<code>ffmpeg</code>查看视频的宽和高，可以发现都是横屏视频(宽大于高)，只是竖屏拍摄的视频添加了<code>rotation</code>属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 顺时针旋转90度</span>
+</span></span><span class="line"><span class="cl">ffmpeg-h -display_rotation:0 -90 -i input.mp4 -c copy output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除视频rotation属性</span>
+</span></span><span class="line"><span class="cl">ffmpeg-h -display_rotation:0 <span class="m">0</span> -i input.mp4 -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="视频拼接" class="heading-element"><span>视频拼接</span>
+  <a href="#%e8%a7%86%e9%a2%91%e6%8b%bc%e6%8e%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>先创建一个文本文件<code>filelist.txt</code>，按视频拼接顺序以下述格式写下各个视频片段的路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">file &#39;input-01.mp4&#39;
+</span></span><span class="line"><span class="cl">file &#39;input-02.mp4&#39;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后执行下述命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -f concat -safe <span class="m">0</span> -i filelist.txt -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果文件名有奇怪的字符，要在<code>filelist.txt</code>中转义</li>
+<li>可能会出现报错<code>Unsafe file name</code>，导致命令运行不成功，<code>-safe 0</code>可以避免该问题</li>
+<li>上述方法对于所有视频只有一个视频流的情况是支持的。如果参与拼接的视频还存在一个视频流是视频封面，上述方法会失败，可先删除视频封面再进行拼接。</li>
+<li>假如有内容上是连续的两个视频片段，前一个视频片段的最后一帧和后一个视频的第一帧是一样的，<code>-c copy</code>拼接出来的视频在该时刻的画面可能会不流畅，此时尝试不使用<code>-c copy</code>参数</li>
+</ul>
+<h3 id="视频截取片段" class="heading-element"><span>视频截取片段</span>
+  <a href="#%e8%a7%86%e9%a2%91%e6%88%aa%e5%8f%96%e7%89%87%e6%ae%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:01:00 -t 00:02:30 -c copy output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -t <span class="m">30</span> -c copy output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:01:00 -to 00:02:30 -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote><p><code>-ss</code>放在<code>-i</code>前面运行会更快，把<code>-ss 1:05</code>放到<code>-i</code>前面，与原来的区别是，这样会先跳转到第1:05秒在开始解码输入视频，而原来的会从开始解码，只是丢弃掉前1:05秒的结果。如果将<code>-ss</code>放在<code>-i input.mp4</code>后面则<code>-to</code>的作用就没了，跟<code>-t</code>一样的效果了。</p>
+</blockquote><h3 id="视频封面" class="heading-element"><span>视频封面</span>
+  <a href="#%e8%a7%86%e9%a2%91%e5%b0%81%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="添加封面" class="heading-element"><span>添加封面</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e5%b0%81%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>下面两个命令都可以给视频添加封面。如果视频原来就有封面，再运行下面两个命令，第一个命令的结果是视频还是原来的封面，并且原封面对应的流的<code>attached_pic</code>属性会变成0；第二个命令的结果是视频显示是新封面，也不会改变原来封面的属性<code>attached_pic</code>的值。</p>
+<blockquote><p>命令<code>ffprobe -show_streams VIDEO_FILE</code>可以查看流的<code>attached_pic</code>值</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -i input.png -map <span class="m">0</span> -map <span class="m">1</span> -c copy -disposition:v:1 attached_pic output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -i input.png -map <span class="m">1</span> -map <span class="m">0</span> -c copy -disposition:0 attached_pic output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="替换封面" class="heading-element"><span>替换封面</span>
+  <a href="#%e6%9b%bf%e6%8d%a2%e5%b0%81%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>例如，通过<code>ffmpeg</code>看到一个视频的信息如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2041 kb/s, 30 fps, 30 tbr, 90k tbn (default)
+</span></span><span class="line"><span class="cl">Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 146 kb/s (default)
+</span></span><span class="line"><span class="cl">Stream #0:2[0x0]: Video: png, rgb24(pc, gbr/unknown/unknown), 320x180 [SAR 1:1 DAR 16:9], 90k tbr, 90k tbn (attached pic)</span></span></code></pre></td></tr></table>
+</div>
+</div><p>三个数据流依次是视频、音频、封面，替换原来封面使用新封面的命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -i input.png -map 0:0 -map 0:1 -map <span class="m">1</span> -c copy -disposition:v:1 attached_pic output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -i input.png -map <span class="m">1</span> -map 0:0 -map 0:1 -c copy -disposition:0 attached_pic output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以第一个命令为例
+<code>-map 0:0</code>: 表示第一个文件的第一个流，第一个文件就是<code>input.mp4</code>，<code>input.mp4</code>的第一个流就是视频流
+<code>-map 0:1</code>: 表示第一个文件的第二个流，也就是文件<code>input.mp4</code>的音频流
+<code>-map 1</code>: 表示第二个文件，也就是<code>input.png</code></p>
+<p>上述命令中的<code>-map 0:1</code>可以写成<code>-map 0:a</code>，二者等价（对于该文件而言），都表示音频流。但命令中的<code>-map 0:0</code>不可以写成<code>-map 0:v</code>，因为<code>-map 0:v</code>表示视频流，但是封面也是视频流，既然是替换封面，就应该忽略掉原封面对应的流。</p>
+<h4 id="删除封面" class="heading-element"><span>删除封面</span>
+  <a href="#%e5%88%a0%e9%99%a4%e5%b0%81%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>例如，通过<code>ffmpeg</code>看到一个视频的信息如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2041 kb/s, 30 fps, 30 tbr, 90k tbn (default)
+</span></span><span class="line"><span class="cl">Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 146 kb/s (default)
+</span></span><span class="line"><span class="cl">Stream #0:2[0x0]: Video: png, rgb24(pc, gbr/unknown/unknown), 320x180 [SAR 1:1 DAR 16:9], 90k tbr, 90k tbn (attached pic)</span></span></code></pre></td></tr></table>
+</div>
+</div><p>三个数据流依次是视频、音频、封面，下述命令可以删除视频封面，即只保留第一个和第二个数据流：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -map 0:0 -map 0:1 -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下述命令也可删除封面（原理待研究）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -c copy -map_metadata -1 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="音频视频合并" class="heading-element"><span>音频视频合并</span>
+  <a href="#%e9%9f%b3%e9%a2%91%e8%a7%86%e9%a2%91%e5%90%88%e5%b9%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i video.mp4 -i audio.mp3 -c copy output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="去除视频某些信息" class="heading-element"><span>去除视频某些信息</span>
+  <a href="#%e5%8e%bb%e9%99%a4%e8%a7%86%e9%a2%91%e6%9f%90%e4%ba%9b%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>删除视频章节信息，用<code>ffmpeg</code>查看视频信息，比如结果如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Chapters:
+</span></span><span class="line"><span class="cl">  Chapter #0:0: start 0.000000, end 2321.237000
+</span></span><span class="line"><span class="cl">    Metadata:
+</span></span><span class="line"><span class="cl">      title           : 
+</span></span><span class="line"><span class="cl">Stream #0:0[0x1](und): Video: h264 (High) ...
+</span></span><span class="line"><span class="cl">Stream #0:1[0x2](und): Audio: aac (HE-AAC) ...
+</span></span><span class="line"><span class="cl">Stream #0:2[0x3](eng): Data: bin_data (text / 0x74786574)
+</span></span><span class="line"><span class="cl">  Metadata:
+</span></span><span class="line"><span class="cl">    handler_name    : SubtitleHandler</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中<code>Chapters</code>就是章节信息，对应<code>handler_name</code>为<code>SubtitleHandler</code>、类型<code>bin_data</code>的<code>Data</code>的这个流。下述信息可以删除章节信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -c copy -map_chapters -1 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用<code>ffmpeg</code>查看视频信息时，有的视频除了一个视频流和一个音频流外，还会有第三个流</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -c copy -map_metadata -1 output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="更改视频帧率" class="heading-element"><span>更改视频帧率</span>
+  <a href="#%e6%9b%b4%e6%94%b9%e8%a7%86%e9%a2%91%e5%b8%a7%e7%8e%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 帧率修改为25</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -r <span class="m">25</span> output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="压缩视频-crf参数" class="heading-element"><span>压缩视频-crf参数</span>
+  <a href="#%e5%8e%8b%e7%bc%a9%e8%a7%86%e9%a2%91-crf%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i test.mp4 -crf <span class="m">18</span> test-crf18.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>crf</code>这个参数的取值范围为0~51，其中0为无损模式，数值越大，画质越差，生成的文件越小。一般取值在 18 到 28 之间。18往往被认为从视觉上看是无损的，但从技术的角度来讲，它依然是有损压缩。 若<code>crf</code>值加6，输出码率大概减少一半。使用<code>H264</code>编码时<code>crf</code>默认是23；使用<code>H265</code>编码时<code>crf</code>默认是28。</p>
+<h3 id="设置视频码率" class="heading-element"><span>设置视频码率</span>
+  <a href="#%e8%ae%be%e7%bd%ae%e8%a7%86%e9%a2%91%e7%a0%81%e7%8e%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -b:v 2000k output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -b:v 2000k -bufsize 2000k output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -b:v 2000k -bufsize 2000k -minrate 1800k -maxrate 2200k output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>-b:v</code>主要是控制平均码率</p>
+<p><code>-bufsize</code>用于设置码率控制缓冲器的大小，设置的好处是，让整体的码率更趋近于希望的值，减少波动。（简单来说，比如1 2的平均值是1.5， 1.49 1.51 也是1.5, 当然是第二种比较好）</p>
+<p><code>-minrate</code>,<code>-maxrate</code>将视频码率波动控制在一个范围内</p>
+<h3 id="设置视频大小" class="heading-element"><span>设置视频大小</span>
+  <a href="#%e8%ae%be%e7%bd%ae%e8%a7%86%e9%a2%91%e5%a4%a7%e5%b0%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -fs 10MB output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -fs 10M output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i test.mp4 -fs 5000K output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i test.mp4 -fs 5000k output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 下述命令报错,改成10M可行</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -fs 10m output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>fs</code>参数以字节为单位，输出的视频的大小会变成与指定的大小相近</p>
+<p>该参数可能会改变视频总帧数。比如原视频是30秒帧率30共900帧，用fs参数压缩后，虽然视频信息显示还是900帧，但实际总帧数小于900帧。（查看视频总帧数用的是下述命令）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -count_frames -select_streams v:0 -show_entries <span class="nv">stream</span><span class="o">=</span>nb_read_frames -of <span class="nv">default</span><span class="o">=</span><span class="nv">nokey</span><span class="o">=</span>1:noprint_wrappers<span class="o">=</span><span class="m">1</span> output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="preset参数" class="heading-element"><span>preset参数</span>
+  <a href="#preset%e5%8f%82%e6%95%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -crf <span class="m">18</span> -preset veryslow output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -crf <span class="m">18</span> -preset medium output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -crf <span class="m">18</span> -preset ultrafast output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>preset</code>参数主要调节编码速度和质量的平衡，编码速度慢会提供更高的压缩效率。有ultrafast、superfast、veryfast、faster、fast、medium、slow、slower、veryslow、placebo这10个选项。缺省值为medium。</p>
+<p>与 veryslow相比，placebo以极高的编码时间为代价换取了大概1%的视频质量提升，这是一种收益递减准则，veryslow 与 slower相比提升了3%；slower 与 slow相比提升了5%；slow 与 medium相比提升了5%~10%。有需要的话，一般用veryslow就行，placebo可忽略考虑。</p>
+<h3 id="h264编码profile" class="heading-element"><span>H264编码profile</span>
+  <a href="#h264%e7%bc%96%e7%a0%81profile" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><code>H264</code>有四种画质级别,分别是<code>baseline</code>, <code>extended</code>, <code>main</code>, <code>high</code>:</p>
+<ol>
+<li><code>Baseline Profile</code>: 基本画质。支持I/P 帧，只支持无交错（Progressive）和CAVLC。</li>
+<li><code>Extended profile</code>: 进阶画质。支持I/P/B/SP/SI 帧，只支持无交错（Progressive）和CAVLC。(用的少)</li>
+<li><code>Main profile</code>: 主流画质。提供I/P/B 帧，支持无交错（Progressive）和交错（Interlaced），也支持CAVLC 和CABAC 的支持。</li>
+<li><code>High profile</code>: 高级画质。在main Profile 的基础上增加了8x8内部预测、自定义量化、 无损视频编码和更多的YUV 格式。</li>
+</ol>
+<p>从压缩比例来说，<code>baseline&lt;main&lt;high</code>。<code>Baseline profile</code>多应用于实时通信领域，<code>Main profile</code>多应用于流媒体领域，<code>High profile</code>则多应用于广电和存储领域。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i test.mp4 -c:v libx264 -profile:v baseline test-profile-baseline.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i test.mp4 -c:v libx264 -profile:v main test-profile-main.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i test.mp4 -c:v libx264 -profile:v high test-profile-high.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>main</code>和<code>high</code>等profile是对于<code>H264</code>编解码器而言的，实际使用中发现<code>ffmpeg</code>默认是使用<code>profile</code>为<code>high</code>的<code>H264</code>，所以上述命令中<code>-c:v libx264</code>其实可以省略。比如，即使是对于一个原编解码器是<code>MPEG4</code>的视频来说，命令<code>ffmpeg -i test.mp4 -profile:v high test-profile-high.mp4</code>是可以正常运行的，输出视频的编解码器是<code>H264</code>，<code>profile</code>是<code>high</code>。</p>
+<h3 id="视频补帧提高帧率" class="heading-element"><span>视频补帧提高帧率</span>
+  <a href="#%e8%a7%86%e9%a2%91%e8%a1%a5%e5%b8%a7%e6%8f%90%e9%ab%98%e5%b8%a7%e7%8e%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 前两个命令效果一样</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -filter_complex <span class="s2">&#34;minterpolate=&#39;fps=30&#39;&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">minterpolate</span><span class="o">=</span><span class="s1">&#39;fps=30&#39;</span> output.mp4
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -r <span class="m">30</span> -vf minterpolate output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="视频黑边检测" class="heading-element"><span>视频黑边检测</span>
+  <a href="#%e8%a7%86%e9%a2%91%e9%bb%91%e8%be%b9%e6%a3%80%e6%b5%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="-cropdetecthttpsffmpegorgffmpeg-filtershtmlcropdetect" class="heading-element"><span><a href="https://ffmpeg.org/ffmpeg-filters.html#cropdetect"target="_blank" rel="external nofollow noopener noreferrer">-cropdetect</a></span>
+  <a href="#-cropdetecthttpsffmpegorgffmpeg-filtershtmlcropdetect" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>检测视频黑边</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i test-053.mp4 -t <span class="m">1</span> -vf <span class="nv">cropdetect</span><span class="o">=</span><span class="nv">round</span><span class="o">=</span><span class="m">2</span> -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i test-053.mp4 -t <span class="m">1</span> -vf <span class="nv">cropdetect</span><span class="o">=</span><span class="nv">limit</span><span class="o">=</span>24:round<span class="o">=</span><span class="m">2</span> -f null -</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>limit</code>默认值24
+<code>round</code>默认值是16，<code>round</code>值整除视频宽度和高度。据<code>ffmpeg</code>官网描述，对多数编解码器来说，16是最好的。当然，设置成2，即让视频宽度和高度是2的倍数，也是可以的。</p>
+<h4 id="-bboxhttpsffmpegorgffmpeg-filtershtmlbbox" class="heading-element"><span><a href="https://ffmpeg.org/ffmpeg-filters.html#bbox"target="_blank" rel="external nofollow noopener noreferrer">-bbox</a></span>
+  <a href="#-bboxhttpsffmpegorgffmpeg-filtershtmlbbox" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>检测视频黑边</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -t <span class="m">1</span> -vf bbox -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -t <span class="m">1</span> -vf <span class="nv">bbox</span><span class="o">=</span><span class="m">16</span> -f null -</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面是命令运行结果的部分内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n:23 pts:23000 pts_time:0.766692 x1:648 x2:1271 y1:0 y2:1079 w:624 h:1080 crop=624:1080:648:0 drawbox=648:0:624:1080</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>n:23</code>: 第23帧
+<code>x1,x2,y1,y2</code>: 表示非黑部分左上角和左下角的坐标
+<code>crop=a,b,c,d</code>: 可直接用于裁剪视频</p>
+<h4 id="tips-1" class="heading-element"><span>Tips</span>
+  <a href="#tips-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>可能会遇到这样的视频，视频左右两边有黑色区域，但是视频中有小的logo一直在整个视频画面中运动（包括黑色区域）。对于黑色区域有小logo的某一帧：参数<code>-vf cropdetect=limit=24</code>可能可以忽略掉小logo的影响，检测出黑色区域；若减小<code>limit</code>值，比如<code>-vf cropdetect=limit=16</code>可能检测出来的非黑色区域就包括了小logo，即检测出来的区域更大。对于该类视频，想忽略掉小logo的影响，调整<code>cropdetect</code>的<code>limit</code>值比用<code>bbox</code>更方便。</p>
+<h3 id="黑屏检测" class="heading-element"><span>黑屏检测</span>
+  <a href="#%e9%bb%91%e5%b1%8f%e6%a3%80%e6%b5%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>检查视频中纯黑色画面的片段，https://ffmpeg.org/ffmpeg-filters.html#blackdetect</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf blackdetect -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;blackdetect=d=2:pix_th=0.00&#34;</span> -f null -</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>black_min_duration, d: 设置黑场时间阈值，只有黑场的连续时间大于门限值才认为是黑场视频。阈值大于等于0，默认2.0。</li>
+<li>picture_black_ratio_th, pic_th: 设置黑场的判断阈值，nb_black_pixels/nb_pixels（黑场像素/总像素），该值为百分比，大于等于此阈值认为此帧图片是黑场. 默认值0.98.</li>
+<li>pixel_black_th, pix_th:
+设置黑场像素的判断阈值，默认值0.10。根据此阈值计算绝对阈值，低于绝对阈值的像素认为是黑场像素点。绝对阈值计算公式：$absolute_threshold = luminance_minimum_value + pixel_black_th * luminance_range_size$​
+$luminance_range_size$​和$luminance_minimum_value$​ 依赖输入视频的格式, 对于YUV full-range 其范围是 [0-255]，对于YUV non full-range 其范围是 [16-235];</li>
+</ul>
+<p>命令的运行结果示例如下，可以输出检测到的黑屏开始时间、黑屏结束时间、黑屏持续时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:298.266667 black_end:300.7 black_duration:2.433333
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:589.333333 black_end:601.166667 black_duration:11.833333
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:893.266667 black_end:901.616667 black_duration:8.35
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:1193.366667 black_end:1202.116667 black_duration:8.75
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:1498.65 black_end:1502.55 black_duration:3.9
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:1792.15 black_end:1803.016667 black_duration:10.866667
+</span></span><span class="line"><span class="cl">[blackdetect @ 0x600000da4070] black_start:2081.05 black_end:2103.266667 black_duration:22.216667</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="黑帧检测" class="heading-element"><span>黑帧检测</span>
+  <a href="#%e9%bb%91%e5%b8%a7%e6%a3%80%e6%b5%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>检测视频的中黑色的帧，https://ffmpeg.org/ffmpeg-filters.html#blackframe</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i intput.mp4 -vf blackframe -f null -
+</span></span><span class="line"><span class="cl"><span class="c1"># 下面三个命令等效</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i intput.mp4 -vf <span class="nv">blackframe</span><span class="o">=</span>98:32 -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i intput.mp4 -vf <span class="nv">blackframe</span><span class="o">=</span><span class="nv">amount</span><span class="o">=</span>98:threshold<span class="o">=</span><span class="m">32</span> -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i intput.mp4 -vf <span class="nv">blackframe</span><span class="o">=</span><span class="nv">amount</span><span class="o">=</span>98:thresh<span class="o">=</span><span class="m">32</span> -f null -</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>amount</code>: 黑色像素比例高于等于该值被视作是黑帧
+<code>threshold, thresh</code>: 像素值低于该值的被视为黑色像素</p>
+<p>命令运行结果示例如下，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Parsed_blackframe_0 @ 0x600001be0000] frame:1 pblack:100 pts:400 t:0.034734 type:B last_keyframe:0
+</span></span><span class="line"><span class="cl">[Parsed_blackframe_0 @ 0x600001be0000] frame:2 pblack:100 pts:800 t:0.069469 type:P last_keyframe:0
+</span></span><span class="line"><span class="cl">[Parsed_blackframe_0 @ 0x600001be0000] frame:8586 pblack:100 pts:3434400 t:298.228552 type:B last_keyframe:8421
+</span></span><span class="line"><span class="cl">[Parsed_blackframe_0 @ 0x600001be0000] frame:8587 pblack:100 pts:3434800 t:298.263286 type:P last_keyframe:8421</span></span></code></pre></td></tr></table>
+</div>
+</div><p>书序信息分别表示：帧序号、黑色像素占比、时间戳、时间(秒)、帧类型、当前gop的idr帧的位置</p>
+<p>通过<code>ffprobe -show_streams</code>查看视频流信息，可以看到<code>time_base</code>；通过<code>ffprobe -show_frames</code>查看帧信息，可以看到<code>pts</code>和<code>pts_time</code>；三者之间的关系是：$pts_time=pts*time_base$，上述输出信息中的<code>t</code>就是<code>pts_time</code></p>
+<h3 id="metadata" class="heading-element"><span>metadata</span>
+  <a href="#metadata" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://ffmpeg.org/ffmpeg-filters.html#metadata_002c-ametadata"target="_blank" rel="external nofollow noopener noreferrer">https://ffmpeg.org/ffmpeg-filters.html#metadata_002c-ametadata</a></p>
+<p>下述命令实现了提取视频第一个非黑色的帧（可用于视频的缩略图）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;blackframe=0,metadata=select:key=lavfi.blackframe.pblack:value=50:function=less&#34;</span> -vframes <span class="m">1</span> -f image2 out.png</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>blackframe=0</code>: 黑色像素比例大于0的帧，即所有帧
+<code>metadata=select:key=lavfi.blackframe.pblack:value=50:function=less</code>: 选择<code>pblack</code>小于50的帧，即黑色像素占比低于50的帧
+<code>-vframes 1</code>: 只输出符合要求的第一帧</p>
+<p>即上述命令的含义就是输出所有帧中第一个黑色像素占比低于50的帧</p>
+<h3 id="图片合成视频" class="heading-element"><span>图片合成视频</span>
+  <a href="#%e5%9b%be%e7%89%87%e5%90%88%e6%88%90%e8%a7%86%e9%a2%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -r <span class="m">1</span> -f image2 -i img-%2d.jpg output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>图片命令的序号必须连续</p>
+<h2 id="音频处理" class="heading-element"><span>音频处理</span>
+  <a href="#%e9%9f%b3%e9%a2%91%e5%a4%84%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="导出音频信息" class="heading-element"><span>导出音频信息</span>
+  <a href="#%e5%af%bc%e5%87%ba%e9%9f%b3%e9%a2%91%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp3 -f ffmetadata output.txt</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改音频信息" class="heading-element"><span>修改音频信息</span>
+  <a href="#%e4%bf%ae%e6%94%b9%e9%9f%b3%e9%a2%91%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 修改title, 删除album, 其他不变</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp3 -metadata <span class="nv">title</span><span class="o">=</span><span class="s2">&#34;new title&#34;</span> -metadata <span class="nv">album</span><span class="o">=</span><span class="s2">&#34;&#34;</span> -c copy output.mp3
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp3 -metadata <span class="nv">title</span><span class="o">=</span>new-title -metadata <span class="nv">album</span><span class="o">=</span> output.mp3
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除所有信息(metadata)</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp3 -map_metadata -1 output.mp3
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除所有信息(metadata), 仅设置title</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp3 -map_metadata -1 -metadata <span class="nv">title</span><span class="o">=</span>new-title output.mp3</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="压缩音频" class="heading-element"><span>压缩音频</span>
+  <a href="#%e5%8e%8b%e7%bc%a9%e9%9f%b3%e9%a2%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp3 -ab 24k -ar 16k output.mp3</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>-ab</code>: 等同于<code>-b:v</code>，设置码率
+<code>-ar</code>: 设置音频采样速率</p>
+<h3 id="查看音量" class="heading-element"><span>查看音量</span>
+  <a href="#%e6%9f%a5%e7%9c%8b%e9%9f%b3%e9%87%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -af volumedetect -f null -</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述命令的运行结果的其中两行信息如下，分别表示平均音量和最大音量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Parsed_volumedetect_0 @ 0x6000025e9b80] mean_volume: -38.7 dB
+</span></span><span class="line"><span class="cl">[Parsed_volumedetect_0 @ 0x6000025e9b80] max_volume: -10.1 dB</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="调整音量" class="heading-element"><span>调整音量</span>
+  <a href="#%e8%b0%83%e6%95%b4%e9%9f%b3%e9%87%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 音量调大10分贝</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -c:v copy -af <span class="s2">&#34;volume=10dB&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 音量调小5分贝</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -c:v copy -af <span class="s2">&#34;volume=-5dB&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 音量调为150%</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -c:v copy -af <span class="s2">&#34;volume=1.5&#34;</span> output.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 音量调为80%</span>
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -c:v copy -af <span class="s2">&#34;volume=0.8&#34;</span> output.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="绘制音量波形图" class="heading-element"><span>绘制音量波形图</span>
+  <a href="#%e7%bb%98%e5%88%b6%e9%9f%b3%e9%87%8f%e6%b3%a2%e5%bd%a2%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://ffmpeg.org/ffmpeg-filters.html#showwavespic"target="_blank" rel="external nofollow noopener noreferrer">https://ffmpeg.org/ffmpeg-filters.html#showwavespic</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i input.mp4 -filter_complex <span class="s2">&#34;showwavespic=s=600x240:scale=3&#34;</span> -vframes <span class="m">1</span> output.png</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>s</code>: 指定图片大小，默认是<code>600x240</code>
+<code>scale</code>: 设置音量振幅放缩比例，范围是<code>[0-3]</code></p>
+<h2 id="ffprobe" class="heading-element"><span>ffprobe</span>
+  <a href="#ffprobe" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="简介-1" class="heading-element"><span>简介</span>
+  <a href="#%e7%ae%80%e4%bb%8b-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>ffprobe 是ffmpeg的一个工具包，主要用于探测音视频文件的各种信息</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://ffmpeg.org/ffprobe.html"target="_blank" rel="external nofollow noopener noreferrer">ffprobe Documentation-官网</a></li>
+<li><a href="https://www.jianshu.com/p/789244ad10d8"target="_blank" rel="external nofollow noopener noreferrer">ffprobe 使用小结-简书</a></li>
+<li><a href="https://juejin.cn/post/6844903920750297101"target="_blank" rel="external nofollow noopener noreferrer">FFmpeg之ffprobe-掘金</a></li>
+<li><a href="https://www.cnblogs.com/chentiao/p/17085229.html"target="_blank" rel="external nofollow noopener noreferrer">ffprobe输出元数据参数解析-博客园</a></li>
+</ul>
+<h3 id="参数介绍" class="heading-element"><span>参数介绍</span>
+  <a href="#%e5%8f%82%e6%95%b0%e4%bb%8b%e7%bb%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下述两个命令等效，输出信息类似于: ffmpeg -i input.mp4</span>
+</span></span><span class="line"><span class="cl">ffprobe input.mp4
+</span></span><span class="line"><span class="cl">ffprobe -i input.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-show_format" class="heading-element"><span><code>-show_format</code></span>
+  <a href="#-show_format" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>查看容器格式相关信息</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -show_format input.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-show_streams" class="heading-element"><span><code>-show_streams</code></span>
+  <a href="#-show_streams" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>查看流信息</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -show_streams input.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-show_frames" class="heading-element"><span><code>-show_frames</code></span>
+  <a href="#-show_frames" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>查看帧信息</p>
+</blockquote><h4 id="-show_entries" class="heading-element"><span><code>-show_entries</code></span>
+  <a href="#-show_entries" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>设置只输出指定条目</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 只输出下述四项</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -show_format中的bit_rate,duration</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -show_streams中的codec_type,codec_name,bit_rate</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -show_streams中的tags</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -show_streams中的disposition中的attached_pic</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration:stream<span class="o">=</span>codec_type,codec_name,bit_rate:stream_tags:stream_disposition<span class="o">=</span>attached_pic input.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-output_format--of" class="heading-element"><span><code>-output_format, -of</code>:</span>
+  <a href="#-output_format--of" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>设置输出格式</p>
+</blockquote><p>例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[FORMAT]
+</span></span><span class="line"><span class="cl">duration=30.000181
+</span></span><span class="line"><span class="cl">bit_rate=13020820
+</span></span><span class="line"><span class="cl">[/FORMAT]</span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么，下述命令及其输出如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration -output_format <span class="nv">default</span><span class="o">=</span><span class="nv">noprint_wrappers</span><span class="o">=</span><span class="m">1</span> test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">duration=30.000181
+</span></span><span class="line"><span class="cl">bit_rate=13020820</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration -of <span class="nv">default</span><span class="o">=</span><span class="nv">nokey</span><span class="o">=</span><span class="m">1</span> test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[FORMAT]
+</span></span><span class="line"><span class="cl">30.000181
+</span></span><span class="line"><span class="cl">13020820
+</span></span><span class="line"><span class="cl">[/FORMAT]</span></span></code></pre></td></tr></table>
+</div>
+</div><p>同时设置<code>nokey</code>和<code>noprint_wrappers</code>的命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration -of <span class="nv">default</span><span class="o">=</span><span class="nv">nokey</span><span class="o">=</span>1:noprint_wrappers<span class="o">=</span><span class="m">1</span> test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等价于下述命令，<code>nokey</code>简写<code>nk</code>，<code>noprint_wrappers</code>简写<code>nw</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration -of <span class="nv">default</span><span class="o">=</span><span class="nv">nk</span><span class="o">=</span>1:nw<span class="o">=</span><span class="m">1</span> test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>亦可指定输出格式，以json格式输出的命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -show_entries <span class="nv">format</span><span class="o">=</span>bit_rate,duration -of json test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-select_streams" class="heading-element"><span><code>-select_streams</code></span>
+  <a href="#-select_streams" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>输出指定流的信息</p>
+</blockquote><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 音频流</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_streams -select_streams a test.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 视频流</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_streams -select_streams v test.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一个视频流</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_streams -select_streams v:0 test.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 第二个视频流</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_streams -select_streams v:1 test.mp4
+</span></span><span class="line"><span class="cl"><span class="c1"># 第二个流</span>
+</span></span><span class="line"><span class="cl">ffprobe -v error -show_streams -select_streams <span class="m">1</span> test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="-count_frames" class="heading-element"><span><code>-count_frames</code></span>
+  <a href="#-count_frames" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><blockquote><p>计算每个流的帧数，并在相应的流部分中报告</p>
+</blockquote><p>例如，视频总帧数命令如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe -v error -count_frames -select_streams v:0 -show_entries <span class="nv">stream</span><span class="o">=</span>nb_read_frames test.mp4</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不指定参数<code>-select_streams</code>时，<code>nb_read_frames</code>是<code>N/A</code></p>
+<h2 id="小结" class="heading-element"><span>小结</span>
+  <a href="#%e5%b0%8f%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="压缩视频" class="heading-element"><span>压缩视频</span>
+  <a href="#%e5%8e%8b%e7%bc%a9%e8%a7%86%e9%a2%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li>降低分辨率</li>
+<li>降低帧率</li>
+<li>用crf参数进行压缩</li>
+<li>非H264的视频，可考虑改成H264，H264压缩可能比原编解码器更高</li>
+<li>更改H264格式视频的profile，从压缩比例来说，baseline&lt;main&lt;high</li>
+<li>使用H265编码，比H264压缩效率更高，但需要考虑兼容性，H264兼容性更高</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-05-03 09:32:00">Updated on 2023-05-03&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://example.org/posts/ffmpeg/" data-title="FFmpeg Notes" data-hashtags="FFmpeg"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://example.org/posts/ffmpeg/" data-hashtag="FFmpeg"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://example.org/posts/ffmpeg/" data-title="FFmpeg Notes"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/ffmpeg/" class="post-tag" title="Tags - FFmpeg">FFmpeg</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/mac-notes/" class="post-nav-item" rel="prev" title="Mac Notes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Mac Notes</a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.133.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.11"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.11"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

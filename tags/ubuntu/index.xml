@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu - Tag - Hu Xin</title>
+    <link>https://example.org/tags/ubuntu/</link>
+    <description>Hu Xin</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 May 2023 09:32:00 -0500</lastBuildDate>
+    <atom:link href="https://example.org/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Notes</title>
+      <link>https://example.org/posts/ubuntu/</link>
+      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate><author>1469025384@qq.com (Hu Xin)</author>
+      <guid>https://example.org/posts/ubuntu/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <category domain="https://example.org/categories/notes/">Notes</category>
+      <description>相关说明 下述相关配置，无特别说明，使用的是bash终端 某些笔记是在Docker中的ubuntu中实践出来的，某些是双系统或虚拟机中实践出来的</description>
+    </item>
+  </channel>
+</rss>
