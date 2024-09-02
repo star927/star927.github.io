@@ -1438,6 +1438,6 @@ cpdf-binaries: https://github.com/coherentgraphics/cpdf-binaries
 
 ---
 
-> Author: [Hu Xin](https://star927.github.io/)  
-> URL: http://localhost:1313/posts/mac-notes/  
+> Author: [Huxley](https://star927.github.io/)  
+> URL: https://example.org/posts/mac-notes/  
 

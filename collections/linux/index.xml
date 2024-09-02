@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux - Collection - Hu Xin</title>
+    <title>Linux - Collection - Huxley&#39;s Blog</title>
     <link>https://example.org/collections/linux/</link>
-    <description>Hu Xin</description>
+    <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
     <language>en</language>
     <lastBuildDate>Wed, 03 May 2023 09:32:00 -0500</lastBuildDate>
@@ -11,7 +11,7 @@
     <item>
       <title>Ubuntu Notes</title>
       <link>https://example.org/posts/ubuntu/</link>
-      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate><author>1469025384@qq.com (Hu Xin)</author>
+      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
       <guid>https://example.org/posts/ubuntu/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
       <category domain="https://example.org/categories/notes/">Notes</category>

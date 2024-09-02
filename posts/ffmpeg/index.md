@@ -739,6 +739,6 @@ ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_
 
 ---
 
-> Author: [Hu Xin](https://star927.github.io/)  
-> URL: http://localhost:1313/posts/ffmpeg/  
+> Author: [Huxley](https://star927.github.io/)  
+> URL: https://example.org/posts/ffmpeg/  
 

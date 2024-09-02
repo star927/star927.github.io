@@ -267,6 +267,6 @@ sudo chmod &#43;x /etc/rc.local
 
 ---
 
-> Author: [Hu Xin](https://star927.github.io/)  
-> URL: http://localhost:1313/posts/ubuntu/  
+> Author: [Huxley](https://star927.github.io/)  
+> URL: https://example.org/posts/ubuntu/  
 

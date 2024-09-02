@@ -7,5 +7,5 @@ A blog (a truncation of &#34;weblog&#34;) is an informational website published 
 ---
 
 > Author: Hu Xin  
-> URL: http://localhost:1313/posts/first_post/  
+> URL: https://example.org/posts/first_post/  
 

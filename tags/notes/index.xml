@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notes - Tag - Hu Xin</title>
+    <title>Notes - Tag - Huxley&#39;s Blog</title>
     <link>https://example.org/tags/notes/</link>
-    <description>Hu Xin</description>
+    <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 May 2023 09:32:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 02 Sep 2024 09:32:00 -0500</lastBuildDate>
     <atom:link href="https://example.org/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Text and Typography</title>
+      <link>https://example.org/posts/markdown/</link>
+      <pubDate>Mon, 02 Sep 2024 09:32:00 -0500</pubDate>
+      <guid>https://example.org/posts/markdown/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <category domain="https://example.org/categories/notes/">Notes</category>
+      <description>Notes Note Highlights information that users should take into account, even when skimming. Tip Optional information to help a user be more successful. Important Crucial information necessary for users to succeed. Warning Critical content demanding immediate user attention due to potential risks. Caution Negative potential consequences of an action. 图片 1 ![unnamed-2](https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png) 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34; alt=&amp;#34;unnamed-1&amp;#34; style=&amp;#34;zoom:10%;&amp;#34; /&amp;gt; 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34; alt=&amp;#34;unnamed-1&amp;#34; width=200 height=200 align=left /&amp;gt; 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34;</description>
+    </item>
+    <item>
+      <title>FFmpeg Notes</title>
+      <link>https://example.org/posts/ffmpeg/</link>
+      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
+      <guid>https://example.org/posts/ffmpeg/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <category domain="https://example.org/categories/notes/">Notes</category>
+      <description>简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &amp;gt; output.txt 2&amp;gt;&amp;amp;1 常见参数 -i: 设定输入</description>
+    </item>
     <item>
       <title>Mac Notes</title>
       <link>https://example.org/posts/mac-notes/</link>
-      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate><author>1469025384@qq.com (Hu Xin)</author>
+      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
       <guid>https://example.org/posts/mac-notes/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
       <category domain="https://example.org/categories/notes/">Notes</category>
