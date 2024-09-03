@@ -1,20 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog - Tag - Hu Xin</title>
-    <link>http://localhost:1313/tags/blog/</link>
-    <description>Hu Xin</description>
+    <title>Blog - Tag - Huxley&#39;s Blog</title>
+    <link>https://example.org/tags/blog/</link>
+    <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Feb 2023 20:14:22 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/first_post/</link>
-      <pubDate>Mon, 20 Feb 2023 20:14:22 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first_post/</guid>
-      <category domain="http://localhost:1313/categories/blog/">Blog</category>
-      <description>A blog (a truncation of &amp;ldquo;weblog&amp;rdquo;) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic.</description>
+      <title>GitHub Pages绑定个人域名</title>
+      <link>https://example.org/posts/github-custom-domain/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/github-custom-domain/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>1 购买域名 如阿里云、腾讯云、华为云等都可以购买域名，同一个域名不同厂商的价格可能不一样。 2 域名解析 以阿里云为例，进入域名控制台，解析新购买的</description>
+    </item>
+    <item>
+      <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
+      <link>https://example.org/posts/jsdelivr-image-hosting/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jsdelivr-image-hosting/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>1 生成一个Github Token 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Perso</description>
+    </item>
+    <item>
+      <title>Jekyll博客中基于LeanCloud统计文章阅读量</title>
+      <link>https://example.org/posts/leancloud/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/leancloud/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>1 配置LeanCloud 进入LeanCloud官网https://www.leancloud.cn/，注册或登录账号。 创建应用，应用名称可自</description>
+    </item>
+    <item>
+      <title>Jekyll博客中添加Gitalk评论系统</title>
+      <link>https://example.org/posts/jekyll-gitalk/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jekyll-gitalk/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>Gitalk评论系统的效果图如下： Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Gi</description>
+    </item>
+    <item>
+      <title>Jekyll博客中添加Valine评论系统</title>
+      <link>https://example.org/posts/valine/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/valine/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>Valine评论系统的效果图如下： 下面一步步来配置Valine评论系统 1 配置LeanCloud 进入LeanCloud官网https://ww</description>
     </item>
   </channel>
 </rss>

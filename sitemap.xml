@@ -2,21 +2,21 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://example.org/categories/blog/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/categories/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/collections/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
       <loc>https://example.org/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/tags/mac/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/collections/mac/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/tags/notes/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/categories/notes/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
       <loc>https://example.org/posts/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/tags/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/posts/markdown/</loc><lastmod>2024-09-02T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/tags/ffmpeg/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/posts/ffmpeg/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/collections/linux/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/posts/mac-notes/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/tags/ubuntu/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/posts/ubuntu/</loc><lastmod>2023-05-03T09:32:00-05:00</lastmod></url><url>
-      <loc>https://example.org/posts/first_post/</loc><lastmod>2023-02-20T20:14:22&#43;08:00</lastmod></url></urlset>
+      <loc>https://example.org/tags/blog/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/categories/blog/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/categories/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/gitalk/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/posts/github-custom-domain/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/posts/jsdelivr-image-hosting/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/jekyll/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/posts/leancloud/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/posts/jekyll-gitalk/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/posts/valine/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/jsdelivr/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/leancloud/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/valine/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/tags/%E5%9B%BE%E5%BA%8A/</loc><lastmod>2021-08-29T00:00:00&#43;00:00</lastmod></url><url>
+      <loc>https://example.org/collections/</loc></url></urlset>

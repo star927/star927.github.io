@@ -6,50 +6,47 @@
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Sep 2024 09:32:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Text and Typography</title>
-      <link>https://example.org/posts/markdown/</link>
-      <pubDate>Mon, 02 Sep 2024 09:32:00 -0500</pubDate>
-      <guid>https://example.org/posts/markdown/</guid>
+      <title>GitHub Pages绑定个人域名</title>
+      <link>https://example.org/posts/github-custom-domain/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/github-custom-domain/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
-      <category domain="https://example.org/categories/notes/">Notes</category>
-      <description>Notes Note Highlights information that users should take into account, even when skimming. Tip Optional information to help a user be more successful. Important Crucial information necessary for users to succeed. Warning Critical content demanding immediate user attention due to potential risks. Caution Negative potential consequences of an action. 图片 1 ![unnamed-2](https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png) 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34; alt=&amp;#34;unnamed-1&amp;#34; style=&amp;#34;zoom:10%;&amp;#34; /&amp;gt; 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34; alt=&amp;#34;unnamed-1&amp;#34; width=200 height=200 align=left /&amp;gt; 1 &amp;lt;img src=&amp;#34;https://cdn.jsdelivr.net/gh/star927/star927.github.io/assets/img/avatar.png&amp;#34;</description>
+      <description>1 购买域名 如阿里云、腾讯云、华为云等都可以购买域名，同一个域名不同厂商的价格可能不一样。 2 域名解析 以阿里云为例，进入域名控制台，解析新购买的</description>
     </item>
     <item>
-      <title>FFmpeg Notes</title>
-      <link>https://example.org/posts/ffmpeg/</link>
-      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
-      <guid>https://example.org/posts/ffmpeg/</guid>
+      <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
+      <link>https://example.org/posts/jsdelivr-image-hosting/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jsdelivr-image-hosting/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
-      <category domain="https://example.org/categories/notes/">Notes</category>
-      <description>简介 基本命令格式 1 ffmpeg [全局参数] [输入文件参数] -i [输入文件] [输出文件参数] [输出文件] 输出视频信息到文件 1 ffmpeg -i vedio.mp4 &amp;gt; output.txt 2&amp;gt;&amp;amp;1 常见参数 -i: 设定输入</description>
+      <description>1 生成一个Github Token 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Perso</description>
     </item>
     <item>
-      <title>Mac Notes</title>
-      <link>https://example.org/posts/mac-notes/</link>
-      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
-      <guid>https://example.org/posts/mac-notes/</guid>
+      <title>Jekyll博客中基于LeanCloud统计文章阅读量</title>
+      <link>https://example.org/posts/leancloud/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/leancloud/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
-      <category domain="https://example.org/categories/notes/">Notes</category>
-      <description>Tips Homebrew brew是mac系统中程序包的管理程序，通过brew安装的程序默认都是/opt/homebrew/Cellar下，然后在/opt/hom</description>
+      <description>1 配置LeanCloud 进入LeanCloud官网https://www.leancloud.cn/，注册或登录账号。 创建应用，应用名称可自</description>
     </item>
     <item>
-      <title>Ubuntu Notes</title>
-      <link>https://example.org/posts/ubuntu/</link>
-      <pubDate>Wed, 03 May 2023 09:32:00 -0500</pubDate>
-      <guid>https://example.org/posts/ubuntu/</guid>
+      <title>Jekyll博客中添加Gitalk评论系统</title>
+      <link>https://example.org/posts/jekyll-gitalk/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jekyll-gitalk/</guid>
       <category domain="https://example.org/categories/blog/">Blog</category>
-      <category domain="https://example.org/categories/notes/">Notes</category>
-      <description>相关说明 下述相关配置，无特别说明，使用的是bash终端 某些笔记是在Docker中的ubuntu中实践出来的，某些是双系统或虚拟机中实践出来的</description>
+      <description>Gitalk评论系统的效果图如下： Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Gi</description>
     </item>
     <item>
-      <title>My First Post</title>
-      <link>https://example.org/posts/first_post/</link>
-      <pubDate>Mon, 20 Feb 2023 20:14:22 +0800</pubDate>
-      <guid>https://example.org/posts/first_post/</guid>
-      <description>A blog (a truncation of &amp;ldquo;weblog&amp;rdquo;) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic.</description>
+      <title>Jekyll博客中添加Valine评论系统</title>
+      <link>https://example.org/posts/valine/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/valine/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>Valine评论系统的效果图如下： 下面一步步来配置Valine评论系统 1 配置LeanCloud 进入LeanCloud官网https://ww</description>
     </item>
   </channel>
 </rss>

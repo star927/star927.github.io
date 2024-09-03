@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog - Category - Huxley&#39;s Blog</title>
-    <link>https://example.org/categories/blog/</link>
+    <title>Jekyll - Tag - Huxley&#39;s Blog</title>
+    <link>https://example.org/tags/jekyll/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Pages绑定个人域名</title>
       <link>https://example.org/posts/github-custom-domain/</link>

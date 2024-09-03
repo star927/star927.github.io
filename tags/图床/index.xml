@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图床 - Tag - Huxley&#39;s Blog</title>
+    <link>https://example.org/tags/%E5%9B%BE%E5%BA%8A/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
+      <link>https://example.org/posts/jsdelivr-image-hosting/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jsdelivr-image-hosting/</guid>
+      <category domain="https://example.org/categories/blog/">Blog</category>
+      <description>1 生成一个Github Token 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Perso</description>
+    </item>
+  </channel>
+</rss>
