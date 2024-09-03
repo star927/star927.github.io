@@ -1,52 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>All Posts - Huxley&#39;s Blog</title>
-    <link>https://example.org/posts/</link>
-    <description>This is my new Hugo FixIt site</description>
-    <generator>Hugo 0.133.1 &amp; FixIt v0.3.11</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GitHub Pages绑定个人域名</title>
-      <link>https://example.org/posts/github-custom-domain/</link>
-      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/github-custom-domain/</guid>
-      <category domain="https://example.org/categories/blog/">Blog</category>
-      <description>1 购买域名 如阿里云、腾讯云、华为云等都可以购买域名，同一个域名不同厂商的价格可能不一样。 2 域名解析 以阿里云为例，进入域名控制台，解析新购买的</description>
-    </item>
-    <item>
-      <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
-      <link>https://example.org/posts/jsdelivr-image-hosting/</link>
-      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jsdelivr-image-hosting/</guid>
-      <category domain="https://example.org/categories/blog/">Blog</category>
-      <description>1 生成一个Github Token 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Perso</description>
-    </item>
-    <item>
-      <title>Jekyll博客中基于LeanCloud统计文章阅读量</title>
-      <link>https://example.org/posts/leancloud/</link>
-      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/leancloud/</guid>
-      <category domain="https://example.org/categories/blog/">Blog</category>
-      <description>1 配置LeanCloud 进入LeanCloud官网https://www.leancloud.cn/，注册或登录账号。 创建应用，应用名称可自</description>
-    </item>
-    <item>
-      <title>Jekyll博客中添加Gitalk评论系统</title>
-      <link>https://example.org/posts/jekyll-gitalk/</link>
-      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jekyll-gitalk/</guid>
-      <category domain="https://example.org/categories/blog/">Blog</category>
-      <description>Gitalk评论系统的效果图如下： Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Gi</description>
-    </item>
-    <item>
-      <title>Jekyll博客中添加Valine评论系统</title>
-      <link>https://example.org/posts/valine/</link>
-      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/valine/</guid>
-      <category domain="https://example.org/categories/blog/">Blog</category>
-      <description>Valine评论系统的效果图如下： 下面一步步来配置Valine评论系统 1 配置LeanCloud 进入LeanCloud官网https://ww</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Huxley's Blog</title><link>https://star927.github.io/posts/</link><description>Recent content in Posts on Huxley's Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://star927.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Pages绑定个人域名</title><link>https://star927.github.io/posts/github-custom-domain/</link><pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate><guid>https://star927.github.io/posts/github-custom-domain/</guid><description>&lt;h2 id="1-购买域名">1 购买域名&lt;/h2>
+&lt;p>如阿里云、腾讯云、华为云等都可以购买域名，同一个域名不同厂商的价格可能不一样。&lt;/p>
+&lt;h2 id="2-域名解析">2 域名解析&lt;/h2>
+&lt;p>以阿里云为例，进入&lt;code>域名控制台&lt;/code>，解析新购买的域名。添加下面两条记录，记录值填写Github Pages的原始域名&lt;code>user-name.github.io&lt;/code>，记录类型选择&lt;code>CNAME&lt;/code>，比如自己的域名是&lt;code>hxhuxin.top&lt;/code>，那么主机记录&lt;code>www&lt;/code>对应的网址就是&lt;code>www.hxhuxin.top&lt;/code>，主机记录&lt;code>@&lt;/code>对应的网址是&lt;code>hxhuxin.top&lt;/code>。添加完两条记录后，需等待十几分钟。&lt;/p></description></item><item><title>GitHub+jsDelivr+PicGo搭建免费图床</title><link>https://star927.github.io/posts/jsdelivr-image-hosting/</link><pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate><guid>https://star927.github.io/posts/jsdelivr-image-hosting/</guid><description>&lt;h2 id="1-生成一个github-token">1 生成一个Github Token&lt;/h2>
+&lt;p>进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Personal access tokens】-【Generate new token】，如下图：&lt;/p></description></item><item><title>Jekyll博客中基于LeanCloud统计文章阅读量</title><link>https://star927.github.io/posts/jekyli-leancloud/</link><pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate><guid>https://star927.github.io/posts/jekyli-leancloud/</guid><description>&lt;h2 id="1-配置leancloud">1 配置LeanCloud&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>进入LeanCloud官网&lt;a href="https://www.leancloud.cn/">https://www.leancloud.cn/&lt;/a>，注册或登录账号。&lt;/p></description></item><item><title>Jekyll博客中添加Gitalk评论系统</title><link>https://star927.github.io/posts/jekyll-gitalk/</link><pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate><guid>https://star927.github.io/posts/jekyll-gitalk/</guid><description>&lt;p>Gitalk评论系统的效果图如下：&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Github仓库的Issues，就可以管理评论数据了，下面来配置Gitalk评论系统。&lt;/p></description></item><item><title>Jekyll博客中添加Valine评论系统</title><link>https://star927.github.io/posts/jekyll-valine/</link><pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate><guid>https://star927.github.io/posts/jekyll-valine/</guid><description>&lt;p>Valine评论系统的效果图如下：&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>下面一步步来配置Valine评论系统&lt;/p>
+&lt;h2 id="1-配置leancloud">1 配置LeanCloud&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>进入LeanCloud官网&lt;a href="https://www.leancloud.cn/">https://www.leancloud.cn/&lt;/a>，注册/登录账号。&lt;/p></description></item></channel></rss>
