@@ -5,9 +5,11 @@ Gitalk评论系统的效果图如下：
 
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk.png&#34; alt=&#34;gitalk&#34; style=&#34;zoom:50%;&#34; /&gt;
 
+&lt;!--more--&gt;
+
 Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Github仓库的Issues，就可以管理评论数据了，下面来配置Gitalk评论系统。
 
-## 1 创建Github OAuth Apps
+## 创建Github OAuth Apps
 
 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【OAuth Apps】-【New OAuth App】，可看到如下界面：
 
@@ -20,7 +22,7 @@ Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk�
 
 如果Github Pages已经绑定了个人域名，则`Homepage URL`和`Authorization callback URL`需要填写自己的域名，如&lt;https://hxhuxin.top/&gt;
 
-## 2 在Jekyll中配置Gitalk
+## 在Jekyll中配置Gitalk
 
 需要修改文件如下：
 
@@ -85,7 +87,7 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk-error-not-found.png&#34; alt=&#34;gitalk-error-not-found&#34; style=&#34;zoom:50%;&#34; /&gt;
 
-## 3 初始化Gitalk
+## 初始化Gitalk
 
 正确完成上述步骤后，在评论区可看到以下内容，点击`使用Github登录`即可。
 
@@ -99,5 +101,5 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 ---
 
 > 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/jekyll-gitalk/  
+> URL: https://star927.github.io/posts/blog/jekyll-gitalk/  
 

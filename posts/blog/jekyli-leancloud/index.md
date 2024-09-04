@@ -1,7 +1,9 @@
 # Jekyll博客中基于LeanCloud统计文章阅读量
 
 
-## 1 配置LeanCloud
+&lt;!--more--&gt;
+
+## 配置LeanCloud
 
 - 进入LeanCloud官网&lt;https://www.leancloud.cn/&gt;，注册或登录账号。
 
@@ -27,7 +29,7 @@
 
 ![服务开关](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-5.png)
 
-## 2 修改博客配置文件
+## 修改博客配置文件
 
 需要修改或新增的文件如下：
 
@@ -199,5 +201,5 @@ leancloud:
 ---
 
 > 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/jekyli-leancloud/  
+> URL: https://star927.github.io/posts/blog/jekyli-leancloud/  
 

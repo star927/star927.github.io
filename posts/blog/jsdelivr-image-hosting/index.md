@@ -1,7 +1,9 @@
 # GitHub&#43;jsDelivr&#43;PicGo搭建免费图床
 
 
-## 1 生成一个Github Token
+&lt;!--more--&gt;
+
+## 生成一个Github Token
 
 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【Personal access tokens】-【Generate new token】，如下图：
 
@@ -12,7 +14,7 @@
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Github-Token-List.png&#34; alt=&#34;Github-Token-List&#34; style=&#34;zoom:50%;&#34; /&gt;
 
 
-## 2 配置PicGo
+## 配置PicGo
 
 [PicGo](https://github.com/Molunerfinn/PicGo)安装完成后，打开图床设置，配置GitHub图床，如下图：
 
@@ -31,5 +33,5 @@
 ---
 
 > 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/jsdelivr-image-hosting/  
+> URL: https://star927.github.io/posts/blog/jsdelivr-image-hosting/  
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archetypes - 标签 - Huxley&#39;s Blog</title>
+    <link>https://star927.github.io/tags/archetypes/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.134.0 &amp; FixIt v0.3.11</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 04 Sep 2024 14:33:53 +0800</lastBuildDate>
+    <atom:link href="https://star927.github.io/tags/archetypes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客文章模板-Archetypes</title>
+      <link>https://star927.github.io/posts/blog/hugo-archetypes/</link>
+      <pubDate>Wed, 04 Sep 2024 14:33:53 +0800</pubDate>
+      <guid>https://star927.github.io/posts/blog/hugo-archetypes/</guid>
+      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <description>&lt;p&gt;用&lt;code&gt;hugo new content&lt;/code&gt;命令可以创建一篇文章，&lt;a href=&#34;https://gohugo.io/content-management/archetypes/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Archetypes&lt;/a&gt;就是新建文章的模板。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

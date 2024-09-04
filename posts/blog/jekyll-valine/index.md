@@ -5,9 +5,11 @@ Valine评论系统的效果图如下：
 
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine.png&#34; alt=&#34;Valine&#34; style=&#34;zoom:50%;&#34; /&gt;
 
+&lt;!--more--&gt;
+
 下面一步步来配置Valine评论系统
 
-## 1 配置LeanCloud
+## 配置LeanCloud
 
 - 进入LeanCloud官网&lt;https://www.leancloud.cn/&gt;，注册/登录账号。
 
@@ -19,7 +21,7 @@ Valine评论系统的效果图如下：
 
 ![Credentials](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png)
 
-## 2 修改博客配置文件
+## 修改博客配置文件
 
 - 在`_config.yml`文件中添加以下代码：
 
@@ -59,7 +61,7 @@ valine:
 
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine-Comment.png&#34; alt=&#34;Valine-Comment&#34; style=&#34;zoom:50%;&#34; /&gt;
 
-## 3 配置Valine邮件提醒功能
+## 配置Valine邮件提醒功能
 
 参见&lt;https://github.com/DesertsP/Valine-Admin&gt;
 
@@ -68,5 +70,5 @@ valine:
 ---
 
 > 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/jekyll-valine/  
+> URL: https://star927.github.io/posts/blog/jekyll-valine/  
 

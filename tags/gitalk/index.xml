@@ -10,11 +10,11 @@
     <atom:link href="https://star927.github.io/tags/gitalk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jekyll博客中添加Gitalk评论系统</title>
-      <link>https://star927.github.io/posts/jekyll-gitalk/</link>
+      <link>https://star927.github.io/posts/blog/jekyll-gitalk/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/jekyll-gitalk/</guid>
+      <guid>https://star927.github.io/posts/blog/jekyll-gitalk/</guid>
       <category domain="https://star927.github.io/categories/blog/">Blog</category>
-      <description>&lt;p&gt;Gitalk评论系统的效果图如下：&lt;/p&gt;&#xA;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk.png&#34; alt=&#34;gitalk&#34; style=&#34;zoom:50%;&#34; /&gt;&#xA;&lt;p&gt;Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Github仓库的Issues，就可以管理评论数据了，下面来配置Gitalk评论系统。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Gitalk评论系统的效果图如下：&lt;/p&gt;&#xA;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk.png&#34; alt=&#34;gitalk&#34; style=&#34;zoom:50%;&#34; /&gt;</description>
     </item>
   </channel>
 </rss>
