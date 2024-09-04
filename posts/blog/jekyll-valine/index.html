@@ -181,7 +181,7 @@
   </ul>
 </nav></div>
       </div><div class="content" id="content"><p>Valine评论系统的效果图如下：</p>
-<img src="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine.png" alt="Valine" style="zoom:50%;" />
+<p><figure><img loading="lazy" src="./images/Valine.png" alt="Valine" srcset="./images/Valine.png?size=small, ./images/Valine.png?size=medium 1.5x, ./images/Valine.png?size=large 2x" data-title="Valine" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
 <p>下面一步步来配置Valine评论系统</p>
 <h2 id="配置leancloud" class="heading-element"><span>配置LeanCloud</span>
   <a href="#%e9%85%8d%e7%bd%aeleancloud" class="heading-mark">
@@ -195,11 +195,11 @@
 <p>创建应用，应用名称可自行设定。</p>
 </li>
 </ul>
-<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png" alt="Create-App" srcset="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png?size=small, https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png?size=medium 1.5x, https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png?size=large 2x" data-title="Create-App" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><figure><img loading="lazy" src="./images/LeanCloud-1.png" alt="Create-App" srcset="./images/LeanCloud-1.png?size=small, ./images/LeanCloud-1.png?size=medium 1.5x, ./images/LeanCloud-1.png?size=large 2x" data-title="Create-App" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
 <ul>
 <li>查看<code>App ID</code>和<code>App Key</code>，【设置】-【应用凭证】-【Credentials】，<code>App ID</code>和<code>App Key</code>在后面的配置中会用到。</li>
 </ul>
-<p><img loading="lazy" src="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png" alt="Credentials" srcset="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png?size=small, https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png?size=medium 1.5x, https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png?size=large 2x" data-title="Credentials" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><figure><img loading="lazy" src="./images/LeanCloud-4.png" alt="Credentials" srcset="./images/LeanCloud-4.png?size=small, ./images/LeanCloud-4.png?size=medium 1.5x, ./images/LeanCloud-4.png?size=large 2x" data-title="Credentials" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
 <h2 id="修改博客配置文件" class="heading-element"><span>修改博客配置文件</span>
   <a href="#%e4%bf%ae%e6%94%b9%e5%8d%9a%e5%ae%a2%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -263,12 +263,12 @@
 </span></span><span class="line"><span class="cl">{% endif %}{% endraw %}</span></span></code></pre></td></tr></table>
 </div>
 </div><p>至此Valine评论系统配置完毕。打开对应的LeanCloud应用，在【数据存储】-【结构化数据】-【Comment&lt;/&gt;】中可查看和管理所有评论数据。</p>
-<img src="https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine-Comment.png" alt="Valine-Comment" style="zoom:50%;" />
+<p><figure><img loading="lazy" src="./images/Valine-Comment.png" alt="Valine-Comment" srcset="./images/Valine-Comment.png?size=small, ./images/Valine-Comment.png?size=medium 1.5x, ./images/Valine-Comment.png?size=large 2x" data-title="Valine-Comment" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
 <h2 id="配置valine邮件提醒功能" class="heading-element"><span>配置Valine邮件提醒功能</span>
   <a href="#%e9%85%8d%e7%bd%aevaline%e9%82%ae%e4%bb%b6%e6%8f%90%e9%86%92%e5%8a%9f%e8%83%bd" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>参见<a href="https://github.com/DesertsP/Valine-Admin"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/DesertsP/Valine-Admin</a></p></div><hr class="awesome-hr" />
+</h2><p>详见<a href="https://github.com/DesertsP/Valine-Admin"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/DesertsP/Valine-Admin</a></p></div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
     <ul><li>
           <a href="/posts/blog/github-custom-domain/" title="GitHub Pages绑定个人域名">GitHub Pages绑定个人域名</a></li><li>

@@ -3,7 +3,7 @@
 
 Gitalk评论系统的效果图如下：
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk.png&#34; alt=&#34;gitalk&#34; style=&#34;zoom:50%;&#34; /&gt;
+![gitalk](./images/gitalk.png)
 
 &lt;!--more--&gt;
 
@@ -13,7 +13,7 @@ Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk�
 
 进入Github主页，点击右上角个人头像，【Settings】-【Developer settings】-【OAuth Apps】-【New OAuth App】，可看到如下界面：
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/github-oauth-app.png&#34; alt=&#34;github-oauth-app&#34; style=&#34;zoom:50%;&#34; /&gt;
+![github-oauth-app](./images/github-oauth-app.png)
 
 - Application name: 应用的名字，自定义
 - Homepage URL: 填写自己博客的URL，如&lt;https://star927.github.io/&gt;
@@ -85,7 +85,7 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 上述步骤完成后，在评论区如果出现问题 **Error: Not Found.**（如下图），请仔细检查代码是否有误。
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk-error-not-found.png&#34; alt=&#34;gitalk-error-not-found&#34; style=&#34;zoom:50%;&#34; /&gt;
+![gitalk-error-not-found](./images/gitalk-error-not-found.png)
 
 ## 初始化Gitalk
 
@@ -93,7 +93,7 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 &gt; 必须将上述代码的修改提交到Github上，通过&lt;https://your-user-name.github.io/&gt;或者自己已绑定的域名访问自己的博客，再点击`使用Github登录`，而不是在本地服务器&lt;http://127.0.0.1:4000/&gt;点击`使用Github登录`。
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/gitalk-init.png&#34; alt=&#34;gitalk-init&#34; style=&#34;zoom:50%;&#34; /&gt;
+![gitalk-init](./images/gitalk-init.png)
 
 登录自己的Github账号后，就可以看到Gitalk评论区了。
 

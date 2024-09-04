@@ -11,7 +11,7 @@
 
 以阿里云为例，进入`域名控制台`，解析新购买的域名。添加下面两条记录，记录值填写Github Pages的原始域名`user-name.github.io`，记录类型选择`CNAME`，比如自己的域名是`hxhuxin.top`，那么主机记录`www`对应的网址就是`www.hxhuxin.top`，主机记录`@`对应的网址是`hxhuxin.top`。添加完两条记录后，需等待十几分钟。
 
- &lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/aliyun.png&#34; alt=&#34;aliyun&#34; style=&#34;zoom:50%;&#34; /&gt;
+![aliyun](./images/aliyun.png)
 
 ## Github Pages绑定个人域名
 
@@ -19,7 +19,7 @@
 
 &gt; 点击`Save`后可能提示绑定不成功，十几分钟后再试一下即可，域名解析需要等待一定的时间。
 
-![github-custom-domain](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/github-custom-domain.png)
+![github-custom-domain](./images/github-custom-domain.png)
 
 
 ---

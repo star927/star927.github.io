@@ -9,25 +9,25 @@
 
 - 创建应用，应用名称可自行设定。
 
-![Create-App](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png)
+![Create-App](./images/LeanCloud-1.png)
 
 - 创建Class，【数据存储】-【结构化数据】-【创建Class】，Class名称与后面相关代码有关，为减少不必要的麻烦，建议将Class名称设置为`Counter`，其它设置项默认值即可。
 
-![Create-Class](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-2.png)
+![Create-Class](./images/LeanCloud-2.png)
 
 以后每篇文章的点击量等信息都可在该Class下查看。
 
 - 设置安全域名，【设置】-【安全中心】-【Web安全域名】，填写自己博客的域名即可，在本地调试阶段还可以添加`http://127.0.0.1:4000`
 
-![Web安全域名](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-3.png)
+![Web安全域名](./images/LeanCloud-3.png)
 
 - 查看`App ID`和`App Key`，【设置】-【应用凭证】-【Credentials】，`App ID`和`App Key`在后面的配置中会用到。
 
-![Credentials](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png)
+![Credentials](./images/LeanCloud-4.png)
 
 - 安全设置，【设置】-【安全中心】-【服务开关】，由于`App ID`和`App Key`会出现在博客的配置文件中，相当于是公开的，所以有必要进行安全设置，关闭不需要的服务。
 
-![服务开关](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-5.png)
+![服务开关](./images/LeanCloud-5.png)
 
 ## 修改博客配置文件
 
@@ -193,7 +193,7 @@ leancloud:
 
 效果图如下：
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-6.png&#34; alt=&#34;leancloud-statistic&#34; style=&#34;zoom:50%;&#34; /&gt;
+![leancloud-statistic](./images/LeanCloud-6.png)
 
 至此，LeanCloud统计功能配置完毕，登录LeanCloud打开上面创建的Class即可进行后台数据管理。
 

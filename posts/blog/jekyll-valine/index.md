@@ -3,7 +3,7 @@
 
 Valine评论系统的效果图如下：
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine.png&#34; alt=&#34;Valine&#34; style=&#34;zoom:50%;&#34; /&gt;
+![Valine](./images/Valine.png)
 
 &lt;!--more--&gt;
 
@@ -15,11 +15,11 @@ Valine评论系统的效果图如下：
 
 - 创建应用，应用名称可自行设定。
 
-![Create-App](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-1.png)
+![Create-App](./images/LeanCloud-1.png)
 
 - 查看`App ID`和`App Key`，【设置】-【应用凭证】-【Credentials】，`App ID`和`App Key`在后面的配置中会用到。
 
-![Credentials](https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/LeanCloud-4.png)
+![Credentials](./images/LeanCloud-4.png)
 
 ## 修改博客配置文件
 
@@ -59,12 +59,11 @@ valine:
 
 至此Valine评论系统配置完毕。打开对应的LeanCloud应用，在【数据存储】-【结构化数据】-【Comment&lt;/&gt;】中可查看和管理所有评论数据。
 
-&lt;img src=&#34;https://cdn.jsdelivr.net/gh/star927/Image-Hosting@main/202108/Valine-Comment.png&#34; alt=&#34;Valine-Comment&#34; style=&#34;zoom:50%;&#34; /&gt;
+![Valine-Comment](./images/Valine-Comment.png)
 
 ## 配置Valine邮件提醒功能
 
-参见&lt;https://github.com/DesertsP/Valine-Admin&gt;
-
+详见&lt;https://github.com/DesertsP/Valine-Admin&gt;
 
 
 ---
