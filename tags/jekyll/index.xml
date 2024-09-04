@@ -38,7 +38,7 @@
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://star927.github.io/posts/blog/jekyll-gitalk/</guid>
       <category domain="https://star927.github.io/categories/blog/">Blog</category>
-      <description>&lt;p&gt;Gitalk评论系统的效果图如下：&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./images/gitalk.png&#34; alt=&#34;gitalk&#34; srcset=&#34;./images/gitalk.png?size=small, ./images/gitalk.png?size=medium 1.5x, ./images/gitalk.png?size=large 2x&#34; data-title=&#34;gitalk&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/figure&gt;&lt;/p&gt;</description>
+      <description>Jekyll博客中添加Gitalk评论系统</description>
     </item>
     <item>
       <title>Jekyll博客中添加Valine评论系统</title>
@@ -46,7 +46,7 @@
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://star927.github.io/posts/blog/jekyll-valine/</guid>
       <category domain="https://star927.github.io/categories/blog/">Blog</category>
-      <description>&lt;p&gt;Valine评论系统的效果图如下：&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./images/Valine.png&#34; alt=&#34;Valine&#34; srcset=&#34;./images/Valine.png?size=small, ./images/Valine.png?size=medium 1.5x, ./images/Valine.png?size=large 2x&#34; data-title=&#34;Valine&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/figure&gt;&lt;/p&gt;</description>
+      <description>Jekyll博客中添加Valine评论系统</description>
     </item>
   </channel>
 </rss>

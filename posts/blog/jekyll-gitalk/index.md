@@ -1,11 +1,11 @@
 # Jekyll博客中添加Gitalk评论系统
 
 
+&lt;!--more--&gt;
+
 Gitalk评论系统的效果图如下：
 
 ![gitalk](./images/gitalk.png)
-
-&lt;!--more--&gt;
 
 Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk后，进入博客对应的Github仓库的Issues，就可以管理评论数据了，下面来配置Gitalk评论系统。
 

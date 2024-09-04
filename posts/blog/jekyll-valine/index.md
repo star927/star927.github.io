@@ -1,11 +1,11 @@
 # Jekyll博客中添加Valine评论系统
 
 
+&lt;!--more--&gt;
+
 Valine评论系统的效果图如下：
 
 ![Valine](./images/Valine.png)
-
-&lt;!--more--&gt;
 
 下面一步步来配置Valine评论系统
 
