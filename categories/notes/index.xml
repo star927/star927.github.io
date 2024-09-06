@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes - 分类 - Huxley&#39;s Blog</title>
+    <link>https://star927.github.io/categories/notes/</link>
+    <description>This is my new Hugo FixIt site</description>
+    <generator>Hugo 0.134.1 &amp; FixIt v0.3.11</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Sep 2024 16:16:20 +0800</lastBuildDate>
+    <atom:link href="https://star927.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Notes</title>
+      <link>https://star927.github.io/posts/notes/git-notes/</link>
+      <pubDate>Thu, 05 Sep 2024 16:16:20 +0800</pubDate>
+      <guid>https://star927.github.io/posts/notes/git-notes/</guid>
+      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <description>&lt;p&gt;&lt;code&gt;Git&lt;/code&gt;相关介绍、常用命令总结及使用过程中的遇到的相关问题记录&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

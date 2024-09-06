@@ -1,0 +1,403 @@
+# Git Notes
+
+
+`Git`相关介绍、常用命令总结及使用过程中的遇到的相关问题记录
+
+&lt;!--more--&gt;
+
+## Git相关知识
+
+### Git工作区域
+
+```mermaid
+flowchart LR
+work[[Workspace\n工作区]]
+stage[(Stage\n暂存区)]
+repo[(Repository\n版本库)]
+remote[(Remote\n远程仓库)]
+
+work--&gt;|git add|stage
+stage--&gt;|git commit\ngit commit --amend|repo
+stage--&gt;|git restore --staged|work
+repo--&gt;|git push\ngit push -f|remote
+repo--&gt;|git reset --soft|stage
+repo--&gt;|git reset --hard|work
+repo--&gt;|git checkout branch|work
+repo--&gt;|git commit --amend|repo
+remote--&gt;|git fetch|repo
+remote--&gt;|git pull| work
+remote--&gt;|git clone| work
+```
+
+- **工作区**：就是在电脑里能看到的目录。
+- **版本库**：工作区有一个隐藏目录`.git`，这个不算工作区，而是 Git 的版本库。
+- **暂存区**：英文叫stage或index。对应`.git`目录下的`index`文件。
+- **远程仓库**：托管代码的服务器，`Github`等。
+
+### 文件状态
+
+```mermaid
+flowchart LR
+untracked([untracked])
+modified([modified\ntracked])
+staged([staged])
+committed([committed])
+delete[Deletion of untracked files]
+undo[Undo changes to tracked files]
+
+untracked-.-&gt;|git clean|delete
+untracked-.-&gt;|git restore|undo
+untracked &amp; modified--&gt;|git add|staged
+staged--&gt;|git restore --staged|untracked &amp; modified
+staged--&gt;|git commit|committed
+```
+
+- **未跟踪（untrack）**：表示文件为新增加的。
+- **已修改（modified/tracked）**：表示修改了文件，但还没保存到git仓库中。
+- **已暂存（staged）**：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。 
+- **已提交（committed）**：表示文件已保存在git仓库中。
+
+## Git命令
+
+| [git add](#git-add) | [git branch](#git-branch) | [git checkout](#git-checkout) | [git cherry-pick](#git-cherry-pick) | [git clean](#git-clean) | [git clone](#git-clone) |
+| ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
+| [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
+| [git push](#git-push) | [git rebase](#git-rebase) | [git remote](#git-remote) | [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) |
+| [git stash](#git-stash) | [git tag](#git-tag) |  |  |  |  |
+
+多数命令有参数`-v/--verbose`，会打印更详细的信息。
+
+### 相关概念
+
+- `HEAD` 代表了当前工作目录所指向的当前分支的最新提交。`HEAD^`表示上一个版本，`HEAD^^`表示上上一个版本，`^`个数不限，几个`^`表示落后`HEAD`几个版本；`HEAD~5`表示落后`HEAD`5个版本。
+
+- `origin`是一个远程仓库的默认名称，这个名称并不是强制的，它代表了远程仓库的地址。`origin main`和`origin/main`含义相同，表示远程仓库的`main`分支。再比如 `origin/HEAD`表示远程仓库默认分支的最新提交，`origin v1.0.0`表示远程仓库tag为`v1.0.0`的那次提交。
+- 上游分支：本地分支一般会与远程仓库的某个分支相关联，关联的这个远程分支就称作是这个本地分支的上游分支。
+
+### git config
+
+Git配置级别主要有以下3类：
+
+1. 仓库级别local【优先级最高】，对应的文件仓库下的`.git/config`
+
+2. 用户级别global【优先级次之】，对应的文件是`~/.gitconfig`
+
+3. 系统级别system【优先级最低】
+
+```shell
+git config -l  # 查看所有配置
+git config --local -l # 查看仓库配置
+git config --global -l  # 用户全局配置
+git config --system -l  # 系统配置
+git config --global user.name &lt;name&gt;  # 设置用户名
+git config --global user.email &lt;email&gt;  # 设置邮箱
+git config --unset config_name  # 删除某个配置
+git config --global --edit  # 编辑配置文件，该命令会显示配置文件的路径
+git config --global init.defaultBranch main # 修改默认分支
+```
+
+### git init
+
+```shell
+git init  # 初始化，采用默认分支名称。默认分支名称可通过 git config 来配置
+git init -b branch_name  # 初始化，并制定分支名称
+```
+
+### git clone
+
+将远程仓库克隆到本地
+
+```shell
+git clone url # 克隆某个仓库
+git clone --branch &lt;branch_name/tag_name&gt; url # 克隆某个分支或标签
+git clone url &lt;local_path&gt;  # 克隆的文件放在指定文件夹下
+
+# SSH公钥是一种用于身份验证的密钥，它允许用户无需每次访问时都输入密码即可安全地连接到远程服务器或仓库。
+ssh-keygen -t rsa -C &#34;email&#34; # 生成ssh公钥
+```
+
+### git add
+
+将文件放入暂存区
+
+```shell
+git add .  # 将当前文件夹下的文件和文件夹放入暂存区
+git add file1 file2  # 将指定文件/文件夹放入暂存区
+```
+
+### git commit
+
+将暂存区中文件提交到版本库
+
+```shell
+git commit -m &lt;message&gt;  # 提交暂存区中的文件到版本库
+git commit  # 以交互的方式填写提交信息
+git commit --amend  # 修改最近一次的提交信息，如果此时暂存区中有文件，则暂存区中的文件也会被提交到版本库
+```
+
+### git push
+
+将版本库中推导远程仓库
+
+```shell
+git push  # 将当前分支推到上游分支，当前与上游分支的名称一致才可以使用该命令，否则报错提醒名称不匹配
+git push origin branch_name  # 将本地main分支(注意不是当前分支)推到远程仓库指定分支
+git push origin &lt;local-branch&gt;:&lt;remote-branch&gt;  # 将本地的指定分支推送到远程仓库的指定分支
+git push -f  # 强制推到远程仓库，比如落后远程仓库时强制推到远程仓库，则会使远程仓库的版本回退
+git push origin :branch_name  # 删除远端分支
+git push origin v1.0.0  # 推送指定标签到远程仓库
+git push origin --tags  # 推送所有标签到远程仓库
+git push origin :refs/tags/v1.0.0  # 删除远程标签
+```
+
+```shell
+git push -u origin branch_name
+```
+
+将本地`branch_name`分支推到远程仓库的`branch_name`分支上，并设置当前分支的上游分支为远程仓库的`branch_name`分支。
+
+```shell
+git push -u origin local-branch:remote-branch
+```
+
+将本地`local-branch`分支推到远程仓库的`remote-branch`分支上，并设置当前分支的上游分支为远程仓库的`branch_name`分支。
+
+{{&lt; admonition &gt;}}
+先`git branch --set-upstream-to`再`git push`与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
+{{&lt; /admonition &gt;}}
+
+### git log
+
+```shell
+git log  # 查看当前分支的log
+git log origin/main # 查看远程main分支的log
+git log branc_name file_path # 查看指定分支指定文件的log
+git log --pretty=oneline  # 指定输出格式，一行显示一条记录, 完整的commit id
+git log --oneline  # 指定输出格式，一行显示一条记录, 简短的commit id
+git log --stat  # 会显示哪些文件有修改，修改了多少行或字节(二进制文件)
+git log --stat --patch  # 会显示文件具体修改内容
+
+git reflog  # 最近几次操作记录 
+```
+
+### git remote
+
+```shell
+git remote add origin git@github.com:user_name/repository_name.git  # 关联远端仓库
+git remote remove origin  # 移除
+git remote -v  # 查看远程仓库地址
+```
+
+{{&lt; admonition &gt;}}
+`git remote add origin`只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行`git branch -r`就会发现为空（即使关联的是一个非空仓库），运行命令`git branch --set-upstream-to=origin/main`也会报错（即使远程仓库存在`main`分支）。
+{{&lt; /admonition &gt;}}
+
+### git fetch
+
+获取远程仓库最新信息。比如远程仓库已经有一些新的提交，`git pull`是直接下载最新代码到本地，`git fetch`不会下载最新的代码，只是获取仓库的最新信息，`git fetch` 之后可通过`git status`看到落后上游分支，也可通过`git log origin/branch_name`查看最新`log`信息。
+
+```shell
+git fetch  # 获取当前分支的上游远程仓库（如origin）的最新信息
+git fetch --all  # 获取所有配置的远程仓库的最新信息
+git fetch origin  # 获取origin这个远程仓库的最新信息
+git fetch origin main  # 只获取origin这个远程仓库main分支的信息
+```
+
+### git branch
+
+```shell
+git branch  # 列出所有本地分支，当前分支会有显著标记
+git branch -r  # 查看远程分支
+git branch name  # 创建分支
+git branch -d name1 name2  # 删除分支
+git branch -D name1 name2  # 强制删除分支
+git branch -m new_banch_name  # 重命名当前分支，new_banch_name分支已存在则报错。
+git branch -M new_banch_name  # 强制重命名当前分支，即使new_banch_name分时已存在。
+```
+
+```shell
+# 设置当前分支的上游分支，将当前分支与远程仓库的main分支相关联
+git branch --set-upstream-to=origin/main
+git branch --set-upstream-to=origin/main local_branch  # 设置指定本地分支的上游分支
+git branch --unset-upstream  # 取消当前分支与上游分支(相关联的远程仓库分支)的关联
+git branch --unset-upstream local_branch  # 取消指定分支的上游分支
+git branch -v  # 查看本地每个分支，包括分支名、分支最新提交的commit-id和commit-message
+git branch -vv  # 还会显示每个分支的上游分支名称
+```
+
+{{&lt; admonition &gt;}}
+`git branch --set-upstream-to=origin/branch_name`要求远程仓库`branch_name`分支必须存在，并且本地有远程仓库`branch_name`分支的信息；也就是说比如通过`git remote add origin`关联了一个包含`branch_name`分支的远程仓库之后，还得使用`git fetch`命令获取`branch_name`分支的信息，这时`git branch --set-upstream-to=origin/branch_name`这条命令才会成功。
+{{&lt; /admonition &gt;}}
+
+### git checkout
+
+```shell
+git checkout branch_name  # 切换分支
+```
+
+{{&lt; admonition &gt;}}
+`git checkout branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
+{{&lt; /admonition &gt;}}
+
+```shell
+git checkout -b branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
+```
+
+### git tag
+
+```shell
+git tag  # 查看所有标签
+git tag v1.0.0  # 轻量级标签  TODO 最新提交，如果有untracked等
+git tag -a v1.0.0 -m &#34;version 1.0.0&#34;  # 带注释的标签
+git tag -a v1.0.0  # 带注释的标签，接着Git会提示你输入标签消息
+git tag -d v1.0.0  # 删除本地标签
+```
+
+### git restore
+
+```shell
+git restore --staged .  # 将当前文件夹下的暂存区中的文件和文件夹放回工作区
+git restore --staged file1 file2  # 将暂存区中的指定文件/文件夹放回工作区
+git restore .  # 撤销对于当前文件夹下的已跟踪文件的修改
+git restore file1 file2  # 撤销对于指定已跟踪文件的修改
+```
+
+### git clean
+
+`git clean` 命令在 Git 版本控制系统中用于移除**当前工作目录**中未跟踪的文件和目录。使用 `git clean` 时需要谨慎，因为它会永久删除这些文件。
+
+- `-f` 或 `--force`：强制执行清理操作，不询问确认。
+- `-i` 或 `--interactive`：以交互模式运行，让用户选择要删除的文件。
+- `-n` 或 `--dry-run`：模拟执行，显示将要删除的文件列表，但不实际删除它们。
+- `-d`：同时删除未跟踪的目录。默认情况下，`git clean` 只删除文件。
+
+```shell
+git clean -f
+git clean -fd
+git clean -fdn
+```
+
+### git reset
+
+TODO git reset
+
+```shell
+git reset --hard &lt;commit_id&gt;
+git reset --soft origin/main
+git reset --mixed HEAD~1
+```
+
+### git diff
+
+```shell
+git diff  # 查看当前分支工作区中所有文件与版本库的修改内容
+git diff file_path  # 查看当前分支工作区中指定文件与版本库修改内容
+git diff branch_name file_path  # 查看当前分支指定文件与指定分支的区别
+git diff branch1 branch2 file_path  # 查看指定两个分支最新提交上指定文件的区别
+```
+
+{{&lt; admonition &gt;}}
+`git diff`和`git diff file_path`是工作区中的文件与版本库的比较，不包括暂存区与版本库的比较。
+
+`git diff branch1 branch2 file_path`是版本库上该文件的比较，`git diff branch_name file_path`是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。
+{{&lt; /admonition &gt;}}
+
+### git show
+
+TODO git show
+
+```shell
+git show 
+git show HEAD
+git show main
+git show origin/main
+```
+
+### git cherry-pick
+
+TODO git cherry-pick
+
+### git rebase
+
+TODO git rebase
+
+### git stash
+
+```bash
+git stash  # 保存当前工作进度
+git stash -u/--include-untracked  # 只有未跟踪的文件时，需要加该参数才能保存
+```
+
+{{&lt; admonition &gt;}}未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要`--include-untracked`参数才能保存，否则会提示没有要保存的文件。
+{{&lt; /admonition &gt;}}
+
+```shell
+git stash save &#34;&lt;message&gt;&#34;  # 保存并附带信息
+git stash list  # 查看所有stash，每个stash前面都有一个编号
+# 可以使用stash的编号来应用一个特定的stash，这会将更改应用到你的工作目录，但不会从stash列表中删除它
+# 没指定stash编号则应用最新的stash
+git stash apply &lt;stash&gt;
+git stash drop &lt;stash&gt;  # 删除一个特定的stash
+git stash pop  # 应用最新的stash并删除
+```
+
+一个使用场景是，当想切换分支做其它工作时，需先保存一个stash，之后切换回来再应用保存的stash即可。
+
+## Git LFS
+
+将大文件从本地提交到Github仓库需要使用`git-lfs`，见官网：&lt;https://git-lfs.github.com&gt;
+
+## .gitignore
+
+```
+# 注释
+.DS_Store  # 忽略该文件
+*.exe  # 所有.exe文件
+!index.html  # 该文件不被忽略
+
+test  # 忽略名为test的文件或文件夹
+test/  # 忽略名为test的文件夹
+/test/  # 根目录下名为test的文件
+```
+
+更多详细内容见官网：&lt;https://git-scm.com/docs/gitignore&gt;
+
+## 常见报错
+
+### Failed to connect
+
+{{&lt; admonition failure &gt;}}
+Failed to connect to github.com port 443 after 75002 ms: Couldn&#39;t connect to server
+{{&lt; /admonition &gt;}}
+
+在使用了VPN时，配置http代理，如下，`7890`是代理的端口号，打开`ClashX`可以查看使用的端口号
+
+```
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+```
+
+### RPC failed
+
+{{&lt; admonition failure &gt;}}
+RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
+{{&lt; /admonition &gt;}}
+
+- `git clone`遇到该问题时，有时再运行一遍`git clone`命令就可以
+- 指定使用`http 1.1`，`git config --global http.version HTTP/1.1`
+
+{{&lt; admonition failure &gt;}}
+RPC failed; curl 18 transfer closed with outstanding read data remaining
+{{&lt; /admonition &gt;}}
+
+- 使用`git clone`时，可加参数`--depth 1`
+- 增大缓冲区，`git config --global http.postBuffer 536870912`
+- 多尝试几遍
+
+
+
+---
+
+> 作者: [Huxley](https://star927.github.io/)  
+> URL: https://star927.github.io/posts/notes/git-notes/  
+
