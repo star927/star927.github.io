@@ -47,9 +47,9 @@ hugo new --kind test posts/new-post.md
 
 ## 新建一篇基于目录的文章
 
-&gt; [!NOTE]
-&gt;
-&gt; 以[该种方式](https://gohugo.io/content-management/page-bundles/#leaf-bundles)新建文章，文章的文件名应该是`index.md`
+{{&lt; admonition &gt;}}
+[一个文件夹对应一篇博客文章](https://gohugo.io/content-management/page-bundles/#leaf-bundles)这种方式，文章的文件名应该是`index.md`
+{{&lt; /admonition &gt;}}
 
 ### hugo new [path]
 

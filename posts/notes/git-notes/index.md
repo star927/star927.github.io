@@ -92,8 +92,9 @@ git config --system -l  # 系统配置
 git config --global user.name &lt;name&gt;  # 设置用户名
 git config --global user.email &lt;email&gt;  # 设置邮箱
 git config --unset config_name  # 删除某个配置
-git config --global --edit  # 编辑配置文件，该命令会显示配置文件的路径
+git config --global -e/--edit  # 编辑配置文件，该命令会显示配置文件的路径
 git config --global init.defaultBranch main # 修改默认分支
+git config pull.rebase false  # 在一个git仓库中，不带--system和--global参数，配置的就是仓库级别
 ```
 
 ### git init
@@ -109,9 +110,20 @@ git init -b branch_name  # 初始化，并制定分支名称
 
 ```shell
 git clone url # 克隆某个仓库
-git clone --branch &lt;branch_name/tag_name&gt; url # 克隆某个分支或标签
 git clone url &lt;local_path&gt;  # 克隆的文件放在指定文件夹下
+git clone --branch &lt;branch_name/tag_name&gt; url # 克隆某个分支或标签
+git clone url # 只下载最近一次的提交历史，下载完后通过git log也只会看到最近一次提交记录
+```
 
+```shell
+git clone --recursive url
+```
+
+当使用`git clone`命令克隆一个包含子模块的仓库时，Git会克隆主仓库，但不会自动克隆子模块目录中的内容。子模块目录会保留，但会是空的，或者包含指向提交对象的占位符（通常是一个特殊的提交，表示子模块指向的特定版本）。当在`git clone`命令中加上`--recursive`参数时，Git不仅会克隆主仓库，还会自动地初始化并克隆仓库中所有的子模块。
+
+如果已经克隆了一个仓库但没有使用`--recursive`参数，可以在之后通过`git submodule update --init --recursive`命令来初始化并更新子模块。
+
+```shell
 # SSH公钥是一种用于身份验证的密钥，它允许用户无需每次访问时都输入密码即可安全地连接到远程服务器或仓库。
 ssh-keygen -t rsa -C &#34;email&#34; # 生成ssh公钥
 ```
@@ -177,6 +189,13 @@ git log --oneline  # 指定输出格式，一行显示一条记录, 简短的com
 git log --stat  # 会显示哪些文件有修改，修改了多少行或字节(二进制文件)
 git log --stat --patch  # 会显示文件具体修改内容
 
+git log main..origin/main  # 查看远程main分支上但不在本地main分支上的提交  
+git log origin/main..main  # 查看本地main分支上但不在远程main分支上的提交
+```
+
+### git reflog
+
+```
 git reflog  # 最近几次操作记录 
 ```
 
@@ -202,6 +221,12 @@ git fetch --all  # 获取所有配置的远程仓库的最新信息
 git fetch origin  # 获取origin这个远程仓库的最新信息
 git fetch origin main  # 只获取origin这个远程仓库main分支的信息
 ```
+
+```shell
+git fetch --unshallow
+```
+
+比如`git clone --depth 1`只会下载最近一次提交记录，现在需要完整的仓库历史记录，可以使用 `git fetch --unshallow`使其包含完整的提交历史。
 
 ### git branch
 
@@ -317,6 +342,12 @@ git show origin/main
 
 TODO git cherry-pick
 
+### git merge
+
+```shell
+git merge branch_name  # 将branch_name分支的更改合并到你当前所在的分支中
+```
+
 ### git rebase
 
 TODO git rebase
@@ -337,8 +368,9 @@ git stash list  # 查看所有stash，每个stash前面都有一个编号
 # 可以使用stash的编号来应用一个特定的stash，这会将更改应用到你的工作目录，但不会从stash列表中删除它
 # 没指定stash编号则应用最新的stash
 git stash apply &lt;stash&gt;
-git stash drop &lt;stash&gt;  # 删除一个特定的stash
 git stash pop  # 应用最新的stash并删除
+git stash drop &lt;stash&gt;  # 删除一个特定的stash
+git stash clear  # 删除所有stash
 ```
 
 一个使用场景是，当想切换分支做其它工作时，需先保存一个stash，之后切换回来再应用保存的stash即可。

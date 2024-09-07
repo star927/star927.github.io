@@ -11,7 +11,7 @@
   <meta itemprop="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录">
   <meta itemprop="datePublished" content="2024-09-05T16:16:20+08:00">
   <meta itemprop="dateModified" content="2024-09-05T16:16:20+08:00">
-  <meta itemprop="wordCount" content="4801">
+  <meta itemprop="wordCount" content="5316">
   <meta itemprop="keywords" content="Git"><meta property="og:url" content="https://star927.github.io/posts/notes/git-notes/">
   <meta property="og:site_name" content="Huxley&#39;s Blog">
   <meta property="og:title" content="Git Notes">
@@ -40,7 +40,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/"
-    },"genre": "posts","keywords": "Git","wordcount":  4801 ,
+    },"genre": "posts","keywords": "Git","wordcount":  5316 ,
     "url": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/","datePublished": "2024-09-05T16:16:20+08:00","dateModified": "2024-09-05T16:16:20+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -166,7 +166,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Git Notes</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="4801 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 4900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 10 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="5316 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 5400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 11 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -191,6 +191,7 @@
         <li><a href="#git-commit">git commit</a></li>
         <li><a href="#git-push">git push</a></li>
         <li><a href="#git-log">git log</a></li>
+        <li><a href="#git-reflog">git reflog</a></li>
         <li><a href="#git-remote">git remote</a></li>
         <li><a href="#git-fetch">git fetch</a></li>
         <li><a href="#git-branch">git branch</a></li>
@@ -202,6 +203,7 @@
         <li><a href="#git-diff">git diff</a></li>
         <li><a href="#git-show">git show</a></li>
         <li><a href="#git-cherry-pick">git cherry-pick</a></li>
+        <li><a href="#git-merge">git merge</a></li>
         <li><a href="#git-rebase">git rebase</a></li>
         <li><a href="#git-stash">git stash</a></li>
       </ul>
@@ -375,15 +377,16 @@ staged-->|git commit|committed</template><ul>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config -l  <span class="c1"># 查看所有配置</span>
@@ -393,8 +396,9 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl">git config --global user.name &lt;name&gt;  <span class="c1"># 设置用户名</span>
 </span></span><span class="line"><span class="cl">git config --global user.email &lt;email&gt;  <span class="c1"># 设置邮箱</span>
 </span></span><span class="line"><span class="cl">git config --unset config_name  <span class="c1"># 删除某个配置</span>
-</span></span><span class="line"><span class="cl">git config --global --edit  <span class="c1"># 编辑配置文件，该命令会显示配置文件的路径</span>
-</span></span><span class="line"><span class="cl">git config --global init.defaultBranch main <span class="c1"># 修改默认分支</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git config --global -e/--edit  <span class="c1"># 编辑配置文件，该命令会显示配置文件的路径</span>
+</span></span><span class="line"><span class="cl">git config --global init.defaultBranch main <span class="c1"># 修改默认分支</span>
+</span></span><span class="line"><span class="cl">git config pull.rebase <span class="nb">false</span>  <span class="c1"># 在一个git仓库中，不带--system和--global参数，配置的就是仓库级别</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="git-init" class="heading-element"><span>git init</span>
   <a href="#git-init" class="heading-mark">
@@ -420,15 +424,29 @@ staged-->|git commit|committed</template><ul>
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone url <span class="c1"># 克隆某个仓库</span>
-</span></span><span class="line"><span class="cl">git clone --branch &lt;branch_name/tag_name&gt; url <span class="c1"># 克隆某个分支或标签</span>
 </span></span><span class="line"><span class="cl">git clone url &lt;local_path&gt;  <span class="c1"># 克隆的文件放在指定文件夹下</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># SSH公钥是一种用于身份验证的密钥，它允许用户无需每次访问时都输入密码即可安全地连接到远程服务器或仓库。</span>
+</span></span><span class="line"><span class="cl">git clone --branch &lt;branch_name/tag_name&gt; url <span class="c1"># 克隆某个分支或标签</span>
+</span></span><span class="line"><span class="cl">git clone url <span class="c1"># 只下载最近一次的提交历史，下载完后通过git log也只会看到最近一次提交记录</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone --recursive url</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当使用<code>git clone</code>命令克隆一个包含子模块的仓库时，Git会克隆主仓库，但不会自动克隆子模块目录中的内容。子模块目录会保留，但会是空的，或者包含指向提交对象的占位符（通常是一个特殊的提交，表示子模块指向的特定版本）。当在<code>git clone</code>命令中加上<code>--recursive</code>参数时，Git不仅会克隆主仓库，还会自动地初始化并克隆仓库中所有的子模块。</p>
+<p>如果已经克隆了一个仓库但没有使用<code>--recursive</code>参数，可以在之后通过<code>git submodule update --init --recursive</code>命令来初始化并更新子模块。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># SSH公钥是一种用于身份验证的密钥，它允许用户无需每次访问时都输入密码即可安全地连接到远程服务器或仓库。</span>
 </span></span><span class="line"><span class="cl">ssh-keygen -t rsa -C <span class="s2">&#34;email&#34;</span> <span class="c1"># 生成ssh公钥</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="git-add" class="heading-element"><span>git add</span>
@@ -517,15 +535,16 @@ staged-->|git commit|committed</template><ul>
   </a>
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git log  <span class="c1"># 查看当前分支的log</span>
@@ -536,7 +555,19 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl">git log --stat  <span class="c1"># 会显示哪些文件有修改，修改了多少行或字节(二进制文件)</span>
 </span></span><span class="line"><span class="cl">git log --stat --patch  <span class="c1"># 会显示文件具体修改内容</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">git reflog  <span class="c1"># 最近几次操作记录 </span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git log main..origin/main  <span class="c1"># 查看远程main分支上但不在本地main分支上的提交  </span>
+</span></span><span class="line"><span class="cl">git log origin/main..main  <span class="c1"># 查看本地main分支上但不在远程main分支上的提交</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="git-reflog" class="heading-element"><span>git reflog</span>
+  <a href="#git-reflog" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reflog  # 最近几次操作记录 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="git-remote" class="heading-element"><span>git remote</span>
   <a href="#git-remote" class="heading-mark">
@@ -579,7 +610,15 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl">git fetch origin  <span class="c1"># 获取origin这个远程仓库的最新信息</span>
 </span></span><span class="line"><span class="cl">git fetch origin main  <span class="c1"># 只获取origin这个远程仓库main分支的信息</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="git-branch" class="heading-element"><span>git branch</span>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git fetch --unshallow</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如<code>git clone --depth 1</code>只会下载最近一次提交记录，现在需要完整的仓库历史记录，可以使用 <code>git fetch --unshallow</code>使其包含完整的提交历史。</p>
+<h3 id="git-branch" class="heading-element"><span>git branch</span>
   <a href="#git-branch" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -779,7 +818,18 @@ staged-->|git commit|committed</template><ul>
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>TODO git cherry-pick</p>
-<h3 id="git-rebase" class="heading-element"><span>git rebase</span>
+<h3 id="git-merge" class="heading-element"><span>git merge</span>
+  <a href="#git-merge" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git merge branch_name  <span class="c1"># 将branch_name分支的更改合并到你当前所在的分支中</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="git-rebase" class="heading-element"><span>git rebase</span>
   <a href="#git-rebase" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -814,6 +864,7 @@ staged-->|git commit|committed</template><ul>
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git stash save <span class="s2">&#34;&lt;message&gt;&#34;</span>  <span class="c1"># 保存并附带信息</span>
@@ -821,8 +872,9 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl"><span class="c1"># 可以使用stash的编号来应用一个特定的stash，这会将更改应用到你的工作目录，但不会从stash列表中删除它</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 没指定stash编号则应用最新的stash</span>
 </span></span><span class="line"><span class="cl">git stash apply &lt;stash&gt;
+</span></span><span class="line"><span class="cl">git stash pop  <span class="c1"># 应用最新的stash并删除</span>
 </span></span><span class="line"><span class="cl">git stash drop &lt;stash&gt;  <span class="c1"># 删除一个特定的stash</span>
-</span></span><span class="line"><span class="cl">git stash pop  <span class="c1"># 应用最新的stash并删除</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git stash clear  <span class="c1"># 删除所有stash</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>一个使用场景是，当想切换分支做其它工作时，需先保存一个stash，之后切换回来再应用保存的stash即可。</p>
 <h2 id="git-lfs" class="heading-element"><span>Git LFS</span>
