@@ -62,8 +62,8 @@ staged--&gt;|git commit|committed
 | [git add](#git-add) | [git branch](#git-branch) | [git checkout](#git-checkout) | [git cherry-pick](#git-cherry-pick) | [git clean](#git-clean) | [git clone](#git-clone) |
 | ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
 | [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
-| [git push](#git-push) | [git rebase](#git-rebase) | [git remote](#git-remote) | [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) |
-| [git stash](#git-stash) | [git tag](#git-tag) |  |  |  |  |
+| [git merge](#git-merge) | [git pull](#git-pull) | [git push](#git-push) | [git rebase](#git-rebase) | [git reflog](#git-reflog) | [git remote](#git-remote) |
+| [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) | [git stash](#git-stash) | [git switch](#git-switch) | [git tag](#git-tag) |
 
 多数命令有参数`-v/--verbose`，会打印更详细的信息。
 
@@ -123,11 +123,6 @@ git clone --recursive url
 
 如果已经克隆了一个仓库但没有使用`--recursive`参数，可以在之后通过`git submodule update --init --recursive`命令来初始化并更新子模块。
 
-```shell
-# SSH公钥是一种用于身份验证的密钥，它允许用户无需每次访问时都输入密码即可安全地连接到远程服务器或仓库。
-ssh-keygen -t rsa -C &#34;email&#34; # 生成ssh公钥
-```
-
 ### git add
 
 将文件放入暂存区
@@ -162,6 +157,12 @@ git push origin --tags  # 推送所有标签到远程仓库
 git push origin :refs/tags/v1.0.0  # 删除远程标签
 ```
 
+```
+git push --all
+```
+
+这个命令会推送所有本地分支到远程仓库，如果远程仓库中已经存在同名分支，它们将被更新；如果不存在，则会在远程仓库中创建与本地分支同名的新分支。各个本地分支是否有上游分支、其上游分支是不是与本地分支同名，这些对该命令都没有影响。
+
 ```shell
 git push -u origin branch_name
 ```
@@ -177,27 +178,6 @@ git push -u origin local-branch:remote-branch
 {{&lt; admonition &gt;}}
 先`git branch --set-upstream-to`再`git push`与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
 {{&lt; /admonition &gt;}}
-
-### git log
-
-```shell
-git log  # 查看当前分支的log
-git log origin/main # 查看远程main分支的log
-git log branc_name file_path # 查看指定分支指定文件的log
-git log --pretty=oneline  # 指定输出格式，一行显示一条记录, 完整的commit id
-git log --oneline  # 指定输出格式，一行显示一条记录, 简短的commit id
-git log --stat  # 会显示哪些文件有修改，修改了多少行或字节(二进制文件)
-git log --stat --patch  # 会显示文件具体修改内容
-
-git log main..origin/main  # 查看远程main分支上但不在本地main分支上的提交  
-git log origin/main..main  # 查看本地main分支上但不在远程main分支上的提交
-```
-
-### git reflog
-
-```
-git reflog  # 最近几次操作记录 
-```
 
 ### git remote
 
@@ -228,21 +208,80 @@ git fetch --unshallow
 
 比如`git clone --depth 1`只会下载最近一次提交记录，现在需要完整的仓库历史记录，可以使用 `git fetch --unshallow`使其包含完整的提交历史。
 
+### git pull
+
+TODO git pull
+
+```shell
+git pull  # 拉取上游分支的代码
+git pull origin main  # 拉取指定远程仓库的指定分支的代码
+```
+
+如果当前分支不存在上游分支，需要先设置一下上游分支再`git pull`，或者用`git pull origin main`指定远程仓库名称和远程分支名称。
+
+### git log
+
+```shell
+git log  # 查看当前分支的log
+git log origin/main # 查看远程main分支的log
+git log branc_name file_path # 查看指定分支指定文件的log
+git log --pretty=oneline  # 指定输出格式，一行显示一条记录, 完整的commit id
+git log --oneline  # 指定输出格式，一行显示一条记录, 简短的commit id
+git log --stat  # 会显示哪些文件有修改，修改了多少行或字节(二进制文件)
+git log --stat --patch  # 会显示文件具体修改内容
+git log --graph --oneline  # --graph显示分支结构
+```
+
+```shell
+# 相当于 git log --graph --oneline 的进阶版
+git log --graph --pretty=&#34;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset&#34;
+```
+
+
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C5&#34;
+commit id: &#34;C6&#34;
+```
+
+```shell
+git log main..dev  # 查看远程dev分支上但不在main分支上的提交，如上图中的C3、C4
+git log dev..main  # 查看本地main分支上但不在dev分支上的提交，如上图中的C5、C5
+git log main...dev  # 查看两个分支上不同的提交，如上图中的C3、C4、C5、C6
+```
+
+### git reflog
+
+```
+git reflog  # 最近几次操作记录 
+```
+
 ### git branch
 
 ```shell
 git branch  # 列出所有本地分支，当前分支会有显著标记
-git branch -r  # 查看远程分支
+git branch -r  # 列出所有远程分支
+git branch -a  # 列出所有本地分支和远程分支
 git branch name  # 创建分支
-git branch -d name1 name2  # 删除分支
+git branch -d name1 name2  # 删除分支, 当分支上存在未合并的提交就会删除失败
 git branch -D name1 name2  # 强制删除分支
-git branch -m new_banch_name  # 重命名当前分支，new_banch_name分支已存在则报错。
-git branch -M new_banch_name  # 强制重命名当前分支，即使new_banch_name分时已存在。
+git branch -m new_banch_name  # 重命名当前分支，new_banch_name分支已存在则报错
+git branch -M new_banch_name  # 强制重命名当前分支，即使new_banch_name分时已存在
 ```
 
+{{&lt; admonition &gt;}}
+远程分支不能像本地分支一样直接重命名，可先用`git push origin :branh_name`删除远程分支，再将本地分支推到远程仓库。
+{{&lt; /admonition &gt;}}
+
 ```shell
-# 设置当前分支的上游分支，将当前分支与远程仓库的main分支相关联
-git branch --set-upstream-to=origin/main
+git branch --set-upstream-to=origin/main  # 设置当前分支的上游分支
 git branch --set-upstream-to=origin/main local_branch  # 设置指定本地分支的上游分支
 git branch --unset-upstream  # 取消当前分支与上游分支(相关联的远程仓库分支)的关联
 git branch --unset-upstream local_branch  # 取消指定分支的上游分支
@@ -268,15 +307,35 @@ git checkout branch_name  # 切换分支
 git checkout -b branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
 ```
 
+### git switch
+
+`git switch`专注于切换分支的功能，相比`git checkout`在专注性和安全性方面更胜一筹。切换分支只是`git checkout`的一部分功能。
+
+```shell
+git switch branch_name
+```
+
+{{&lt; admonition &gt;}}
+`git switch branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
+{{&lt; /admonition &gt;}}
+
+```shell
+git switch -c branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
+```
+
 ### git tag
 
 ```shell
 git tag  # 查看所有标签
-git tag v1.0.0  # 轻量级标签  TODO 最新提交，如果有untracked等
+git tag v1.0.0  # 轻量级标签
 git tag -a v1.0.0 -m &#34;version 1.0.0&#34;  # 带注释的标签
 git tag -a v1.0.0  # 带注释的标签，接着Git会提示你输入标签消息
 git tag -d v1.0.0  # 删除本地标签
 ```
+
+{{&lt; admonition &gt;}}
+`git tag v1.0.0`给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。
+{{&lt; /admonition &gt;}}
 
 ### git restore
 
@@ -304,38 +363,38 @@ git clean -fdn
 
 ### git reset
 
-TODO git reset
-
 ```shell
-git reset --hard &lt;commit_id&gt;
-git reset --soft origin/main
-git reset --mixed HEAD~1
+git reset [--hard --soft --mixed] [branch_name origin/branch_name HEAD^ commit_id tag_name]
 ```
+
+`git reset --hard`将`HEAD`指针移动到指定的提交，同时丢弃暂存区和工作目录中的所有更改。所有文件的内容与指定的提交保持一致，不会删除未跟踪的文件。
+
+`git reset --soft`将 HEAD 指针移动到指定的提交，但保留暂存区和工作目录的更改。所有文件的内容与`git reset --soft`之前还是一样的，除了`git reset --soft`之前的暂存区和工作目录的更改，其他文件与指定提交间的差异将放到暂存区。
+
+`git reset --mixed`将 HEAD 指针移动到指定的提交，保留工作目录的更改，但清空暂存区。所有文件的内容与`git reset --mixed`之前还是一样的，所有文件与指定提交间的差异都将放到工作区。
+
+`git reset`不带任何`--soft`、`--mixed`或`--hard`选项，那么默认的行为是`--mixed`。
 
 ### git diff
 
 ```shell
-git diff  # 查看当前分支工作区中所有文件与版本库的修改内容
+git diff  # 查看当前分支工作区中所有文件与暂存区或版本库的修改内容
 git diff file_path  # 查看当前分支工作区中指定文件与版本库修改内容
 git diff branch_name file_path  # 查看当前分支指定文件与指定分支的区别
 git diff branch1 branch2 file_path  # 查看指定两个分支最新提交上指定文件的区别
 ```
 
 {{&lt; admonition &gt;}}
-`git diff`和`git diff file_path`是工作区中的文件与版本库的比较，不包括暂存区与版本库的比较。
+`git diff`和`git diff file_path`是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。
 
 `git diff branch1 branch2 file_path`是版本库上该文件的比较，`git diff branch_name file_path`是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。
 {{&lt; /admonition &gt;}}
 
 ### git show
 
-TODO git show
-
 ```shell
-git show 
-git show HEAD
-git show main
-git show origin/main
+git show  # 显示当前分支上最新一次提交的详细信息
+git show [branch_name origin/branch_name HEAD^ commit_id tag_name]
 ```
 
 ### git cherry-pick
@@ -344,13 +403,55 @@ TODO git cherry-pick
 
 ### git merge
 
-```shell
-git merge branch_name  # 将branch_name分支的更改合并到你当前所在的分支中
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C5&#34;
+commit id: &#34;C6&#34;
+merge dev id: &#34;C7&#34;
+commit id: &#34;C8&#34;
+checkout dev
+commit id: &#34;C9&#34;
 ```
+
+```shell
+git merge branch1 branch2  # 将branch1和branch2分支的更改合并到当前所在的分支中
+```
+
+如上图，如果在`main`分支上`git merge dev`后，在`main`分支上会生成一次新的提交`C7`，该次提交包含了`C3`和`C4`所做的修改，新的提交`C8`是基于`C7`的。但切回`dev`分支再提交`C9`，`C9`是基于`C4`的而不是`C7`。
+
+`git merge`遇到冲突时，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git commit`就可以；或者`git merge --abort`放弃合并。
 
 ### git rebase
 
-TODO git rebase
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+checkout main
+commit id: &#34;C5&#34;
+checkout dev
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C6&#34;
+commit id: &#34;C3-1&#34;
+commit id: &#34;C4-1&#34;
+```
+
+```
+git rebase branch_name
+```
+
+如上图，当`main`分支最新提交是`C6`，`dev`分支最新提交是`C4`时，在`dev`分支上执行`git rebase main`后，`dev`分支上的提交`C3`和`C4`会按顺序整合到`C6`后面，变成新的提交`C3-1`和`C4-1`，`dev`分支会来到`C4-1`处，但`main`分支还是会在main处。使用`git rebase`后新的最新节点的内容和使用`git merge`后生成的新的提交节点的内容是一致的。
+
+`git rebase`遇到冲突时，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git rebase --continue`就可以；或者`git rebase --abort`放弃合并。
 
 ### git stash
 
@@ -426,6 +527,11 @@ RPC failed; curl 18 transfer closed with outstanding read data remaining
 - 增大缓冲区，`git config --global http.postBuffer 536870912`
 - 多尝试几遍
 
+## 相关资料
+
+- [Git 大全 - Gitee](https://gitee.com/all-about-git)
+- [Learn Git Branching](https://help.gitee.com/learn-Git-Branching)
+- [【B站最全Git进阶课程】git rebase: 人生无法重来，但代码可以！](https://www.bilibili.com/video/BV1Xb4y1773F)
 
 
 ---
