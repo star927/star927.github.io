@@ -11,7 +11,7 @@
   <meta itemprop="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录">
   <meta itemprop="datePublished" content="2024-09-05T16:16:20+08:00">
   <meta itemprop="dateModified" content="2024-09-15T00:00:00+00:00">
-  <meta itemprop="wordCount" content="6913">
+  <meta itemprop="wordCount" content="7456">
   <meta itemprop="keywords" content="Git"><meta property="og:url" content="https://star927.github.io/posts/notes/git-notes/">
   <meta property="og:site_name" content="Huxley&#39;s Blog">
   <meta property="og:title" content="Git Notes">
@@ -29,7 +29,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/git-notes/" title="Git Notes - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/blog/hugo-archetypes/" title="Hugo博客文章模板-Archetypes" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/git-notes/index.md" title="Git Notes - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/git-notes/" title="Git Notes - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/blog/hugo-archetypes/" title="Hugo博客文章模板-Archetypes" /><link rel="next" type="text/html" href="https://star927.github.io/posts/notes/ssh/" title="SSH Notes" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/git-notes/index.md" title="Git Notes - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -40,7 +40,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/"
-    },"genre": "posts","keywords": "Git","wordcount":  6913 ,
+    },"genre": "posts","keywords": "Git","wordcount":  7456 ,
     "url": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/","datePublished": "2024-09-05T16:16:20+08:00","dateModified": "2024-09-15T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -166,7 +166,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Git Notes</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-09-15 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-15">2024-09-15</time></span>&nbsp;<span title="6913 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 7000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 14 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-09-15 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-15">2024-09-15</time></span>&nbsp;<span title="7456 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 7500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 15 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -208,6 +208,7 @@
         <li><a href="#git-merge">git merge</a></li>
         <li><a href="#git-rebase">git rebase</a></li>
         <li><a href="#git-stash">git stash</a></li>
+        <li><a href="#git-submodule">git submodule</a></li>
       </ul>
     </li>
     <li><a href="#git-lfs">Git LFS</a></li>
@@ -488,6 +489,7 @@ staged-->|git commit|committed</template><ul>
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git push  <span class="c1"># 将当前分支推到上游分支，当前与上游分支的名称一致才可以使用该命令，否则报错提醒名称不匹配</span>
@@ -497,7 +499,8 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl">git push origin :branch_name  <span class="c1"># 删除远端分支</span>
 </span></span><span class="line"><span class="cl">git push origin v1.0.0  <span class="c1"># 推送指定标签到远程仓库</span>
 </span></span><span class="line"><span class="cl">git push origin --tags  <span class="c1"># 推送所有标签到远程仓库</span>
-</span></span><span class="line"><span class="cl">git push origin :refs/tags/v1.0.0  <span class="c1"># 删除远程标签</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push origin :refs/tags/v1.0.0  <span class="c1"># 删除远程标签</span>
+</span></span><span class="line"><span class="cl">git push --dry-run  <span class="c1"># 模拟推送操作，而不实际将更改推送到远程仓库</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -584,8 +587,7 @@ staged-->|git commit|committed</template><ul>
   <a href="#git-pull" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><p>TODO git pull</p>
-<div class="highlight"><div class="chroma">
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -595,6 +597,87 @@ staged-->|git commit|committed</template><ul>
 </span></span><span class="line"><span class="cl">git pull origin main  <span class="c1"># 拉取指定远程仓库的指定分支的代码</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果当前分支不存在上游分支，需要先设置一下上游分支再<code>git pull</code>，或者用<code>git pull origin main</code>指定远程仓库名称和远程分支名称。</p>
+<pre class="mermaid">%%{init: {'gitGraph': {'mainBranchName': 'origin/main'}} }%%
+gitGraph
+commit id: "C1"
+commit id: "C2"
+branch main
+commit id: "C3"
+checkout origin/main
+commit id: "C5"
+checkout main
+commit id: "C4"
+checkout origin/main
+commit id: "C6"
+checkout main</pre>
+<template>%%{init: {'gitGraph': {'mainBranchName': 'origin/main'}} }%%
+gitGraph
+commit id: "C1"
+commit id: "C2"
+branch main
+commit id: "C3"
+checkout origin/main
+commit id: "C5"
+checkout main
+commit id: "C4"
+checkout origin/main
+commit id: "C6"
+checkout main</template><p>如果远程分支和本地分支处于不同的提交节点，直接<code>git pull</code>不行，需指定<code>git pull</code>的行为方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 采用 git rebase 的方式合并本地的提交和远程的提交</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git pull --rebase
+</span></span><span class="line"><span class="cl">git pull --rebase<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者添加配置设置 git pull 的默认行为，再使用 git pull</span>
+</span></span><span class="line"><span class="cl">git config <span class="o">[</span>--global<span class="o">]</span> pull.rebase <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">git pull</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 采用 git merge 的方式合并本地的提交和远程的提交</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git pull --no-rebase
+</span></span><span class="line"><span class="cl">git pull --rebase<span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者添加配置设置 git pull 的默认行为，再使用 git pull</span>
+</span></span><span class="line"><span class="cl">git config <span class="o">[</span>--global<span class="o">]</span> pull.rebase <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">git pull</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>git pull</code>过程中可能会遇到冲突。<code>git pull --rebase</code>解决冲突的方法与<code>git rebase</code>解决冲突的方法一样，<code>git pull --no-rebase</code>解决冲突的方法与<code>git merge</code>解决冲突的方法一样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 只有当本地分支是当前远程分支的直接祖先时，这个命令才会成功执行。</span>
+</span></span><span class="line"><span class="cl">git pull --ff-only
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者添加配置设置 git pull 的默认行为，再使用 git pull</span>
+</span></span><span class="line"><span class="cl">git config <span class="o">[</span>--global<span class="o">]</span> pull.ff only
+</span></span><span class="line"><span class="cl">git pull</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以参数<code>--rebase, --no-rebase, --ff-only</code>的形式指定<code>git pull</code>的行为的优先级高于配置文件指定<code>git pull</code>的行为。</p>
 <h3 id="git-log" class="heading-element"><span>git log</span>
   <a href="#git-log" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -979,7 +1062,7 @@ commit id: "C4-1"</template><div class="highlight"><div class="chroma">
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git rebase branch_name</span></span></code></pre></td></tr></table>
 </div>
-</div><p>如上图，当<code>main</code>分支最新提交是<code>C6</code>，<code>dev</code>分支最新提交是<code>C4</code>时，在<code>dev</code>分支上执行<code>git rebase main</code>后，<code>dev</code>分支上的提交<code>C3</code>和<code>C4</code>会按顺序整合到<code>C6</code>后面，变成新的提交<code>C3-1</code>和<code>C4-1</code>，<code>dev</code>分支会来到<code>C4-1</code>处，但<code>main</code>分支还是会在main处。使用<code>git rebase</code>后新的最新节点的内容和使用<code>git merge</code>后生成的新的提交节点的内容是一致的。</p>
+</div><p>如上图，当<code>main</code>分支最新提交是<code>C6</code>，<code>dev</code>分支最新提交是<code>C4</code>时，在<code>dev</code>分支上执行<code>git rebase main</code>后，<code>dev</code>分支上的提交<code>C3</code>和<code>C4</code>会按顺序整合到<code>C6</code>后面，变成新的提交<code>C3-1</code>和<code>C4-1</code>，<code>dev</code>分支会来到<code>C4-1</code>处，但<code>main</code>分支还是会在<code>C6</code>处。使用<code>git rebase</code>后新的最新节点的内容和使用<code>git merge</code>后生成的新的提交节点的内容是一致的。</p>
 <p><code>git rebase</code>遇到冲突时，会提示冲突的文件，手动修改完冲突文件的内容后，再<code>git add</code>和<code>git rebase --continue</code>就可以；或者<code>git rebase --abort</code>放弃合并。</p>
 <h3 id="git-stash" class="heading-element"><span>git stash</span>
   <a href="#git-stash" class="heading-mark">
@@ -1024,7 +1107,25 @@ commit id: "C4-1"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git stash clear  <span class="c1"># 删除所有stash</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>一个使用场景是，当想切换分支做其它工作时，需先保存一个stash，之后切换回来再应用保存的stash即可。</p>
-<h2 id="git-lfs" class="heading-element"><span>Git LFS</span>
+<h3 id="git-submodule" class="heading-element"><span>git submodule</span>
+  <a href="#git-submodule" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>TODO git submodule</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule add https://github.com/hugo-fixit/FixIt.git themes/FixIt
+</span></span><span class="line"><span class="cl">git submodule add -b dev https://github.com/hugo-fixit/FixIt.git themes/FixIt
+</span></span><span class="line"><span class="cl">git submodule set-branch -b dev themes/FixIt  <span class="c1"># # 将子模块分支切换到 dev</span>
+</span></span><span class="line"><span class="cl">git submodule update --remote --merge themes/FixIt  <span class="c1"># 更新子模块</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="git-lfs" class="heading-element"><span>Git LFS</span>
   <a href="#git-lfs" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1141,13 +1242,14 @@ commit id: "C4-1"</template><div class="highlight"><div class="chroma">
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a></div>
+  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a>
+      <a href="/posts/notes/ssh/" class="post-nav-item" rel="next" title="SSH Notes">SSH Notes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.11"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.11"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://star927.github.io/"target="_blank" rel="external nofollow noopener noreferrer">Huxley</a></span></div><div class="footer-line visitor">

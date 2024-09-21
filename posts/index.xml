@@ -4,10 +4,18 @@
     <title>所有文章 - Huxley&#39;s Blog</title>
     <link>https://star927.github.io/posts/</link>
     <description>This is my new Hugo FixIt site</description>
-    <generator>Hugo 0.134.2 &amp; FixIt v0.3.11</generator>
+    <generator>Hugo 0.134.3 &amp; FixIt v0.3.11</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2024 15:21:42 +0800</lastBuildDate>
     <atom:link href="https://star927.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH Notes</title>
+      <link>https://star927.github.io/posts/notes/ssh/</link>
+      <pubDate>Sat, 21 Sep 2024 15:21:42 +0800</pubDate>
+      <guid>https://star927.github.io/posts/notes/ssh/</guid>
+      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <description>&lt;p&gt;SSH服务，全称为Secure Shell，是一种网络协议，为用户提供安全的远程访问和文件传输服务。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Git Notes</title>
       <link>https://star927.github.io/posts/notes/git-notes/</link>

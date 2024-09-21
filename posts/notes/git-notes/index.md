@@ -155,6 +155,7 @@ git push origin :branch_name  # 删除远端分支
 git push origin v1.0.0  # 推送指定标签到远程仓库
 git push origin --tags  # 推送所有标签到远程仓库
 git push origin :refs/tags/v1.0.0  # 删除远程标签
+git push --dry-run  # 模拟推送操作，而不实际将更改推送到远程仓库
 ```
 
 ```
@@ -210,14 +211,62 @@ git fetch --unshallow
 
 ### git pull
 
-TODO git pull
-
 ```shell
 git pull  # 拉取上游分支的代码
 git pull origin main  # 拉取指定远程仓库的指定分支的代码
 ```
 
 如果当前分支不存在上游分支，需要先设置一下上游分支再`git pull`，或者用`git pull origin main`指定远程仓库名称和远程分支名称。
+
+```mermaid
+%%{init: {&#39;gitGraph&#39;: {&#39;mainBranchName&#39;: &#39;origin/main&#39;}} }%%
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch main
+commit id: &#34;C3&#34;
+checkout origin/main
+commit id: &#34;C5&#34;
+checkout main
+commit id: &#34;C4&#34;
+checkout origin/main
+commit id: &#34;C6&#34;
+checkout main
+```
+
+如果远程分支和本地分支处于不同的提交节点，直接`git pull`不行，需指定`git pull`的行为方式
+
+```shell
+# 采用 git rebase 的方式合并本地的提交和远程的提交
+
+git pull --rebase
+git pull --rebase=true
+# 或者添加配置设置 git pull 的默认行为，再使用 git pull
+git config [--global] pull.rebase true
+git pull
+```
+
+```shell
+# 采用 git merge 的方式合并本地的提交和远程的提交
+
+git pull --no-rebase
+git pull --rebase=false
+# 或者添加配置设置 git pull 的默认行为，再使用 git pull
+git config [--global] pull.rebase false
+git pull
+```
+
+`git pull`过程中可能会遇到冲突。`git pull --rebase`解决冲突的方法与`git rebase`解决冲突的方法一样，`git pull --no-rebase`解决冲突的方法与`git merge`解决冲突的方法一样。
+
+```shell
+# 只有当本地分支是当前远程分支的直接祖先时，这个命令才会成功执行。
+git pull --ff-only
+# 或者添加配置设置 git pull 的默认行为，再使用 git pull
+git config [--global] pull.ff only
+git pull
+```
+
+以参数`--rebase, --no-rebase, --ff-only`的形式指定`git pull`的行为的优先级高于配置文件指定`git pull`的行为。
 
 ### git log
 
@@ -449,7 +498,7 @@ commit id: &#34;C4-1&#34;
 git rebase branch_name
 ```
 
-如上图，当`main`分支最新提交是`C6`，`dev`分支最新提交是`C4`时，在`dev`分支上执行`git rebase main`后，`dev`分支上的提交`C3`和`C4`会按顺序整合到`C6`后面，变成新的提交`C3-1`和`C4-1`，`dev`分支会来到`C4-1`处，但`main`分支还是会在main处。使用`git rebase`后新的最新节点的内容和使用`git merge`后生成的新的提交节点的内容是一致的。
+如上图，当`main`分支最新提交是`C6`，`dev`分支最新提交是`C4`时，在`dev`分支上执行`git rebase main`后，`dev`分支上的提交`C3`和`C4`会按顺序整合到`C6`后面，变成新的提交`C3-1`和`C4-1`，`dev`分支会来到`C4-1`处，但`main`分支还是会在`C6`处。使用`git rebase`后新的最新节点的内容和使用`git merge`后生成的新的提交节点的内容是一致的。
 
 `git rebase`遇到冲突时，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git rebase --continue`就可以；或者`git rebase --abort`放弃合并。
 
@@ -475,6 +524,17 @@ git stash clear  # 删除所有stash
 ```
 
 一个使用场景是，当想切换分支做其它工作时，需先保存一个stash，之后切换回来再应用保存的stash即可。
+
+### git submodule
+
+TODO git submodule
+
+```shell
+git submodule add https://github.com/hugo-fixit/FixIt.git themes/FixIt
+git submodule add -b dev https://github.com/hugo-fixit/FixIt.git themes/FixIt
+git submodule set-branch -b dev themes/FixIt  # # 将子模块分支切换到 dev
+git submodule update --remote --merge themes/FixIt  # 更新子模块
+```
 
 ## Git LFS
 
