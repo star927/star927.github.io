@@ -63,7 +63,8 @@ staged--&gt;|git commit|committed
 | ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
 | [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
 | [git merge](#git-merge) | [git pull](#git-pull) | [git push](#git-push) | [git rebase](#git-rebase) | [git reflog](#git-reflog) | [git remote](#git-remote) |
-| [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) | [git stash](#git-stash) | [git switch](#git-switch) | [git tag](#git-tag) |
+| [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) | [git stash](#git-stash) | [git submodule](#git-submodule) | [git switch](#git-switch) |
+| [git tag](#git-tag) |  |  |  |  |  |
 
 多数命令有参数`-v/--verbose`，会打印更详细的信息。
 
@@ -140,6 +141,8 @@ git add file1 file2  # 将指定文件/文件夹放入暂存区
 git commit -m &lt;message&gt;  # 提交暂存区中的文件到版本库
 git commit  # 以交互的方式填写提交信息
 git commit --amend  # 修改最近一次的提交信息，如果此时暂存区中有文件，则暂存区中的文件也会被提交到版本库
+# 该命令仅修改最新提交的用户名和邮箱，比如修改了配置中的 user.name 和 user.email 之后可使用该命令
+git commit --amend --reset-author
 ```
 
 ### git push
@@ -446,10 +449,6 @@ git show  # 显示当前分支上最新一次提交的详细信息
 git show [branch_name origin/branch_name HEAD^ commit_id tag_name]
 ```
 
-### git cherry-pick
-
-TODO git cherry-pick
-
 ### git merge
 
 ```mermaid
@@ -501,6 +500,81 @@ git rebase branch_name
 如上图，当`main`分支最新提交是`C6`，`dev`分支最新提交是`C4`时，在`dev`分支上执行`git rebase main`后，`dev`分支上的提交`C3`和`C4`会按顺序整合到`C6`后面，变成新的提交`C3-1`和`C4-1`，`dev`分支会来到`C4-1`处，但`main`分支还是会在`C6`处。使用`git rebase`后新的最新节点的内容和使用`git merge`后生成的新的提交节点的内容是一致的。
 
 `git rebase`遇到冲突时，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git rebase --continue`就可以；或者`git rebase --abort`放弃合并。
+
+### git cherry-pick
+
+`git cherry-pick` 用于将某个特定的一个或多个提交从一个分支应用到当前分支。
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+checkout main
+commit id: &#34;C5&#34;
+checkout dev
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C6&#34;
+commit id: &#34;C7&#34;
+commit id: &#34;C8&#34;
+```
+
+比如当前提交情况如上图，当前处于`dev`分支上
+
+```shell
+git cherry-pick C5 C7  # 一个或多个提交的 commit-id
+```
+
+该命令将`C5`和`C7`的更改应用到当前分支上，运行完该命令状态如下，`git cherry-pick`了几个提交，当前分支就会多几个对应的提交：
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+checkout main
+commit id: &#34;C5&#34;
+checkout dev
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C6&#34;
+commit id: &#34;C7&#34;
+commit id: &#34;C8&#34;
+checkout dev
+commit id: &#34;C5-1&#34;
+commit id: &#34;C7-1&#34;
+```
+
+```shell
+git cherry-pick C5^..C7  # 某两个提交之间的所有提交都进行 git cherry-pick
+```
+
+运行该命令状态如下：
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+branch dev
+commit id: &#34;C3&#34;
+checkout main
+commit id: &#34;C5&#34;
+checkout dev
+commit id: &#34;C4&#34;
+checkout main
+commit id: &#34;C6&#34;
+commit id: &#34;C7&#34;
+commit id: &#34;C8&#34;
+checkout dev
+commit id: &#34;C5-1&#34;
+commit id: &#34;C6-1&#34;
+commit id: &#34;C7-1&#34;
+```
+
+`git cherry-pick`过程中可能会遇到冲突，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git cherry-pick --continue`就可以；或者`git cherry-pick --abort`放弃`git cherry-pick`操作。
 
 ### git stash
 

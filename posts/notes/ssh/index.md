@@ -69,7 +69,7 @@ scp [-P port] username@address:[severFilePath] [localPath]  # 远程服务器文
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINj This is a comment.
 ```
 
-公钥文件内容分为三部分，以空格为分隔符。如上，第一部分`ssh-ed25519`表示该公钥是通过`ed25519`算法生成的，第二部分是公钥的主体部分，用于在 SSH 连接时验证用户的身份，第但部分是注释。
+公钥文件内容分为三部分，以空格为分隔符。如上，第一部分`ssh-ed25519`表示该公钥是通过`ed25519`算法生成的，第二部分是公钥的主体部分，用于在 SSH 连接时验证用户的身份，第三部分是注释。
 
 ### ~/.ssh/config
 
@@ -99,7 +99,7 @@ Port 2222
 IdentityFile ~/.ssh/id_rsa_myserver
 ```
 
-配置完成后，后续可以使用`ssh ubuntu`代替`ssh 123.45.67.89`
+配置完成后，后续可以使用`ssh ubuntu`代替`ssh star@123.45.67.89`
 
 ### ~/.ssh/known_hosts
 
@@ -157,6 +157,9 @@ systemctl enable ssh  # 启用开机自启
 systemctl disable ssh  # 禁用开机自启
 ```
 
+## 参考资料
+
+- [OpenSSH核心操作 | GitHub SSH连接 - 哔哩哔哩](https://www.bilibili.com/video/BV1Sx4y1y7B2)
 
 
 ---
