@@ -601,14 +601,39 @@ git stash clear  # 删除所有stash
 
 ### git submodule
 
-TODO git submodule
+```shell
+# 克隆子模块[的指定分支][到指定文件夹]
+git submodule add [-b dev] https://github.com/hugo-fixit/FixIt.git [themes/FixIt]
+```
+
+当在git仓库中添加子模块后，仓库根目录下会新增文件`.gitmodules`，该文件记录了每个子模块的信息，示例如下。此外`.git/config`和`.git/modules`也会有相应的改变
+
+```ini
+[submodule &#34;themes/FixIt&#34;]
+	path = themes/FixIt
+	url = https://github.com/hugo-fixit/FixIt.git
+	branch = dev
+[submodule &#34;submodule/star927&#34;]
+	path = submodule/star927
+	url = git@github.com:star927/star927.github.io.git
+```
 
 ```shell
-git submodule add https://github.com/hugo-fixit/FixIt.git themes/FixIt
-git submodule add -b dev https://github.com/hugo-fixit/FixIt.git themes/FixIt
-git submodule set-branch -b dev themes/FixIt  # # 将子模块分支切换到 dev
-git submodule update --remote --merge themes/FixIt  # 更新子模块
+git submodule [status]  # 查看子模块信息
+git submodule set-branch -b dev themes/FixIt  # 将子模块分支切换到 dev
+git submodule update --remote themes/FixIt  # 更新指定子模块
+git submodule update --remote  # 更新所有子模块
+git submodule update --init --recursive  # 如果克隆仓库时没有克隆子模块代码时，该命令会下载所有子模块代码
 ```
+
+```shell
+# 依次运行下述两条命令，用于删除指定子模块
+git submodule deinit [-f] submodule/star927  # 在 .git/config 中删除了指定子模块
+git rm submodule/star927  # 在 .gitmodules 中删除了指定子模块
+# 运行完上述两条命令，.git/modules 中依旧保留了该子模块对应的文件夹, 但不影响，该子模块已删除
+```
+
+需要应用子模块指定提交，进入到子模块文件夹，进行相应git操作即可。
 
 ## Git LFS
 
