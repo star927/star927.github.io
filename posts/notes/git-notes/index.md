@@ -19,10 +19,9 @@ remote[(Remote\n远程仓库)]
 work--&gt;|git add|stage
 stage--&gt;|git commit\ngit commit --amend|repo
 stage--&gt;|git restore --staged|work
-repo--&gt;|git push\ngit push -f|remote
+repo--&gt;|git push|remote
 repo--&gt;|git reset --soft|stage
-repo--&gt;|git reset --hard|work
-repo--&gt;|git checkout branch|work
+repo--&gt;|git reset --mixed|work
 repo--&gt;|git commit --amend|repo
 remote--&gt;|git fetch|repo
 remote--&gt;|git pull| work
@@ -42,15 +41,20 @@ untracked([untracked])
 modified([modified\ntracked])
 staged([staged])
 committed([committed])
-delete[Deletion of untracked files]
-undo[Undo changes to tracked files]
+delete[Deletion]
+undo[Undo changes to modified files]
 
-untracked-.-&gt;|git clean|delete
-untracked-.-&gt;|git restore|undo
 untracked &amp; modified--&gt;|git add|staged
-staged--&gt;|git restore --staged|untracked &amp; modified
 staged--&gt;|git commit|committed
+staged--&gt;|git restore --staged|untracked &amp; modified
+modified-.-&gt;|git restore|undo
+untracked-.-&gt;|git clean|delete
+committed-.-&gt;|git rm|delete
+modified &amp; staged-.-&gt;|git rm -f |delete
+modified &amp; staged &amp; committed --&gt;|git rm --cached|untracked
 ```
+
+
 
 - **未跟踪（untrack）**：表示文件为新增加的。
 - **已修改（modified/tracked）**：表示修改了文件，但还没保存到git仓库中。
@@ -62,9 +66,9 @@ staged--&gt;|git commit|committed
 | [git add](#git-add) | [git branch](#git-branch) | [git checkout](#git-checkout) | [git cherry-pick](#git-cherry-pick) | [git clean](#git-clean) | [git clone](#git-clone) |
 | ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
 | [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
-| [git merge](#git-merge) | [git pull](#git-pull) | [git push](#git-push) | [git rebase](#git-rebase) | [git reflog](#git-reflog) | [git remote](#git-remote) |
-| [git reset](#git-reset) | [git restore](#git-restore) | [git show](#git-show) | [git stash](#git-stash) | [git submodule](#git-submodule) | [git switch](#git-switch) |
-| [git tag](#git-tag) |  |  |  |  |  |
+| [git merge](#git-merge) | [git mv](#git-mv)         | [git pull](#git-pull)         | [git push](#git-push)               | [git rebase](#git-rebase) | [git reflog](#git-reflog) |
+| [git remote](#git-remote)       | [git reset](#git-reset)   | [git restore](#git-restore)   | [git rm](#git-rm)                   | [git show](#git-show)     | [git stash](#git-stash) |
+| [git submodule](#git-submodule) | [git switch](#git-switch) | [git tag](#git-tag) |  |  |  |
 
 多数命令有参数`-v/--verbose`，会打印更详细的信息。
 
@@ -79,7 +83,7 @@ staged--&gt;|git commit|committed
 
 Git配置级别主要有以下3类：
 
-1. 仓库级别local【优先级最高】，对应的文件仓库下的`.git/config`
+1. 仓库级别local【优先级最高】，对应的文件是仓库下的`.git/config`
 
 2. 用户级别global【优先级次之】，对应的文件是`~/.gitconfig`
 
@@ -102,7 +106,7 @@ git config pull.rebase false  # 在一个git仓库中，不带--system和--globa
 
 ```shell
 git init  # 初始化，采用默认分支名称。默认分支名称可通过 git config 来配置
-git init -b branch_name  # 初始化，并制定分支名称
+git init -b branch_name  # 初始化，并指定分支名称
 ```
 
 ### git clone
@@ -113,8 +117,13 @@ git init -b branch_name  # 初始化，并制定分支名称
 git clone url # 克隆某个仓库
 git clone url &lt;local_path&gt;  # 克隆的文件放在指定文件夹下
 git clone --branch &lt;branch_name/tag_name&gt; url # 克隆某个分支或标签
-git clone url # 只下载最近一次的提交历史，下载完后通过git log也只会看到最近一次提交记录
 ```
+
+```shell
+git clone url --depth 3  # 只下载最近3次的提交历史，下载完后通过 git log 也只会看到最近3次提交记录
+```
+
+`git clone`加了参数`--depth`之后，执行`git fetch --unshallow`可获取完整的仓库历史记录。
 
 ```shell
 git clone --recursive url
@@ -129,7 +138,7 @@ git clone --recursive url
 将文件放入暂存区
 
 ```shell
-git add .  # 将当前文件夹下的文件和文件夹放入暂存区
+git add .  # 将当前文件夹下的文件和文件夹都放入暂存区
 git add file1 file2  # 将指定文件/文件夹放入暂存区
 ```
 
@@ -180,14 +189,14 @@ git push -u origin local-branch:remote-branch
 将本地`local-branch`分支推到远程仓库的`remote-branch`分支上，并设置当前分支的上游分支为远程仓库的`branch_name`分支。
 
 {{&lt; admonition &gt;}}
-先`git branch --set-upstream-to`再`git push`与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
+先`git branch --set-upstream-to`再`git push`，与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
 {{&lt; /admonition &gt;}}
 
 ### git remote
 
 ```shell
 git remote add origin git@github.com:user_name/repository_name.git  # 关联远端仓库
-git remote remove origin  # 移除
+git remote remove origin  # 移除与远端仓库的关联
 git remote -v  # 查看远程仓库地址
 ```
 
@@ -242,6 +251,7 @@ checkout main
 ```shell
 # 采用 git rebase 的方式合并本地的提交和远程的提交
 
+# 下面两条命令等效
 git pull --rebase
 git pull --rebase=true
 # 或者添加配置设置 git pull 的默认行为，再使用 git pull
@@ -252,6 +262,7 @@ git pull
 ```shell
 # 采用 git merge 的方式合并本地的提交和远程的提交
 
+# 下面两条命令等效
 git pull --no-rebase
 git pull --rebase=false
 # 或者添加配置设置 git pull 的默认行为，再使用 git pull
@@ -311,9 +322,11 @@ git log main...dev  # 查看两个分支上不同的提交，如上图中的C3�
 
 ### git reflog
 
+```shell
+git reflog
 ```
-git reflog  # 最近几次操作记录 
-```
+
+`git reflog` 显示了你在过去所做的所有Git操作的日志，包括提交、分支切换、重置等。而`git log`是查看提交历史。
 
 ### git branch
 
@@ -413,6 +426,28 @@ git clean -fd
 git clean -fdn
 ```
 
+### git rm
+
+`git rm`用于将已跟踪的文件变成未跟踪状态或删除已跟踪的文件，未跟踪的文件不能用 git rm 删除, 可用 git clean 命令进行删除。
+
+```shell
+git rm file_committed.txt  # 删除版本库中的一个或多个文件
+git rm -r dir_committed.txt  # 加参数-r用于删除目录
+git rm -f file_modified.txt file_staged.txt  # 删除已修改未暂存或已暂存未提交的文件，需要加参数-f强制删除
+# --cached 将文件变成未跟踪状态, 不删除文件
+git rm --cached file_committed.txt file_modified.txt file_staged.txt
+```
+
+手动删除已跟踪的文件，删除文件的操作记录是在工作区；`git rm`删除文件后，删除文件的操作记录是在暂存区；`git rm`相当于是手动删除文件后并执行`git add`操作。而只是想停止跟踪文件而不删除文件，就可以使用`git rm --cached`。
+
+### git mv
+
+```shell
+git mv old_name new_name  # 重名已跟踪的文件或文件夹，并将重命名操作记录到暂存区
+```
+
+`git mv`相当于就是手动重命名文件后再`git add`
+
 ### git reset
 
 ```shell
@@ -425,7 +460,7 @@ git reset [--hard --soft --mixed] [branch_name origin/branch_name HEAD^ commit_i
 
 `git reset --mixed`将 HEAD 指针移动到指定的提交，保留工作目录的更改，但清空暂存区。所有文件的内容与`git reset --mixed`之前还是一样的，所有文件与指定提交间的差异都将放到工作区。
 
-`git reset`不带任何`--soft`、`--mixed`或`--hard`选项，那么默认的行为是`--mixed`。
+`git reset`不带`--soft`、`--mixed`或`--hard`选项，那么默认的行为是`--mixed`。
 
 ### git diff
 
@@ -606,7 +641,7 @@ git stash clear  # 删除所有stash
 git submodule add [-b dev] https://github.com/hugo-fixit/FixIt.git [themes/FixIt]
 ```
 
-当在git仓库中添加子模块后，仓库根目录下会新增文件`.gitmodules`，该文件记录了每个子模块的信息，示例如下。此外`.git/config`和`.git/modules`也会有相应的改变
+当在git仓库中添加子模块后，仓库根目录下会新增文件`.gitmodules`，该文件记录了每个子模块的信息，示例如下。此外`.git/config`和`.git/modules`也会有相应的改变。
 
 ```ini
 [submodule &#34;themes/FixIt&#34;]
@@ -626,14 +661,16 @@ git submodule update --remote  # 更新所有子模块
 git submodule update --init --recursive  # 如果克隆仓库时没有克隆子模块代码时，该命令会下载所有子模块代码
 ```
 
+更新子模块也可以进入到子模块对应的目录下，执行`git fetch`、`git pull`等操作。
+
+需要应用子模块指定提交，进入到子模块文件夹，执行`git reset`等操作即可。
+
 ```shell
 # 依次运行下述两条命令，用于删除指定子模块
 git submodule deinit [-f] submodule/star927  # 在 .git/config 中删除了指定子模块
 git rm submodule/star927  # 在 .gitmodules 中删除了指定子模块
 # 运行完上述两条命令，.git/modules 中依旧保留了该子模块对应的文件夹, 但不影响，该子模块已删除
 ```
-
-需要应用子模块指定提交，进入到子模块文件夹，进行相应git操作即可。
 
 ## Git LFS
 
