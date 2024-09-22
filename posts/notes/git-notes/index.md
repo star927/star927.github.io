@@ -66,9 +66,9 @@ modified &amp; staged &amp; committed --&gt;|git rm --cached|untracked
 | [git add](#git-add) | [git branch](#git-branch) | [git checkout](#git-checkout) | [git cherry-pick](#git-cherry-pick) | [git clean](#git-clean) | [git clone](#git-clone) |
 | ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
 | [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
-| [git merge](#git-merge) | [git mv](#git-mv)         | [git pull](#git-pull)         | [git push](#git-push)               | [git rebase](#git-rebase) | [git reflog](#git-reflog) |
-| [git remote](#git-remote)       | [git reset](#git-reset)   | [git restore](#git-restore)   | [git rm](#git-rm)                   | [git show](#git-show)     | [git stash](#git-stash) |
-| [git submodule](#git-submodule) | [git switch](#git-switch) | [git tag](#git-tag) |  |  |  |
+| [git merge](#git-merge) | [git mv](#git-mv)               | [git pull](#git-pull)         | [git push](#git-push)               | [git rebase](#git-rebase) | [git reflog](#git-reflog) |
+| [git remote](#git-remote) | [git reset](#git-reset)         | [git restore](#git-restore)   | [git revert](#git-revert)           | [git rm](#git-rm)         | [git show](#git-show) |
+| [git stash](#git-stash)   | [git submodule](#git-submodule) | [git switch](#git-switch)     | [git tag](#git-tag) |  |  |
 
 多数命令有参数`-v/--verbose`，会打印更详细的信息。
 
@@ -461,6 +461,46 @@ git reset [--hard --soft --mixed] [branch_name origin/branch_name HEAD^ commit_i
 `git reset --mixed`将 HEAD 指针移动到指定的提交，保留工作目录的更改，但清空暂存区。所有文件的内容与`git reset --mixed`之前还是一样的，所有文件与指定提交间的差异都将放到工作区。
 
 `git reset`不带`--soft`、`--mixed`或`--hard`选项，那么默认的行为是`--mixed`。
+
+### git revert
+
+`git revert`用于撤销已提交更改。与 `git reset` 不同，`git revert` 不会改变项目的提交记录，而是通过创建新的提交来回滚之前的更改。
+
+```shell
+git revert C2 C5  # 撤销 C2 和 C5 的更改
+git revert C2^...C5  # 撤销 C2 到 C5 之间所有的更改，闭区间
+git revert C2..C5  # 撤销 C2 到 C5 的更改，左开右闭区间
+```
+
+
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+commit id: &#34;C3&#34;
+commit id: &#34;C4&#34;
+commit id: &#34;C5&#34;
+commit id: &#34;C6&#34;
+```
+
+如上图，当前分支处于`C6`处，执行`git revert C2^...C5`后，状态如下
+
+```mermaid
+gitGraph
+commit id: &#34;C1&#34;
+commit id: &#34;C2&#34;
+commit id: &#34;C3&#34;
+commit id: &#34;C4&#34;
+commit id: &#34;C5&#34;
+commit id: &#34;C6&#34;
+commit id: &#34;C5-1&#34;
+commit id: &#34;C4-1&#34;
+commit id: &#34;C3-1&#34;
+commit id: &#34;C2-1&#34;
+```
+
+`git revert`过程中可能会遇到冲突，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git revert --continue`就可以；或者`git revert --abort`放弃`git revert`操作。
 
 ### git diff
 
