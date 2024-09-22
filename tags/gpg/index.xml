@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github - 标签 - Huxley&#39;s Blog</title>
-    <link>https://star927.github.io/tags/github/</link>
+    <title>GPG - 标签 - Huxley&#39;s Blog</title>
+    <link>https://star927.github.io/tags/gpg/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.134.3 &amp; FixIt v0.3.11</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 22 Sep 2024 22:42:18 +0800</lastBuildDate>
-    <atom:link href="https://star927.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://star927.github.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github使用GPG对Commit进行签名</title>
       <link>https://star927.github.io/posts/notes/github-gpg/</link>
@@ -15,14 +15,6 @@
       <guid>https://star927.github.io/posts/notes/github-gpg/</guid>
       <category domain="https://star927.github.io/categories/notes/">Notes</category>
       <description>&lt;p&gt;如何使用GPG对Commit进行签名，并配置Github。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GitHub Pages绑定个人域名</title>
-      <link>https://star927.github.io/posts/blog/github-custom-domain/</link>
-      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/github-custom-domain/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
-      <description>GitHub Pages绑定个人域名</description>
     </item>
   </channel>
 </rss>

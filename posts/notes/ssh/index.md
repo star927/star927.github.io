@@ -111,9 +111,9 @@ IdentityFile ~/.ssh/id_rsa_myserver
 
 `~/.ssh/authorized_keys` 文件是一个用于存储公钥的文件，允许SSH用户通过公钥认证方式登录到服务器，每一行代表一个公钥。比如使用`ssh-copy-id`将本机上的公钥拷贝到了远程主机，远程主机的该文件就会储存该公钥。
 
-## Github配置ssh
+## Github配置SSH
 
-Github主页点击右上角头像，进入设置
+在GitHub任意页的右上角，单击个人资料照片，然后单击`Settings`进入设置。
 
 ![githuh-ssh-1](./image/githuh-ssh-1.png)
 
@@ -160,6 +160,7 @@ systemctl disable ssh  # 禁用开机自启
 ## 参考资料
 
 - [OpenSSH核心操作 | GitHub SSH连接 - 哔哩哔哩](https://www.bilibili.com/video/BV1Sx4y1y7B2)
+- [通过 SSH 连接到 GitHub - GitHub](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh)
 
 
 ---
