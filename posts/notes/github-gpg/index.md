@@ -114,6 +114,10 @@ gpg: signing failed: Inappropriate ioctl for device
 export GPG_TTY=$(tty)
 ```
 
+&gt; [!IMPORTANT]
+&gt;
+&gt; 如果使用了zsh的powerlevel10k主题，在zsh配置文件中`export GPG_TTY=$(tty)`可能会失效，打开终端输出`GPG_TTY`变量可能是`not a tty`。需要改成`export GPG_TTY=$TTY`，详见[not a tty when loading terminal with powerlevel10k #524](https://github.com/romkatv/powerlevel10k/issues/524)
+
 ## 参考
 
 - [管理提交签名验证 - Github](https://docs.github.com/zh/authentication/managing-commit-signature-verification)

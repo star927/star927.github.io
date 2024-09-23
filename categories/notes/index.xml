@@ -6,7 +6,7 @@
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.134.3 &amp; FixIt v0.3.11</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 22 Sep 2024 22:42:18 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://star927.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github使用GPG对Commit进行签名</title>

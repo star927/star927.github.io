@@ -10,8 +10,8 @@
   <meta itemprop="name" content="Github使用GPG对Commit进行签名">
   <meta itemprop="description" content="如何使用GPG对Commit进行签名，并配置Github。">
   <meta itemprop="datePublished" content="2024-09-22T22:42:18+08:00">
-  <meta itemprop="dateModified" content="2024-09-22T22:42:18+08:00">
-  <meta itemprop="wordCount" content="770">
+  <meta itemprop="dateModified" content="2024-09-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="894">
   <meta itemprop="keywords" content="Github,GPG"><meta property="og:url" content="https://star927.github.io/posts/notes/github-gpg/">
   <meta property="og:site_name" content="Huxley&#39;s Blog">
   <meta property="og:title" content="Github使用GPG对Commit进行签名">
@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-09-22T22:42:18+08:00">
-    <meta property="article:modified_time" content="2024-09-22T22:42:18+08:00">
+    <meta property="article:modified_time" content="2024-09-23T00:00:00+00:00">
     <meta property="article:tag" content="Github">
     <meta property="article:tag" content="GPG">
 
@@ -30,7 +30,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/github-gpg/" title="Github使用GPG对Commit进行签名 - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/notes/ssh/" title="SSH Notes" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/github-gpg/index.md" title="Github使用GPG对Commit进行签名 - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/github-gpg/" title="Github使用GPG对Commit进行签名 - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/notes/ssh/" title="SSH Notes" /><link rel="next" type="text/html" href="https://star927.github.io/posts/blog/hugo-config-file/" title="Hugo博客的配置文件" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/github-gpg/index.md" title="Github使用GPG对Commit进行签名 - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/star927.github.io\/posts\/notes\/github-gpg\/"
-    },"genre": "posts","keywords": "Github, GPG","wordcount":  770 ,
-    "url": "https:\/\/star927.github.io\/posts\/notes\/github-gpg\/","datePublished": "2024-09-22T22:42:18+08:00","dateModified": "2024-09-22T22:42:18+08:00","publisher": {
+    },"genre": "posts","keywords": "Github, GPG","wordcount":  894 ,
+    "url": "https:\/\/star927.github.io\/posts\/notes\/github-gpg\/","datePublished": "2024-09-22T22:42:18+08:00","dateModified": "2024-09-23T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -179,7 +179,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Github使用GPG对Commit进行签名</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a> 和 <a href="/collections/github/" class="post-collection" title="合集 - Github"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Github</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-22 22:42:18"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-22">2024-09-22</time></span>&nbsp;<span title="770 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Github使用GPG对Commit进行签名"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a> 和 <a href="/collections/github/" class="post-collection" title="合集 - Github"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Github</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-22 22:42:18"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-22">2024-09-22</time></span>&nbsp;<span title="更新于 2024-09-23 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-23">2024-09-23</time></span>&nbsp;<span title="894 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Github使用GPG对Commit进行签名"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -367,6 +367,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GPG_TTY</span><span class="o">=</span><span class="k">$(</span>tty<span class="k">)</span></span></span></code></pre></td></tr></table>
 </div>
+</div><div class="alert alert-important"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 1.75C0 .784.784.0 1.75.0h12.5C15.216.0 16 .784 16 1.75v9.5A1.75 1.75.0 0114.25 13H8.06l-2.573 2.573A1.458 1.458.0 013 14.543V13H1.75A1.75 1.75.0 010 11.25zm1.75-.25a.25.25.0 00-.25.25v9.5c0 .138.112.25.25.25h2a.75.75.0 01.75.75v2.19l2.72-2.72a.749.749.0 01.53-.22h6.5a.25.25.0 00.25-.25v-9.5a.25.25.0 00-.25-.25zm7 2.25v2.5a.75.75.0 01-1.5.0v-2.5a.75.75.0 011.5.0zM9 9A1 1 0 117 9a1 1 0 012 0z"/></svg>重要</p><p><p>如果使用了zsh的powerlevel10k主题，在zsh配置文件中<code>export GPG_TTY=$(tty)</code>可能会失效，打开终端输出<code>GPG_TTY</code>变量可能是<code>not a tty</code>。需要改成<code>export GPG_TTY=$TTY</code>，详见<a href="https://github.com/romkatv/powerlevel10k/issues/524"target="_blank" rel="external nofollow noopener noreferrer">not a tty when loading terminal with powerlevel10k #524</a></p>
 </div><h2 id="参考" class="heading-element"><span>参考</span>
   <a href="#%e5%8f%82%e8%80%83" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -380,7 +381,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-09-22 22:42:18">更新于 2024-09-22&nbsp;</span>
+        <span title="更新于 2024-09-23 00:00:00">更新于 2024-09-23&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -399,7 +400,8 @@
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/notes/ssh/" class="post-nav-item" rel="prev" title="SSH Notes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>SSH Notes</a></div>
+  </div><div class="post-nav"><a href="/posts/notes/ssh/" class="post-nav-item" rel="prev" title="SSH Notes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>SSH Notes</a>
+      <a href="/posts/blog/hugo-config-file/" class="post-nav-item" rel="next" title="Hugo博客的配置文件">Hugo博客的配置文件<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
