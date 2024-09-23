@@ -18,9 +18,9 @@
 
 ## 示例
 
-比如`hugo.toml`文件内容如下
+比如当前配置如下：
 
-```toml
+```toml {title=&#34;hugo.toml&#34;}
 baseURL = &#34;https://star927.github.io/&#34;
 title = &#34;Huxley&#39;s Blog&#34;
 theme = &#34;FixIt&#34;
@@ -52,19 +52,15 @@ theme = &#34;FixIt&#34;
     avatar = &#34;/images/avatar.svg&#34;
 ```
 
-将所有配置都放在`hugo.toml`文件中，该文件就会太长，可删除该文件，并创建`config/_default/hugo.toml`、`config/_default/menu.toml`、`config/_default/params.toml`文件。
+将所有配置都放在`hugo.toml`文件中，该文件就会太长，可删除该文件，并创建`config/_default/hugo.toml`、`config/_default/menu.toml`、`config/_default/params.toml`文件，如下所示：
 
-`config/_default/hugo.toml`文件的内容：
-
-```toml
+```toml {title=&#34;config/_default/hugo.toml&#34;}
 baseURL = &#34;https://star927.github.io/&#34;
 title = &#34;Huxley&#39;s Blog&#34;
 theme = &#34;FixIt&#34;
 ```
 
-`config/_default/menu.toml`文件的内容：
-
-```toml
+```toml {title=&#34;config/_default/menu.toml&#34;}
 [[main]]
 identifier = &#34;categories&#34;
 name = &#34;分类&#34;
@@ -81,9 +77,7 @@ weight = 3
   icon = &#34;fa-solid fa-tags&#34;
 ```
 
-`config/_default/params.toml`文件的内容：
-
-```toml
+```toml {title=&#34;config/_default/params.toml&#34;}
 # FixIt theme version
 version = &#34;0.3.X&#34; # e.g. &#34;0.2.X&#34;, &#34;0.2.15&#34;, &#34;v0.2.15&#34; etc.
 description = &#34;This is my new Hugo FixIt site&#34;
