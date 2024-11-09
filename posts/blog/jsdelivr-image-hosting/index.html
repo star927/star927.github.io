@@ -51,37 +51,17 @@
         "name": "Huxley"
       },"description": ""
   }
-  </script></head>
-  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="Huxley&#39;s Blog"><img loading="lazy" src="/images/avatar.svg" alt="Huxley&#39;s Blog" data-title="Huxley&#39;s Blog" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Huxley&#39;s Blog</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/archives/"
-                
-                
-              ><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/categories/"
-                
-                
-              ><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/tags/"
-                
-                
-              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/collections/"
-                
-                
-              ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
@@ -123,35 +103,7 @@
             <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
               取消
             </a>
-          </li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/archives/"
-                  
-                  
-                ><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/categories/"
-                  
-                  
-                ><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/tags/"
-                  
-                  
-                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/collections/"
-                  
-                  
-                ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item menu-system">
+          </li><li class="menu-item"><a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item"><a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item menu-system">
           <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
       </ul>
     </nav>
@@ -162,7 +114,7 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="/"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" data-separator="/" aria-current="page">GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
@@ -195,8 +147,10 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p><a href="https://github.com/Molunerfinn/PicGo"target="_blank" rel="external nofollow noopener noreferrer">PicGo</a>安装完成后，打开图床设置，配置GitHub图床，如下图：</p>
-<blockquote><p>Tips: Mac系统打开PicGo后并不会看到PicGo的主界面，在菜单栏中找到PicGo图标，右键点击“打开详细窗口”即可打开PicGo主界面。</p>
-</blockquote><p><figure><img loading="lazy" src="./images/PicGo.png" alt="PicGo" srcset="./images/PicGo.png?size=small, ./images/PicGo.png?size=medium 1.5x, ./images/PicGo.png?size=large 2x" data-title="PicGo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
+<blockquote>
+<p>Tips: Mac系统打开PicGo后并不会看到PicGo的主界面，在菜单栏中找到PicGo图标，右键点击“打开详细窗口”即可打开PicGo主界面。</p>
+</blockquote>
+<p><figure><img loading="lazy" src="./images/PicGo.png" alt="PicGo" srcset="./images/PicGo.png?size=small, ./images/PicGo.png?size=medium 1.5x, ./images/PicGo.png?size=large 2x" data-title="PicGo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></figure></p>
 <ul>
 <li>设定仓库名：格式是<code>用户名/仓库名</code>，可以新建一个GitHub仓库，专门用作图床</li>
 <li>设定分支名：默认分支main即可</li>
@@ -233,23 +187,22 @@
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/blog/jekyli-leancloud/" class="post-nav-item" rel="prev" title="Jekyll博客中基于LeanCloud统计文章阅读量"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Jekyll博客中基于LeanCloud统计文章阅读量</a>
-      <a href="/posts/blog/github-custom-domain/" class="post-nav-item" rel="next" title="GitHub Pages绑定个人域名">GitHub Pages绑定个人域名<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/blog/jekyli-leancloud/" class="post-nav-item" rel="prev" title="Jekyll博客中基于LeanCloud统计文章阅读量"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Jekyll博客中基于LeanCloud统计文章阅读量</a><a href="/posts/blog/github-custom-domain/" class="post-nav-item" rel="next" title="GitHub Pages绑定个人域名">GitHub Pages绑定个人域名<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.11"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.138.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.14"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://star927.github.io/"target="_blank" rel="external nofollow noopener noreferrer">Huxley</a></span></div><div class="footer-line visitor">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
-        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="--fi-progress-start: left; top: 0;"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.11"};</script><script src="/js/theme.min.js" defer></script></body>
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.14"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Git Notes - Huxley&#39;s Blog</title><meta name="author" content="Huxley">
-<meta name="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录"><meta name="keywords" content='Git'>
+<meta name="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录
+"><meta name="keywords" content='Git'>
   <meta itemprop="name" content="Git Notes">
   <meta itemprop="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录">
   <meta itemprop="datePublished" content="2024-09-05T16:16:20+08:00">
   <meta itemprop="dateModified" content="2024-09-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="9205">
+  <meta itemprop="wordCount" content="9103">
   <meta itemprop="keywords" content="Git"><meta property="og:url" content="https://star927.github.io/posts/notes/git-notes/">
   <meta property="og:site_name" content="Huxley&#39;s Blog">
   <meta property="og:title" content="Git Notes">
@@ -40,7 +41,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/"
-    },"genre": "posts","keywords": "Git","wordcount":  9205 ,
+    },"genre": "posts","keywords": "Git","wordcount":  9103 ,
     "url": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/","datePublished": "2024-09-05T16:16:20+08:00","dateModified": "2024-09-22T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -48,37 +49,17 @@
         "name": "Huxley"
       },"description": ""
   }
-  </script></head>
-  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="Huxley&#39;s Blog"><img loading="lazy" src="/images/avatar.svg" alt="Huxley&#39;s Blog" data-title="Huxley&#39;s Blog" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">Huxley&#39;s Blog</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/archives/"
-                
-                
-              ><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/categories/"
-                
-                
-              ><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/tags/"
-                
-                
-              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/collections/"
-                
-                
-              ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
@@ -120,35 +101,7 @@
             <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
               取消
             </a>
-          </li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/archives/"
-                  
-                  
-                ><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/categories/"
-                  
-                  
-                ><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/tags/"
-                  
-                  
-                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/collections/"
-                  
-                  
-                ><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item menu-system">
+          </li><li class="menu-item"><a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-open fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item"><a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw me-1 fa-fw fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item menu-system">
           <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
       </ul>
     </nav>
@@ -159,14 +112,14 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">Git Notes</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="/"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" data-separator="/" aria-current="page">Git Notes</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Git Notes</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-09-22 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-22">2024-09-22</time></span>&nbsp;<span title="9205 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 9300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 19 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-09-22 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-22">2024-09-22</time></span>&nbsp;<span title="9103 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 9200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 19 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -235,13 +188,18 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><pre class="mermaid">flowchart LR
-work[[Workspace\n工作区]]
-stage[(Stage\n暂存区)]
-repo[(Repository\n版本库)]
-remote[(Remote\n远程仓库)]
+work[["`Workspace
+工作区`"]]
+stage[("`Stage
+暂存区`")]
+repo[("`Repository
+版本库`")]
+remote[("`Remote
+远程仓库`")]
 
 work-->|git add|stage
-stage-->|git commit\ngit commit --amend|repo
+stage-->|"`git commit
+git commit --amend`"|repo
 stage-->|git restore --staged|work
 repo-->|git push|remote
 repo-->|git reset --soft|stage
@@ -251,13 +209,18 @@ remote-->|git fetch|repo
 remote-->|git pull| work
 remote-->|git clone| work</pre>
 <template>flowchart LR
-work[[Workspace\n工作区]]
-stage[(Stage\n暂存区)]
-repo[(Repository\n版本库)]
-remote[(Remote\n远程仓库)]
+work[["`Workspace
+工作区`"]]
+stage[("`Stage
+暂存区`")]
+repo[("`Repository
+版本库`")]
+remote[("`Remote
+远程仓库`")]
 
 work-->|git add|stage
-stage-->|git commit\ngit commit --amend|repo
+stage-->|"`git commit
+git commit --amend`"|repo
 stage-->|git restore --staged|work
 repo-->|git push|remote
 repo-->|git reset --soft|stage
@@ -277,11 +240,13 @@ remote-->|git clone| work</template><ul>
   </a>
 </h3><pre class="mermaid">flowchart LR
 untracked([untracked])
-modified([modified\ntracked])
+modified(["`modified
+tracked`"])
 staged([staged])
 committed([committed])
 delete[Deletion]
-undo[Undo changes to modified files]
+undo["`Undo changes to
+modified files`"]
 
 untracked & modified-->|git add|staged
 staged-->|git commit|committed
@@ -293,11 +258,13 @@ modified & staged-.->|git rm -f |delete
 modified & staged & committed -->|git rm --cached|untracked</pre>
 <template>flowchart LR
 untracked([untracked])
-modified([modified\ntracked])
+modified(["`modified
+tracked`"])
 staged([staged])
 committed([committed])
 delete[Deletion]
-undo[Undo changes to modified files]
+undo["`Undo changes to
+modified files`"]
 
 untracked & modified-->|git add|staged
 staged-->|git commit|committed
@@ -319,46 +286,46 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </h2><table>
   <thead>
       <tr>
-          <th style="text-align: left"><a href="#git-add">git add</a></th>
-          <th style="text-align: left"><a href="#git-branch">git branch</a></th>
-          <th style="text-align: left"><a href="#git-checkout">git checkout</a></th>
-          <th style="text-align: left"><a href="#git-cherry-pick">git cherry-pick</a></th>
-          <th style="text-align: left"><a href="#git-clean">git clean</a></th>
-          <th style="text-align: left"><a href="#git-clone">git clone</a></th>
+          <th><a href="#git-add">git add</a></th>
+          <th><a href="#git-branch">git branch</a></th>
+          <th><a href="#git-checkout">git checkout</a></th>
+          <th><a href="#git-cherry-pick">git cherry-pick</a></th>
+          <th><a href="#git-clean">git clean</a></th>
+          <th><a href="#git-clone">git clone</a></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="#git-commit">git commit</a></td>
-          <td style="text-align: left"><a href="#git-config">git config</a></td>
-          <td style="text-align: left"><a href="#git-diff">git diff</a></td>
-          <td style="text-align: left"><a href="#git-fetch">git fetch</a></td>
-          <td style="text-align: left"><a href="#git-init">git init</a></td>
-          <td style="text-align: left"><a href="#git-log">git log</a></td>
+          <td><a href="#git-commit">git commit</a></td>
+          <td><a href="#git-config">git config</a></td>
+          <td><a href="#git-diff">git diff</a></td>
+          <td><a href="#git-fetch">git fetch</a></td>
+          <td><a href="#git-init">git init</a></td>
+          <td><a href="#git-log">git log</a></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="#git-merge">git merge</a></td>
-          <td style="text-align: left"><a href="#git-mv">git mv</a></td>
-          <td style="text-align: left"><a href="#git-pull">git pull</a></td>
-          <td style="text-align: left"><a href="#git-push">git push</a></td>
-          <td style="text-align: left"><a href="#git-rebase">git rebase</a></td>
-          <td style="text-align: left"><a href="#git-reflog">git reflog</a></td>
+          <td><a href="#git-merge">git merge</a></td>
+          <td><a href="#git-mv">git mv</a></td>
+          <td><a href="#git-pull">git pull</a></td>
+          <td><a href="#git-push">git push</a></td>
+          <td><a href="#git-rebase">git rebase</a></td>
+          <td><a href="#git-reflog">git reflog</a></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="#git-remote">git remote</a></td>
-          <td style="text-align: left"><a href="#git-reset">git reset</a></td>
-          <td style="text-align: left"><a href="#git-restore">git restore</a></td>
-          <td style="text-align: left"><a href="#git-revert">git revert</a></td>
-          <td style="text-align: left"><a href="#git-rm">git rm</a></td>
-          <td style="text-align: left"><a href="#git-show">git show</a></td>
+          <td><a href="#git-remote">git remote</a></td>
+          <td><a href="#git-reset">git reset</a></td>
+          <td><a href="#git-restore">git restore</a></td>
+          <td><a href="#git-revert">git revert</a></td>
+          <td><a href="#git-rm">git rm</a></td>
+          <td><a href="#git-show">git show</a></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="#git-stash">git stash</a></td>
-          <td style="text-align: left"><a href="#git-submodule">git submodule</a></td>
-          <td style="text-align: left"><a href="#git-switch">git switch</a></td>
-          <td style="text-align: left"><a href="#git-tag">git tag</a></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td><a href="#git-stash">git stash</a></td>
+          <td><a href="#git-submodule">git submodule</a></td>
+          <td><a href="#git-switch">git switch</a></td>
+          <td><a href="#git-tag">git tag</a></td>
+          <td></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
@@ -552,13 +519,11 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </div>
 </div><p>将本地<code>local-branch</code>分支推到远程仓库的<code>remote-branch</code>分支上，并设置当前分支的上游分支为远程仓库的<code>branch_name</code>分支。</p>
 <div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">先<code>git branch --set-upstream-to</code>再<code>git push</code>，与<code>git push -u</code>某些情况下等效。但是<code>git branch --set-upstream-to=origin/branch_name</code>要求<code>origin/branch_name</code>是已存在的分支。而<code>git push -u</code>对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">先<code>git branch --set-upstream-to</code>再<code>git push</code>，与<code>git push -u</code>某些情况下等效。但是<code>git branch --set-upstream-to=origin/branch_name</code>要求<code>origin/branch_name</code>是已存在的分支。而<code>git push -u</code>对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。</div>
   </div>
+</div>
 <h3 id="git-remote" class="heading-element"><span>git remote</span>
   <a href="#git-remote" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -575,13 +540,11 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </span></span><span class="line"><span class="cl">git remote -v  <span class="c1"># 查看远程仓库地址</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><code>git remote add origin</code>只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行<code>git branch -r</code>就会发现为空（即使关联的是一个非空仓库），运行命令<code>git branch --set-upstream-to=origin/main</code>也会报错（即使远程仓库存在<code>main</code>分支）。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><code>git remote add origin</code>只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行<code>git branch -r</code>就会发现为空（即使关联的是一个非空仓库），运行命令<code>git branch --set-upstream-to=origin/main</code>也会报错（即使远程仓库存在<code>main</code>分支）。</div>
   </div>
+</div>
 <h3 id="git-fetch" class="heading-element"><span>git fetch</span>
   <a href="#git-fetch" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -807,13 +770,11 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git branch -M new_banch_name  <span class="c1"># 强制重命名当前分支，即使new_banch_name分时已存在</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">远程分支不能像本地分支一样直接重命名，可先用<code>git push origin :branh_name</code>删除远程分支，再将本地分支推到远程仓库。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">远程分支不能像本地分支一样直接重命名，可先用<code>git push origin :branh_name</code>删除远程分支，再将本地分支推到远程仓库。</div>
   </div>
+</div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -832,13 +793,11 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git branch -vv  <span class="c1"># 还会显示每个分支的上游分支名称</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><code>git branch --set-upstream-to=origin/branch_name</code>要求远程仓库<code>branch_name</code>分支必须存在，并且本地有远程仓库<code>branch_name</code>分支的信息；也就是说比如通过<code>git remote add origin</code>关联了一个包含<code>branch_name</code>分支的远程仓库之后，还得使用<code>git fetch</code>命令获取<code>branch_name</code>分支的信息，这时<code>git branch --set-upstream-to=origin/branch_name</code>这条命令才会成功。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><code>git branch --set-upstream-to=origin/branch_name</code>要求远程仓库<code>branch_name</code>分支必须存在，并且本地有远程仓库<code>branch_name</code>分支的信息；也就是说比如通过<code>git remote add origin</code>关联了一个包含<code>branch_name</code>分支的远程仓库之后，还得使用<code>git fetch</code>命令获取<code>branch_name</code>分支的信息，这时<code>git branch --set-upstream-to=origin/branch_name</code>这条命令才会成功。</div>
   </div>
+</div>
 <h3 id="git-checkout" class="heading-element"><span>git checkout</span>
   <a href="#git-checkout" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -851,13 +810,11 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git checkout branch_name  <span class="c1"># 切换分支</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><code>git checkout branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><code>git checkout branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
   </div>
+</div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -878,13 +835,11 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git switch branch_name</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><code>git switch branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><code>git switch branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
   </div>
+</div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -912,13 +867,11 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git tag -d v1.0.0  <span class="c1"># 删除本地标签</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><code>git tag v1.0.0</code>给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><code>git tag v1.0.0</code>给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。</div>
   </div>
+</div>
 <h3 id="git-restore" class="heading-element"><span>git restore</span>
   <a href="#git-restore" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -1076,15 +1029,13 @@ commit id: "C2-1"</template><p><code>git revert</code>过程中可能会遇到�
 </span></span><span class="line"><span class="cl">git diff branch1 branch2 file_path  <span class="c1"># 查看指定两个分支最新提交上指定文件的区别</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><p><code>git diff</code>和<code>git diff file_path</code>是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。</p>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content"><p><code>git diff</code>和<code>git diff file_path</code>是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。</p>
 <p><code>git diff branch1 branch2 file_path</code>是版本库上该文件的比较，<code>git diff branch_name file_path</code>是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。</p>
 </div>
-    </div>
   </div>
+</div>
 <h3 id="git-show" class="heading-element"><span>git show</span>
   <a href="#git-show" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -1300,13 +1251,11 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
 </span></span><span class="line"><span class="cl">git stash -u/--include-untracked  <span class="c1"># 只有未跟踪的文件时，需要加该参数才能保存</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要<code>--include-untracked</code>参数才能保存，否则会提示没有要保存的文件。</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要<code>--include-untracked</code>参数才能保存，否则会提示没有要保存的文件。</div>
   </div>
+</div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1432,13 +1381,11 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><div class="details admonition failure open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">Failed to connect to github.com port 443 after 75002 ms: Couldn&rsquo;t connect to server</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">Failed to connect to github.com port 443 after 75002 ms: Couldn&rsquo;t connect to server</div>
   </div>
+</div>
 <p>在使用了VPN时，配置http代理，如下，<code>7890</code>是代理的端口号，打开<code>ClashX</code>可以查看使用的端口号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1454,25 +1401,21 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><div class="details admonition failure open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)</div>
   </div>
+</div>
 <ul>
 <li><code>git clone</code>遇到该问题时，有时再运行一遍<code>git clone</code>命令就可以</li>
 <li>指定使用<code>http 1.1</code>，<code>git config --global http.version HTTP/1.1</code></li>
 </ul>
 <div class="details admonition failure open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">RPC failed; curl 18 transfer closed with outstanding read data remaining</div>
-    </div>
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">RPC failed; curl 18 transfer closed with outstanding read data remaining</div>
   </div>
+</div>
 <ul>
 <li>使用<code>git clone</code>时，可加参数<code>--depth 1</code></li>
 <li>增大缓冲区，<code>git config --global http.postBuffer 536870912</code></li>
@@ -1509,27 +1452,28 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a>
-      <a href="/posts/notes/ssh/" class="post-nav-item" rel="next" title="SSH Notes">SSH Notes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a><a href="/posts/notes/ssh/" class="post-nav-item" rel="next" title="SSH Notes">SSH Notes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.11"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.138.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.14"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://star927.github.io/"target="_blank" rel="external nofollow noopener noreferrer">Huxley</a></span></div><div class="footer-line visitor">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
-        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="--fi-progress-start: left; top: 0;"></div><noscript>
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.esm.min.mjs';
+    
+    
+    
     window.mermaid = mermaid;
-    window.mermaid.themes = ["default","dark"];
   </script><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.11"};</script><script src="/js/theme.min.js" defer></script></body>
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="/js/flyfish.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"mermaid":{"themes":["default","dark"]},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.14"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

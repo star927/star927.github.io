@@ -11,13 +11,18 @@
 
 ```mermaid
 flowchart LR
-work[[Workspace\n工作区]]
-stage[(Stage\n暂存区)]
-repo[(Repository\n版本库)]
-remote[(Remote\n远程仓库)]
+work[[&#34;`Workspace
+工作区`&#34;]]
+stage[(&#34;`Stage
+暂存区`&#34;)]
+repo[(&#34;`Repository
+版本库`&#34;)]
+remote[(&#34;`Remote
+远程仓库`&#34;)]
 
 work--&gt;|git add|stage
-stage--&gt;|git commit\ngit commit --amend|repo
+stage--&gt;|&#34;`git commit
+git commit --amend`&#34;|repo
 stage--&gt;|git restore --staged|work
 repo--&gt;|git push|remote
 repo--&gt;|git reset --soft|stage
@@ -38,11 +43,13 @@ remote--&gt;|git clone| work
 ```mermaid
 flowchart LR
 untracked([untracked])
-modified([modified\ntracked])
+modified([&#34;`modified
+tracked`&#34;])
 staged([staged])
 committed([committed])
 delete[Deletion]
-undo[Undo changes to modified files]
+undo[&#34;`Undo changes to
+modified files`&#34;]
 
 untracked &amp; modified--&gt;|git add|staged
 staged--&gt;|git commit|committed
