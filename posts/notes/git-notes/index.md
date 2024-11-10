@@ -195,9 +195,8 @@ git push -u origin local-branch:remote-branch
 
 将本地`local-branch`分支推到远程仓库的`remote-branch`分支上，并设置当前分支的上游分支为远程仓库的`branch_name`分支。
 
-{{&lt; admonition &gt;}}
-先`git branch --set-upstream-to`再`git push`，与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; 先`git branch --set-upstream-to`再`git push`，与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
 
 ### git remote
 
@@ -207,9 +206,8 @@ git remote remove origin  # 移除与远端仓库的关联
 git remote -v  # 查看远程仓库地址
 ```
 
-{{&lt; admonition &gt;}}
-`git remote add origin`只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行`git branch -r`就会发现为空（即使关联的是一个非空仓库），运行命令`git branch --set-upstream-to=origin/main`也会报错（即使远程仓库存在`main`分支）。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; `git remote add origin`只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行`git branch -r`就会发现为空（即使关联的是一个非空仓库），运行命令`git branch --set-upstream-to=origin/main`也会报错（即使远程仓库存在`main`分支）。
 
 ### git fetch
 
@@ -348,9 +346,8 @@ git branch -m new_banch_name  # 重命名当前分支，new_banch_name分支已�
 git branch -M new_banch_name  # 强制重命名当前分支，即使new_banch_name分时已存在
 ```
 
-{{&lt; admonition &gt;}}
-远程分支不能像本地分支一样直接重命名，可先用`git push origin :branh_name`删除远程分支，再将本地分支推到远程仓库。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; 远程分支不能像本地分支一样直接重命名，可先用`git push origin :branh_name`删除远程分支，再将本地分支推到远程仓库。
 
 ```shell
 git branch --set-upstream-to=origin/main  # 设置当前分支的上游分支
@@ -361,9 +358,8 @@ git branch -v  # 查看本地每个分支，包括分支名、分支最新提交
 git branch -vv  # 还会显示每个分支的上游分支名称
 ```
 
-{{&lt; admonition &gt;}}
-`git branch --set-upstream-to=origin/branch_name`要求远程仓库`branch_name`分支必须存在，并且本地有远程仓库`branch_name`分支的信息；也就是说比如通过`git remote add origin`关联了一个包含`branch_name`分支的远程仓库之后，还得使用`git fetch`命令获取`branch_name`分支的信息，这时`git branch --set-upstream-to=origin/branch_name`这条命令才会成功。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; `git branch --set-upstream-to=origin/branch_name`要求远程仓库`branch_name`分支必须存在，并且本地有远程仓库`branch_name`分支的信息；也就是说比如通过`git remote add origin`关联了一个包含`branch_name`分支的远程仓库之后，还得使用`git fetch`命令获取`branch_name`分支的信息，这时`git branch --set-upstream-to=origin/branch_name`这条命令才会成功。
 
 ### git checkout
 
@@ -371,9 +367,8 @@ git branch -vv  # 还会显示每个分支的上游分支名称
 git checkout branch_name  # 切换分支
 ```
 
-{{&lt; admonition &gt;}}
-`git checkout branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; `git checkout branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
 
 ```shell
 git checkout -b branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
@@ -387,9 +382,8 @@ git checkout -b branch_name  # 创建并切换分支，不会设置上游分支�
 git switch branch_name
 ```
 
-{{&lt; admonition &gt;}}
-`git switch branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; `git switch branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
 
 ```shell
 git switch -c branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
@@ -405,9 +399,8 @@ git tag -a v1.0.0  # 带注释的标签，接着Git会提示你输入标签消�
 git tag -d v1.0.0  # 删除本地标签
 ```
 
-{{&lt; admonition &gt;}}
-`git tag v1.0.0`给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; `git tag v1.0.0`给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。
 
 ### git restore
 
@@ -518,11 +511,10 @@ git diff branch_name file_path  # 查看当前分支指定文件与指定分支�
 git diff branch1 branch2 file_path  # 查看指定两个分支最新提交上指定文件的区别
 ```
 
-{{&lt; admonition &gt;}}
-`git diff`和`git diff file_path`是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。
+&gt; [!Note]
+&gt; `git diff`和`git diff file_path`是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。
 
 `git diff branch1 branch2 file_path`是版本库上该文件的比较，`git diff branch_name file_path`是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。
-{{&lt; /admonition &gt;}}
 
 ### git show
 
@@ -665,8 +657,8 @@ git stash  # 保存当前工作进度
 git stash -u/--include-untracked  # 只有未跟踪的文件时，需要加该参数才能保存
 ```
 
-{{&lt; admonition &gt;}}未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要`--include-untracked`参数才能保存，否则会提示没有要保存的文件。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; 未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要`--include-untracked`参数才能保存，否则会提示没有要保存的文件。
 
 ```shell
 git stash save &#34;&lt;message&gt;&#34;  # 保存并附带信息
@@ -742,9 +734,8 @@ test/  # 忽略名为test的文件夹
 
 ### Failed to connect
 
-{{&lt; admonition failure &gt;}}
-Failed to connect to github.com port 443 after 75002 ms: Couldn&#39;t connect to server
-{{&lt; /admonition &gt;}}
+&gt; [!Failure]
+&gt; Failed to connect to github.com port 443 after 75002 ms: Couldn&#39;t connect to server
 
 在使用了VPN时，配置http代理，如下，`7890`是代理的端口号，打开`ClashX`可以查看使用的端口号
 
@@ -755,16 +746,14 @@ git config --global https.proxy 127.0.0.1:7890
 
 ### RPC failed
 
-{{&lt; admonition failure &gt;}}
-RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
-{{&lt; /admonition &gt;}}
+&gt; [!Failure]
+&gt; RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
 
 - `git clone`遇到该问题时，有时再运行一遍`git clone`命令就可以
 - 指定使用`http 1.1`，`git config --global http.version HTTP/1.1`
 
-{{&lt; admonition failure &gt;}}
-RPC failed; curl 18 transfer closed with outstanding read data remaining
-{{&lt; /admonition &gt;}}
+&gt; [!Failure]
+&gt; RPC failed; curl 18 transfer closed with outstanding read data remaining
 
 - 使用`git clone`时，可加参数`--depth 1`
 - 增大缓冲区，`git config --global http.postBuffer 536870912`

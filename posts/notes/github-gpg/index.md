@@ -21,9 +21,8 @@
 brew install gpg
 ```
 
-{{&lt; admonition &gt;}}
-下述步骤基于`gpg (GnuPG) 2.4.5;`
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; 下述步骤基于`gpg (GnuPG) 2.4.5;`
 
 ### 生成GPG密钥对
 
@@ -50,9 +49,8 @@ gpg --armor --export &lt;私钥id&gt;
 
 再运行该命令即可看到以`-----BEGIN PGP PUBLIC KEY BLOCK-----`开头、以`-----END PGP PUBLIC KEY BLOCK-----`结尾的一段内容。
 
-{{&lt; admonition &gt;}}
-要求你输入电子邮件地址时，请确保输入 GitHub 帐户的经过验证的电子邮件地址。
-{{&lt; /admonition &gt;}}
+&gt; [!Note]
+&gt; 要求你输入电子邮件地址时，请确保输入 GitHub 帐户的经过验证的电子邮件地址。
 
 ### 检查现有GPG密钥
 
@@ -100,13 +98,20 @@ gpg --delete-keys &lt;公钥id&gt;  # 删除公钥
 
 先删除了私钥，才能删除公钥
 
+### 修改GPG密码
+
+```shell
+gpg --edit-key &lt;私钥id&gt;
+```
+
+执行上述命令进入GPG命令行。在GPG命令行执行`passwd`命令可修改密码。
+
 ## 报错
 
-{{&lt; admonition failure &gt;}}
-error: gpg failed to sign the data:
-
-gpg: signing failed: Inappropriate ioctl for device
-{{&lt; /admonition &gt;}}
+&gt; [!Failure]
+&gt; error: gpg failed to sign the data:
+&gt;
+&gt; gpg: signing failed: Inappropriate ioctl for device
 
 直接在命令行或在终端配置文件(如`.zshrc`)中设置变量`GPG_TTY`
 

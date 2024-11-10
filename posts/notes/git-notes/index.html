@@ -518,13 +518,8 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git push -u origin local-branch:remote-branch</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将本地<code>local-branch</code>分支推到远程仓库的<code>remote-branch</code>分支上，并设置当前分支的上游分支为远程仓库的<code>branch_name</code>分支。</p>
-<div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">先<code>git branch --set-upstream-to</code>再<code>git push</code>，与<code>git push -u</code>某些情况下等效。但是<code>git branch --set-upstream-to=origin/branch_name</code>要求<code>origin/branch_name</code>是已存在的分支。而<code>git push -u</code>对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。</div>
-  </div>
-</div>
-<h3 id="git-remote" class="heading-element"><span>git remote</span>
+<div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p>先<code>git branch --set-upstream-to</code>再<code>git push</code>，与<code>git push -u</code>某些情况下等效。但是<code>git branch --set-upstream-to=origin/branch_name</code>要求<code>origin/branch_name</code>是已存在的分支。而<code>git push -u</code>对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。</p>
+</div><h3 id="git-remote" class="heading-element"><span>git remote</span>
   <a href="#git-remote" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -539,13 +534,8 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </span></span><span class="line"><span class="cl">git remote remove origin  <span class="c1"># 移除与远端仓库的关联</span>
 </span></span><span class="line"><span class="cl">git remote -v  <span class="c1"># 查看远程仓库地址</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><code>git remote add origin</code>只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行<code>git branch -r</code>就会发现为空（即使关联的是一个非空仓库），运行命令<code>git branch --set-upstream-to=origin/main</code>也会报错（即使远程仓库存在<code>main</code>分支）。</div>
-  </div>
-</div>
-<h3 id="git-fetch" class="heading-element"><span>git fetch</span>
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git remote add origin</code>只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行<code>git branch -r</code>就会发现为空（即使关联的是一个非空仓库），运行命令<code>git branch --set-upstream-to=origin/main</code>也会报错（即使远程仓库存在<code>main</code>分支）。</p>
+</div><h3 id="git-fetch" class="heading-element"><span>git fetch</span>
   <a href="#git-fetch" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -769,13 +759,8 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git branch -m new_banch_name  <span class="c1"># 重命名当前分支，new_banch_name分支已存在则报错</span>
 </span></span><span class="line"><span class="cl">git branch -M new_banch_name  <span class="c1"># 强制重命名当前分支，即使new_banch_name分时已存在</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">远程分支不能像本地分支一样直接重命名，可先用<code>git push origin :branh_name</code>删除远程分支，再将本地分支推到远程仓库。</div>
-  </div>
-</div>
-<div class="highlight"><div class="chroma">
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p>远程分支不能像本地分支一样直接重命名，可先用<code>git push origin :branh_name</code>删除远程分支，再将本地分支推到远程仓库。</p>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -792,13 +777,8 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git branch -v  <span class="c1"># 查看本地每个分支，包括分支名、分支最新提交的commit-id和commit-message</span>
 </span></span><span class="line"><span class="cl">git branch -vv  <span class="c1"># 还会显示每个分支的上游分支名称</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><code>git branch --set-upstream-to=origin/branch_name</code>要求远程仓库<code>branch_name</code>分支必须存在，并且本地有远程仓库<code>branch_name</code>分支的信息；也就是说比如通过<code>git remote add origin</code>关联了一个包含<code>branch_name</code>分支的远程仓库之后，还得使用<code>git fetch</code>命令获取<code>branch_name</code>分支的信息，这时<code>git branch --set-upstream-to=origin/branch_name</code>这条命令才会成功。</div>
-  </div>
-</div>
-<h3 id="git-checkout" class="heading-element"><span>git checkout</span>
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git branch --set-upstream-to=origin/branch_name</code>要求远程仓库<code>branch_name</code>分支必须存在，并且本地有远程仓库<code>branch_name</code>分支的信息；也就是说比如通过<code>git remote add origin</code>关联了一个包含<code>branch_name</code>分支的远程仓库之后，还得使用<code>git fetch</code>命令获取<code>branch_name</code>分支的信息，这时<code>git branch --set-upstream-to=origin/branch_name</code>这条命令才会成功。</p>
+</div><h3 id="git-checkout" class="heading-element"><span>git checkout</span>
   <a href="#git-checkout" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -809,13 +789,8 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git checkout branch_name  <span class="c1"># 切换分支</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><code>git checkout branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
-  </div>
-</div>
-<div class="highlight"><div class="chroma">
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git checkout branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</p>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -834,13 +809,8 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git switch branch_name</span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><code>git switch branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</div>
-  </div>
-</div>
-<div class="highlight"><div class="chroma">
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git switch branch_name</code>如果本地分支<code>branch_name</code>不存在，但远程仓库分支<code>branch_name</code>存在，则会自动创建本地分支<code>branch_name</code>并设置上游分支；但如果远程仓库分支<code>branch_name</code>也不存在，那么该命令就会报错。</p>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -866,13 +836,8 @@ commit id: "C6"</template><div class="highlight"><div class="chroma">
 </span></span><span class="line"><span class="cl">git tag -a v1.0.0  <span class="c1"># 带注释的标签，接着Git会提示你输入标签消息</span>
 </span></span><span class="line"><span class="cl">git tag -d v1.0.0  <span class="c1"># 删除本地标签</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><code>git tag v1.0.0</code>给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。</div>
-  </div>
-</div>
-<h3 id="git-restore" class="heading-element"><span>git restore</span>
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git tag v1.0.0</code>给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。</p>
+</div><h3 id="git-restore" class="heading-element"><span>git restore</span>
   <a href="#git-restore" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
@@ -1028,14 +993,8 @@ commit id: "C2-1"</template><p><code>git revert</code>过程中可能会遇到�
 </span></span><span class="line"><span class="cl">git diff branch_name file_path  <span class="c1"># 查看当前分支指定文件与指定分支的区别</span>
 </span></span><span class="line"><span class="cl">git diff branch1 branch2 file_path  <span class="c1"># 查看指定两个分支最新提交上指定文件的区别</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p><code>git diff</code>和<code>git diff file_path</code>是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。</p>
-<p><code>git diff branch1 branch2 file_path</code>是版本库上该文件的比较，<code>git diff branch_name file_path</code>是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。</p>
-</div>
-  </div>
-</div>
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><code>git diff</code>和<code>git diff file_path</code>是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。</p>
+</div><p><code>git diff branch1 branch2 file_path</code>是版本库上该文件的比较，<code>git diff branch_name file_path</code>是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。</p>
 <h3 id="git-show" class="heading-element"><span>git show</span>
   <a href="#git-show" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -1250,13 +1209,8 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git stash  <span class="c1"># 保存当前工作进度</span>
 </span></span><span class="line"><span class="cl">git stash -u/--include-untracked  <span class="c1"># 只有未跟踪的文件时，需要加该参数才能保存</span></span></span></code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要<code>--include-untracked</code>参数才能保存，否则会提示没有要保存的文件。</div>
-  </div>
-</div>
-<div class="highlight"><div class="chroma">
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p>未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要<code>--include-untracked</code>参数才能保存，否则会提示没有要保存的文件。</p>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1380,13 +1334,13 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
   <a href="#failed-to-connect" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><div class="details admonition failure open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+</h3><div class="details admonition failure open disabled">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败</div>
   <div class="details-content">
-    <div class="admonition-content">Failed to connect to github.com port 443 after 75002 ms: Couldn&rsquo;t connect to server</div>
-  </div>
+    <div class="admonition-content"><p>Failed to connect to github.com port 443 after 75002 ms: Couldn&rsquo;t connect to server</p>
 </div>
-<p>在使用了VPN时，配置http代理，如下，<code>7890</code>是代理的端口号，打开<code>ClashX</code>可以查看使用的端口号</p>
+  </div>
+</div><p>在使用了VPN时，配置http代理，如下，<code>7890</code>是代理的端口号，打开<code>ClashX</code>可以查看使用的端口号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1400,23 +1354,23 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
   <a href="#rpc-failed" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><div class="details admonition failure open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+</h3><div class="details admonition failure open disabled">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败</div>
   <div class="details-content">
-    <div class="admonition-content">RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)</div>
-  </div>
+    <div class="admonition-content"><p>RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)</p>
 </div>
-<ul>
+  </div>
+</div><ul>
 <li><code>git clone</code>遇到该问题时，有时再运行一遍<code>git clone</code>命令就可以</li>
 <li>指定使用<code>http 1.1</code>，<code>git config --global http.version HTTP/1.1</code></li>
 </ul>
-<div class="details admonition failure open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+<div class="details admonition failure open disabled">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-xmark" aria-hidden="true"></i>失败</div>
   <div class="details-content">
-    <div class="admonition-content">RPC failed; curl 18 transfer closed with outstanding read data remaining</div>
-  </div>
+    <div class="admonition-content"><p>RPC failed; curl 18 transfer closed with outstanding read data remaining</p>
 </div>
-<ul>
+  </div>
+</div><ul>
 <li>使用<code>git clone</code>时，可加参数<code>--depth 1</code></li>
 <li>增大缓冲区，<code>git config --global http.postBuffer 536870912</code></li>
 <li>多尝试几遍</li>

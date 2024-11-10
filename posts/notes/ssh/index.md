@@ -127,9 +127,8 @@ IdentityFile ~/.ssh/id_rsa_myserver
 
 ### 报错
 
-{{&lt; admonition failure &gt;}}
-ssh: connect to host github.com port 22: Operation timed out
-{{&lt; /admonition &gt;}}
+&gt; [!Failure]
+&gt; ssh: connect to host github.com port 22: Operation timed out
 
 在`SSH`的配置文件`~/.ssh/config`添加如下配置
 

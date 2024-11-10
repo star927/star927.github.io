@@ -16,6 +16,14 @@
 
 `hugo.toml`文件和`config/_default`文件夹至少存在一个，二者都存在则依据优先级。
 
+&gt; [!Tip]
+&gt;
+&gt; `hugo server`命令的运行结果中，会列出当前博客所使用的配置文件，如下
+&gt;
+&gt; ```
+&gt; Watching for config changes in /Users/star/Github/Blog/config/_default, /Users/star/Github/Blog/themes/FixIt/hugo.toml
+&gt; ```
+
 ## 示例
 
 比如当前配置如下：
