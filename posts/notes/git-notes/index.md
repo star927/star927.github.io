@@ -83,7 +83,7 @@ modified &amp; staged &amp; committed --&gt;|git rm --cached|untracked
 
 - `HEAD` 代表了当前工作目录所指向的当前分支的最新提交。`HEAD^`表示上一个版本，`HEAD^^`表示上上一个版本，`^`个数不限，几个`^`表示落后`HEAD`几个版本；`HEAD~5`表示落后`HEAD`5个版本。
 
-- `origin`是一个远程仓库的默认名称，这个名称并不是强制的，它代表了远程仓库的地址。`origin main`和`origin/main`含义相同，表示远程仓库的`main`分支。再比如 `origin/HEAD`表示远程仓库默认分支的最新提交，`origin v1.0.0`表示远程仓库tag为`v1.0.0`的那次提交。
+- `origin`是一个远程仓库的默认名称，这个名称并不是强制的，它代表了远程仓库的地址。`origin main`和`origin/main`含义相同，表示远程仓库的`main`分支。再比如 `origin/HEAD`表示远程仓库默认分支的最新提交，`origin v1.0.0`表示远程仓库tag为`v1.0.0`的那次提交。下文中远程仓库的名称统一用`origin`代替。
 - 上游分支：本地分支一般会与远程仓库的某个分支相关联，关联的这个远程分支就称作是这个本地分支的上游分支。
 
 ### git config
@@ -106,8 +106,13 @@ git config --global user.email &lt;email&gt;  # 设置邮箱
 git config --unset config_name  # 删除某个配置
 git config --global -e/--edit  # 编辑配置文件，该命令会显示配置文件的路径
 git config --global init.defaultBranch main # 修改默认分支
-git config pull.rebase false  # 在一个git仓库中，不带--system和--global参数，配置的就是仓库级别
+git config --global log.date local  # 配置git log以本地时区显示时间
+git config pull.rebase false
 ```
+
+&gt; [!Note]
+&gt;
+&gt; 使用`git config`设置或者删除某个配置时，不带`--system`和`--global`参数，配置的就是仓库级别
 
 ### git init
 
@@ -201,7 +206,8 @@ git push -u origin local-branch:remote-branch
 ### git remote
 
 ```shell
-git remote add origin git@github.com:user_name/repository_name.git  # 关联远端仓库
+git remote add origin &lt;remote_repository_url&gt;  # 关联远端仓库
+git remote set-url origin &lt;remote_repository_url&gt;  # 更改远程仓库的链接
 git remote remove origin  # 移除与远端仓库的关联
 git remote -v  # 查看远程仓库地址
 ```
@@ -291,6 +297,7 @@ git pull
 
 ```shell
 git log  # 查看当前分支的log
+git log --date=local  # 以本地时区显示时间，可全局配置git config --global log.date local
 git log origin/main # 查看远程main分支的log
 git log branc_name file_path # 查看指定分支指定文件的log
 git log --pretty=oneline  # 指定输出格式，一行显示一条记录, 完整的commit id
@@ -707,8 +714,9 @@ git submodule update --init --recursive  # 如果克隆仓库时没有克隆子�
 ```shell
 # 依次运行下述两条命令，用于删除指定子模块
 git submodule deinit [-f] submodule/star927  # 在 .git/config 中删除了指定子模块
-git rm submodule/star927  # 在 .gitmodules 中删除了指定子模块
+git rm [-f] submodule/star927  # 在 .gitmodules 中删除了指定子模块
 # 运行完上述两条命令，.git/modules 中依旧保留了该子模块对应的文件夹, 但不影响，该子模块已删除
+# 可以手动删除.git/modules下的submodule/star927文件夹
 ```
 
 ## Git LFS
@@ -756,6 +764,7 @@ git config --global https.proxy 127.0.0.1:7890
 &gt; RPC failed; curl 18 transfer closed with outstanding read data remaining
 
 - 使用`git clone`时，可加参数`--depth 1`
+- 将仓库链接由HTTPS方式改成SSH
 - 增大缓冲区，`git config --global http.postBuffer 536870912`
 - 多尝试几遍
 

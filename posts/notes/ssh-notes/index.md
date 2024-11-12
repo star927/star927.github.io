@@ -17,10 +17,10 @@ ssh -T git@github.com  # 测试 SSH 连接
 `ssh-keygen`命令允许用户创建用于SSH公钥身份验证的密钥对，包括私钥和公钥。私钥应该被安全地保存在本地机器上，而公钥则可以复制到远程服务器上，以便进行无密码的SSH登录。
 
 ```shell
-ssh-keygen -t rsa
+ssh-keygen
 ```
 
-- `-t`：指定生成密钥所用的算法（如rsa、ecdsa、ed25519等），不指定则使用默认算法
+- `-t`：指定生成密钥所用的算法（如rsa、ed25519等），不指定则使用默认算法`ed25519`
 - `-C`：为密钥对添加注释
 - `-b`：指定密钥的位数（长度）
 - `-f`：指定私钥文件的路径，不指定路径默认在`~/.ssh`文件夹下，公钥文件名比私钥文件名多了`.pub`
@@ -113,30 +113,7 @@ IdentityFile ~/.ssh/id_rsa_myserver
 
 ## Github配置SSH
 
-在GitHub任意页的右上角，单击个人资料照片，然后单击`Settings`进入设置。
-
-![githuh-ssh-1](./image/githuh-ssh-1.png)
-
-在`SSH and GPK keys`设置中点击`New SSH key`
-
-![githuh-ssh-2](./image/githuh-ssh-2.png)
-
-`Title`自定义取个名字，`Key type`默认的`Authentication Key`即可，将本地的公钥文件的内容复制到`Key`中，保存。
-
-![githuh-ssh-3](./image/githuh-ssh-3.png)
-
-### 报错
-
-&gt; [!Failure]
-&gt; ssh: connect to host github.com port 22: Operation timed out
-
-在`SSH`的配置文件`~/.ssh/config`添加如下配置
-
-```shell
-Host github.com
-HostName ssh.github.com
-Port 443
-```
+详见：[Github上配置SSH](../github-ssh)
 
 ## Ubuntu上使用SSH服务
 
@@ -165,5 +142,5 @@ systemctl disable ssh  # 禁用开机自启
 ---
 
 > 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/notes/ssh/  
+> URL: https://star927.github.io/posts/notes/ssh-notes/  
 

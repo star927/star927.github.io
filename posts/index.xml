@@ -6,8 +6,16 @@
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Sep 2024 11:23:26 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2024 20:24:20 +0800</lastBuildDate>
     <atom:link href="https://star927.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github上配置SSH</title>
+      <link>https://star927.github.io/posts/notes/github-ssh/</link>
+      <pubDate>Tue, 12 Nov 2024 20:24:20 +0800</pubDate>
+      <guid>https://star927.github.io/posts/notes/github-ssh/</guid>
+      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <description>&lt;p&gt;本文介绍了如何在Github上配置SSH，以及当有多个Github账号时又该如何进行配置。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo博客的配置文件</title>
       <link>https://star927.github.io/posts/blog/hugo-config-file/</link>
@@ -26,9 +34,9 @@
     </item>
     <item>
       <title>SSH Notes</title>
-      <link>https://star927.github.io/posts/notes/ssh/</link>
+      <link>https://star927.github.io/posts/notes/ssh-notes/</link>
       <pubDate>Sat, 21 Sep 2024 15:21:42 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/ssh/</guid>
+      <guid>https://star927.github.io/posts/notes/ssh-notes/</guid>
       <category domain="https://star927.github.io/categories/notes/">Notes</category>
       <description>&lt;p&gt;SSH服务，全称为Secure Shell，是一种网络协议，为用户提供安全的远程访问和文件传输服务。&lt;/p&gt;</description>
     </item>

@@ -11,8 +11,8 @@
   <meta itemprop="name" content="Git Notes">
   <meta itemprop="description" content="Git相关介绍、常用命令总结及使用过程中的遇到的相关问题记录">
   <meta itemprop="datePublished" content="2024-09-05T16:16:20+08:00">
-  <meta itemprop="dateModified" content="2024-09-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="9103">
+  <meta itemprop="dateModified" content="2024-11-12T00:00:00+00:00">
+  <meta itemprop="wordCount" content="9267">
   <meta itemprop="keywords" content="Git"><meta property="og:url" content="https://star927.github.io/posts/notes/git-notes/">
   <meta property="og:site_name" content="Huxley&#39;s Blog">
   <meta property="og:title" content="Git Notes">
@@ -21,7 +21,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-09-05T16:16:20+08:00">
-    <meta property="article:modified_time" content="2024-09-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-12T00:00:00+00:00">
     <meta property="article:tag" content="Git">
 
   <meta name="twitter:card" content="summary">
@@ -30,7 +30,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/git-notes/" title="Git Notes - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/blog/hugo-archetypes/" title="Hugo博客文章模板-Archetypes" /><link rel="next" type="text/html" href="https://star927.github.io/posts/notes/ssh/" title="SSH Notes" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/git-notes/index.md" title="Git Notes - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://star927.github.io/posts/notes/git-notes/" title="Git Notes - Huxley&#39;s Blog" /><link rel="prev" type="text/html" href="https://star927.github.io/posts/blog/hugo-archetypes/" title="Hugo博客文章模板-Archetypes" /><link rel="next" type="text/html" href="https://star927.github.io/posts/notes/ssh-notes/" title="SSH Notes" /><link rel="alternate" type="text/markdown" href="https://star927.github.io/posts/notes/git-notes/index.md" title="Git Notes - Huxley's Blog"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/"
-    },"genre": "posts","keywords": "Git","wordcount":  9103 ,
-    "url": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/","datePublished": "2024-09-05T16:16:20+08:00","dateModified": "2024-09-22T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Git","wordcount":  9267 ,
+    "url": "https:\/\/star927.github.io\/posts\/notes\/git-notes\/","datePublished": "2024-09-05T16:16:20+08:00","dateModified": "2024-11-12T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -119,7 +119,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Git Notes</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-09-22 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-22">2024-09-22</time></span>&nbsp;<span title="9103 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 9200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 19 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+      <div class="post-meta-line"><span class="post-author"><a href="https://star927.github.io/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="/images/avatar.svg" alt="Huxley" data-title="Huxley" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;Huxley</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/notes/" class="post-category" title="分类 - Notes"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Notes</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 16:16:20"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="更新于 2024-11-12 00:00:00"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-11-12">2024-11-12</time></span>&nbsp;<span title="9267 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 9300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 19 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Git Notes"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -339,7 +339,7 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 <p><code>HEAD</code> 代表了当前工作目录所指向的当前分支的最新提交。<code>HEAD^</code>表示上一个版本，<code>HEAD^^</code>表示上上一个版本，<code>^</code>个数不限，几个<code>^</code>表示落后<code>HEAD</code>几个版本；<code>HEAD~5</code>表示落后<code>HEAD</code>5个版本。</p>
 </li>
 <li>
-<p><code>origin</code>是一个远程仓库的默认名称，这个名称并不是强制的，它代表了远程仓库的地址。<code>origin main</code>和<code>origin/main</code>含义相同，表示远程仓库的<code>main</code>分支。再比如 <code>origin/HEAD</code>表示远程仓库默认分支的最新提交，<code>origin v1.0.0</code>表示远程仓库tag为<code>v1.0.0</code>的那次提交。</p>
+<p><code>origin</code>是一个远程仓库的默认名称，这个名称并不是强制的，它代表了远程仓库的地址。<code>origin main</code>和<code>origin/main</code>含义相同，表示远程仓库的<code>main</code>分支。再比如 <code>origin/HEAD</code>表示远程仓库默认分支的最新提交，<code>origin v1.0.0</code>表示远程仓库tag为<code>v1.0.0</code>的那次提交。下文中远程仓库的名称统一用<code>origin</code>代替。</p>
 </li>
 <li>
 <p>上游分支：本地分支一般会与远程仓库的某个分支相关联，关联的这个远程分支就称作是这个本地分支的上游分支。</p>
@@ -373,6 +373,7 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config -l  <span class="c1"># 查看所有配置</span>
@@ -384,8 +385,10 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 </span></span><span class="line"><span class="cl">git config --unset config_name  <span class="c1"># 删除某个配置</span>
 </span></span><span class="line"><span class="cl">git config --global -e/--edit  <span class="c1"># 编辑配置文件，该命令会显示配置文件的路径</span>
 </span></span><span class="line"><span class="cl">git config --global init.defaultBranch main <span class="c1"># 修改默认分支</span>
-</span></span><span class="line"><span class="cl">git config pull.rebase <span class="nb">false</span>  <span class="c1"># 在一个git仓库中，不带--system和--global参数，配置的就是仓库级别</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git config --global log.date <span class="nb">local</span>  <span class="c1"># 配置git log以本地时区显示时间</span>
+</span></span><span class="line"><span class="cl">git config pull.rebase false</span></span></code></pre></td></tr></table>
 </div>
+</div><div class="alert alert-note"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/></svg>注意</p><p><p>使用<code>git config</code>设置或者删除某个配置时，不带<code>--system</code>和<code>--global</code>参数，配置的就是仓库级别</p>
 </div><h3 id="git-init" class="heading-element"><span>git init</span>
   <a href="#git-init" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -528,9 +531,11 @@ modified & staged & committed -->|git rm --cached|untracked</template><ul>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git remote add origin git@github.com:user_name/repository_name.git  <span class="c1"># 关联远端仓库</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git remote add origin &lt;remote_repository_url&gt;  <span class="c1"># 关联远端仓库</span>
+</span></span><span class="line"><span class="cl">git remote set-url origin &lt;remote_repository_url&gt;  <span class="c1"># 更改远程仓库的链接</span>
 </span></span><span class="line"><span class="cl">git remote remove origin  <span class="c1"># 移除与远端仓库的关联</span>
 </span></span><span class="line"><span class="cl">git remote -v  <span class="c1"># 查看远程仓库地址</span></span></span></code></pre></td></tr></table>
 </div>
@@ -674,9 +679,11 @@ checkout main</template><p>如果远程分支和本地分支处于不同的提�
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git log  <span class="c1"># 查看当前分支的log</span>
+</span></span><span class="line"><span class="cl">git log --date<span class="o">=</span><span class="nb">local</span>  <span class="c1"># 以本地时区显示时间，可全局配置git config --global log.date local</span>
 </span></span><span class="line"><span class="cl">git log origin/main <span class="c1"># 查看远程main分支的log</span>
 </span></span><span class="line"><span class="cl">git log branc_name file_path <span class="c1"># 查看指定分支指定文件的log</span>
 </span></span><span class="line"><span class="cl">git log --pretty<span class="o">=</span>oneline  <span class="c1"># 指定输出格式，一行显示一条记录, 完整的commit id</span>
@@ -1288,12 +1295,14 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 依次运行下述两条命令，用于删除指定子模块</span>
 </span></span><span class="line"><span class="cl">git submodule deinit <span class="o">[</span>-f<span class="o">]</span> submodule/star927  <span class="c1"># 在 .git/config 中删除了指定子模块</span>
-</span></span><span class="line"><span class="cl">git rm submodule/star927  <span class="c1"># 在 .gitmodules 中删除了指定子模块</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 运行完上述两条命令，.git/modules 中依旧保留了该子模块对应的文件夹, 但不影响，该子模块已删除</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git rm <span class="o">[</span>-f<span class="o">]</span> submodule/star927  <span class="c1"># 在 .gitmodules 中删除了指定子模块</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行完上述两条命令，.git/modules 中依旧保留了该子模块对应的文件夹, 但不影响，该子模块已删除</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以手动删除.git/modules下的submodule/star927文件夹</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git-lfs" class="heading-element"><span>Git LFS</span>
   <a href="#git-lfs" class="heading-mark">
@@ -1372,6 +1381,7 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
   </div>
 </div><ul>
 <li>使用<code>git clone</code>时，可加参数<code>--depth 1</code></li>
+<li>将仓库链接由HTTPS方式改成SSH</li>
 <li>增大缓冲区，<code>git config --global http.postBuffer 536870912</code></li>
 <li>多尝试几遍</li>
 </ul>
@@ -1387,7 +1397,7 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-09-22 00:00:00">更新于 2024-09-22&nbsp;</span>
+        <span title="更新于 2024-11-12 00:00:00">更新于 2024-11-12&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
@@ -1406,7 +1416,7 @@ commit id: "C7-1"</template><p><code>git cherry-pick</code>过程中可能会遇
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a><a href="/posts/notes/ssh/" class="post-nav-item" rel="next" title="SSH Notes">SSH Notes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/blog/hugo-archetypes/" class="post-nav-item" rel="prev" title="Hugo博客文章模板-Archetypes"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Hugo博客文章模板-Archetypes</a><a href="/posts/notes/ssh-notes/" class="post-nav-item" rel="next" title="SSH Notes">SSH Notes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
