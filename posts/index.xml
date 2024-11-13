@@ -17,6 +17,14 @@
       <description>&lt;p&gt;本文介绍了如何在Github上配置SSH，以及当有多个Github账号时又该如何进行配置。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Hugo &#43; Github Pages搭建个人博客</title>
+      <link>https://star927.github.io/posts/blog/hugo-blog/</link>
+      <pubDate>Sun, 10 Nov 2024 11:13:08 +0800</pubDate>
+      <guid>https://star927.github.io/posts/blog/hugo-blog/</guid>
+      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <description>&lt;p&gt;使用Hugo搭建个人博客，并部署到Github Pages上。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Hugo博客的配置文件</title>
       <link>https://star927.github.io/posts/blog/hugo-config-file/</link>
       <pubDate>Mon, 23 Sep 2024 11:23:26 +0800</pubDate>

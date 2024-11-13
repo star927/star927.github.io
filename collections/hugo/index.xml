@@ -6,8 +6,16 @@
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Sep 2024 11:23:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2024 11:13:08 +0800</lastBuildDate>
     <atom:link href="https://star927.github.io/collections/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo &#43; Github Pages搭建个人博客</title>
+      <link>https://star927.github.io/posts/blog/hugo-blog/</link>
+      <pubDate>Sun, 10 Nov 2024 11:13:08 +0800</pubDate>
+      <guid>https://star927.github.io/posts/blog/hugo-blog/</guid>
+      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <description>&lt;p&gt;使用Hugo搭建个人博客，并部署到Github Pages上。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo博客的配置文件</title>
       <link>https://star927.github.io/posts/blog/hugo-config-file/</link>
