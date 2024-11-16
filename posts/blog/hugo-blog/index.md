@@ -204,8 +204,6 @@ jobs:
           cname: https://huxinme.top  # 填写自己的自定义域名, 如果没有自定义域名, 删除该项配置
 ```
 
-上述文件的内容修改自[actions-hugo](https://github.com/peaceiris/actions-hugo)
-
 #### 发布网站
 
 `public`和`resources`文件夹都是Hugo生成静态网站时创建的，因此在`.gitignore`文件中可以添加以下内容
@@ -232,6 +230,11 @@ git push -u origin main
 ## 进一步的配置
 
 - [GitHub Pages绑定个人域名](../github-custom-domain/)
+
+## 参考资料
+
+- [将Hugo静态网站部署到Github Pages](https://simumis.com/posts/deploy-to-github/)
+- [actions-hugo](https://github.com/peaceiris/actions-hugo)
 
 
 ---
