@@ -109,6 +109,6 @@ draft: true
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/blog/hugo-archetypes/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/blog/hugo-archetypes/  
 

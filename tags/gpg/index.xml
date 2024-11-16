@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GPG - 标签 - Huxley&#39;s Blog</title>
-    <link>https://star927.github.io/tags/gpg/</link>
+    <link>https://huxinme.top/tags/gpg/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://star927.github.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://huxinme.top/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github使用GPG对Commit进行签名</title>
-      <link>https://star927.github.io/posts/notes/github-gpg/</link>
+      <link>https://huxinme.top/posts/notes/github-gpg/</link>
       <pubDate>Sun, 22 Sep 2024 22:42:18 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/github-gpg/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/github-gpg/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;如何使用GPG对Commit进行签名，并配置Github。&lt;/p&gt;</description>
     </item>
   </channel>

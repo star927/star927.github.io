@@ -135,6 +135,6 @@ git remote set-url origin github-alan:alan/hugo-blog.git
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/notes/github-ssh/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/notes/github-ssh/  
 

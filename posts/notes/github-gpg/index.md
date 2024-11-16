@@ -130,6 +130,6 @@ export GPG_TTY=$(tty)
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/notes/github-gpg/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/notes/github-gpg/  
 

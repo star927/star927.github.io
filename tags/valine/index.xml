@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Valine - 标签 - Huxley&#39;s Blog</title>
-    <link>https://star927.github.io/tags/valine/</link>
+    <link>https://huxinme.top/tags/valine/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://star927.github.io/tags/valine/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://huxinme.top/tags/valine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jekyll博客中添加Valine评论系统</title>
-      <link>https://star927.github.io/posts/blog/jekyll-valine/</link>
+      <link>https://huxinme.top/posts/blog/jekyll-valine/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/jekyll-valine/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/jekyll-valine/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>Jekyll博客中添加Valine评论系统</description>
     </item>
   </channel>

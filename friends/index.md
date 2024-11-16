@@ -12,8 +12,8 @@
 
 ````yaml
 - nickname: Huxley
-  avatar: https://star927.github.io/images/avatar.svg
-  url: https://star927.github.io
+  avatar: https://huxinme.top/images/avatar.svg
+  url: https://huxinme.top
   description: 越自律，越自由
 ````
 
@@ -21,5 +21,5 @@
 ---
 
 > 作者:   
-> URL: https://star927.github.io/friends/  
+> URL: https://huxinme.top/friends/  
 

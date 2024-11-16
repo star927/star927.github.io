@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SSH - 标签 - Huxley&#39;s Blog</title>
-    <link>https://star927.github.io/tags/ssh/</link>
+    <link>https://huxinme.top/tags/ssh/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 12 Nov 2024 20:24:20 +0800</lastBuildDate>
-    <atom:link href="https://star927.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://huxinme.top/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github上配置SSH</title>
-      <link>https://star927.github.io/posts/notes/github-ssh/</link>
+      <link>https://huxinme.top/posts/notes/github-ssh/</link>
       <pubDate>Tue, 12 Nov 2024 20:24:20 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/github-ssh/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/github-ssh/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;本文介绍了如何在Github上配置SSH，以及当有多个Github账号时又该如何进行配置。&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSH Notes</title>
-      <link>https://star927.github.io/posts/notes/ssh-notes/</link>
+      <link>https://huxinme.top/posts/notes/ssh-notes/</link>
       <pubDate>Sat, 21 Sep 2024 15:21:42 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/ssh-notes/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/ssh-notes/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;SSH服务，全称为Secure Shell，是一种网络协议，为用户提供安全的远程访问和文件传输服务。&lt;/p&gt;</description>
     </item>
   </channel>

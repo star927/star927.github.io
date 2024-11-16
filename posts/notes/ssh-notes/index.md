@@ -141,6 +141,6 @@ systemctl disable ssh  # 禁用开机自启
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/notes/ssh-notes/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/notes/ssh-notes/  
 

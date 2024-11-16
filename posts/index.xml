@@ -2,106 +2,106 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>所有文章 - Huxley&#39;s Blog</title>
-    <link>https://star927.github.io/posts/</link>
+    <link>https://huxinme.top/posts/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://star927.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://huxinme.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo &#43; Github Pages搭建个人博客</title>
-      <link>https://star927.github.io/posts/blog/hugo-blog/</link>
+      <link>https://huxinme.top/posts/blog/hugo-blog/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/hugo-blog/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/hugo-blog/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>&lt;p&gt;使用Hugo搭建个人博客，并部署到Github Pages上。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Github上配置SSH</title>
-      <link>https://star927.github.io/posts/notes/github-ssh/</link>
+      <link>https://huxinme.top/posts/notes/github-ssh/</link>
       <pubDate>Tue, 12 Nov 2024 20:24:20 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/github-ssh/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/github-ssh/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;本文介绍了如何在Github上配置SSH，以及当有多个Github账号时又该如何进行配置。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo博客的配置文件</title>
-      <link>https://star927.github.io/posts/blog/hugo-config-file/</link>
+      <link>https://huxinme.top/posts/blog/hugo-config-file/</link>
       <pubDate>Mon, 23 Sep 2024 11:23:26 +0800</pubDate>
-      <guid>https://star927.github.io/posts/blog/hugo-config-file/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/hugo-config-file/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt;博客的配置文件介绍&lt;/p&gt;</description>
     </item>
     <item>
       <title>Github使用GPG对Commit进行签名</title>
-      <link>https://star927.github.io/posts/notes/github-gpg/</link>
+      <link>https://huxinme.top/posts/notes/github-gpg/</link>
       <pubDate>Sun, 22 Sep 2024 22:42:18 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/github-gpg/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/github-gpg/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;如何使用GPG对Commit进行签名，并配置Github。&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSH Notes</title>
-      <link>https://star927.github.io/posts/notes/ssh-notes/</link>
+      <link>https://huxinme.top/posts/notes/ssh-notes/</link>
       <pubDate>Sat, 21 Sep 2024 15:21:42 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/ssh-notes/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/ssh-notes/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;SSH服务，全称为Secure Shell，是一种网络协议，为用户提供安全的远程访问和文件传输服务。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git Notes</title>
-      <link>https://star927.github.io/posts/notes/git-notes/</link>
+      <link>https://huxinme.top/posts/notes/git-notes/</link>
       <pubDate>Thu, 05 Sep 2024 16:16:20 +0800</pubDate>
-      <guid>https://star927.github.io/posts/notes/git-notes/</guid>
-      <category domain="https://star927.github.io/categories/notes/">Notes</category>
+      <guid>https://huxinme.top/posts/notes/git-notes/</guid>
+      <category domain="https://huxinme.top/categories/notes/">Notes</category>
       <description>&lt;p&gt;&lt;code&gt;Git&lt;/code&gt;相关介绍、常用命令总结及使用过程中的遇到的相关问题记录&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo博客文章模板-Archetypes</title>
-      <link>https://star927.github.io/posts/blog/hugo-archetypes/</link>
+      <link>https://huxinme.top/posts/blog/hugo-archetypes/</link>
       <pubDate>Wed, 04 Sep 2024 14:33:53 +0800</pubDate>
-      <guid>https://star927.github.io/posts/blog/hugo-archetypes/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/hugo-archetypes/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>&lt;p&gt;用&lt;code&gt;hugo new content&lt;/code&gt;命令可以创建一篇文章，&lt;a href=&#34;https://gohugo.io/content-management/archetypes/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Archetypes&lt;/a&gt;就是新建文章的模板。&lt;/p&gt;</description>
     </item>
     <item>
       <title>GitHub Pages绑定个人域名</title>
-      <link>https://star927.github.io/posts/blog/github-custom-domain/</link>
+      <link>https://huxinme.top/posts/blog/github-custom-domain/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/github-custom-domain/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/github-custom-domain/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>GitHub Pages绑定个人域名</description>
     </item>
     <item>
       <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
-      <link>https://star927.github.io/posts/blog/jsdelivr-image-hosting/</link>
+      <link>https://huxinme.top/posts/blog/jsdelivr-image-hosting/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/jsdelivr-image-hosting/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/jsdelivr-image-hosting/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>GitHub+jsDelivr+PicGo搭建免费图床</description>
     </item>
     <item>
       <title>Jekyll博客中基于LeanCloud统计文章阅读量</title>
-      <link>https://star927.github.io/posts/blog/jekyli-leancloud/</link>
+      <link>https://huxinme.top/posts/blog/jekyli-leancloud/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/jekyli-leancloud/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/jekyli-leancloud/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>Jekyll博客中基于LeanCloud统计文章阅读量</description>
     </item>
     <item>
       <title>Jekyll博客中添加Gitalk评论系统</title>
-      <link>https://star927.github.io/posts/blog/jekyll-gitalk/</link>
+      <link>https://huxinme.top/posts/blog/jekyll-gitalk/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/jekyll-gitalk/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/jekyll-gitalk/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>Jekyll博客中添加Gitalk评论系统</description>
     </item>
     <item>
       <title>Jekyll博客中添加Valine评论系统</title>
-      <link>https://star927.github.io/posts/blog/jekyll-valine/</link>
+      <link>https://huxinme.top/posts/blog/jekyll-valine/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://star927.github.io/posts/blog/jekyll-valine/</guid>
-      <category domain="https://star927.github.io/categories/blog/">Blog</category>
+      <guid>https://huxinme.top/posts/blog/jekyll-valine/</guid>
+      <category domain="https://huxinme.top/categories/blog/">Blog</category>
       <description>Jekyll博客中添加Valine评论系统</description>
     </item>
   </channel>

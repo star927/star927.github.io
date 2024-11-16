@@ -16,11 +16,11 @@ Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk�
 ![github-oauth-app](./images/github-oauth-app.png)
 
 - Application name: 应用的名字，自定义
-- Homepage URL: 填写自己博客的URL，如&lt;https://star927.github.io/&gt;
+- Homepage URL: 填写自己博客的URL，如&lt;https://star927.github.io&gt;
 - Application description: 应用描述，选填项
 - Authorization callback URL: 与Homepage URL一样即可
 
-如果Github Pages已经绑定了个人域名，则`Homepage URL`和`Authorization callback URL`需要填写自己的域名，如&lt;https://hxhuxin.top/&gt;
+如果Github Pages已经绑定了个人域名，则`Homepage URL`和`Authorization callback URL`需要填写自己的域名，如&lt;https://huxinme.top&gt;
 
 ## 在Jekyll中配置Gitalk
 
@@ -91,7 +91,7 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 正确完成上述步骤后，在评论区可看到以下内容，点击`使用Github登录`即可。
 
-&gt; 必须将上述代码的修改提交到Github上，通过&lt;https://your-user-name.github.io/&gt;或者自己已绑定的域名访问自己的博客，再点击`使用Github登录`，而不是在本地服务器&lt;http://127.0.0.1:4000/&gt;点击`使用Github登录`。
+&gt; 必须将上述代码的修改提交到Github上，通过&lt;https://your-user-name.github.io&gt;或者自己已绑定的域名访问自己的博客，再点击`使用Github登录`，而不是在本地服务器&lt;http://127.0.0.1:4000/&gt;点击`使用Github登录`。
 
 ![gitalk-init](./images/gitalk-init.png)
 
@@ -100,6 +100,6 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/blog/jekyll-gitalk/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/blog/jekyll-gitalk/  
 

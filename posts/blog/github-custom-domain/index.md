@@ -9,7 +9,7 @@
 
 ## 域名解析
 
-以阿里云为例，进入`域名控制台`，解析新购买的域名。添加下面两条记录，记录值填写Github Pages的原始域名`user-name.github.io`，记录类型选择`CNAME`，比如自己的域名是`hxhuxin.top`，那么主机记录`www`对应的网址就是`www.hxhuxin.top`，主机记录`@`对应的网址是`hxhuxin.top`。添加完两条记录后，需等待十几分钟。
+以阿里云为例，进入`域名控制台`，解析新购买的域名。添加下面两条记录，记录值填写Github Pages的原始域名`user-name.github.io`，记录类型选择`CNAME`，比如自己的域名是`huxinme.top`，那么主机记录`www`对应的网址就是`www.huxinme.top`，主机记录`@`对应的网址是`huxinme.top`。添加完两条记录后，需等待十几分钟。
 
 ![aliyun](./images/aliyun.png)
 
@@ -24,6 +24,6 @@
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/blog/github-custom-domain/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/blog/github-custom-domain/  
 

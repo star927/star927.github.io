@@ -777,6 +777,6 @@ git config --global https.proxy 127.0.0.1:7890
 
 ---
 
-> 作者: [Huxley](https://star927.github.io/)  
-> URL: https://star927.github.io/posts/notes/git-notes/  
+> 作者: [Huxley](https://huxinme.top)  
+> URL: https://huxinme.top/posts/notes/git-notes/  
 
