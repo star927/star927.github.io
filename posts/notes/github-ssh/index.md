@@ -7,7 +7,7 @@
 
 &gt; [!Note]
 &gt;
-&gt; 本文在于介绍与Github相关的SSH配置，关于SSH本身，比如SSH密钥的生成、本地SSH相关文件等，详见：[SSH Notes](../ssh)，本文不赘述。
+&gt; 本文在于介绍与Github相关的SSH配置，关于SSH本身，比如SSH密钥的生成、本地SSH相关文件等，详见：[SSH Notes](../ssh-notes)，本文不赘述。
 
 ## Github配置SSH
 

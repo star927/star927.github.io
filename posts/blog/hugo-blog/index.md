@@ -201,6 +201,7 @@ jobs:
           # 可选配置, 每次博客更新后, 本仓库会自动往&lt;username&gt;.github.io仓库提交一次更新后的网站内容
           # 添加该项配置后, &lt;username&gt;.github.io仓库的提交信息就会使用本仓库的提交信息
           commit_message: ${{ github.event.head_commit.message }}
+          cname: https://huxinme.top  # 填写自己的自定义域名, 如果没有自定义域名, 删除该项配置
 ```
 
 上述文件的内容修改自[actions-hugo](https://github.com/peaceiris/actions-hugo)
@@ -227,6 +228,10 @@ git push -u origin main
 ```
 
 提交到Github上后，稍等一会儿，打开`&lt;username&gt;.github.io`就可以看到更新后的网站了。
+
+## 进一步的配置
+
+- [GitHub Pages绑定个人域名](../github-custom-domain/)
 
 
 ---
