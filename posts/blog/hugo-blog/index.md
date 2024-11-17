@@ -234,7 +234,6 @@ git push -u origin main
 ## 参考资料
 
 - [将Hugo静态网站部署到Github Pages](https://simumis.com/posts/deploy-to-github/)
-- [actions-hugo](https://github.com/peaceiris/actions-hugo)
 
 
 ---
