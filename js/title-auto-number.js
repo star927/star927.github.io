@@ -44,7 +44,7 @@ function addPrefixToCatalog() {
     processList(document.querySelector("#TableOfContents").querySelector("ul"));
 }
 
-if (document.querySelector(".page.single")) {
+if (document.querySelector("article.page.single:not(.friends)")) {
     addPrefixToTitle();
     addPrefixToCatalog();
 }
