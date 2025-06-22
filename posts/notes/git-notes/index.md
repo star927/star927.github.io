@@ -71,7 +71,7 @@ modified & staged & committed -->|git rm --cached|untracked
 ## Git命令
 
 | [git add](#git-add) | [git branch](#git-branch) | [git checkout](#git-checkout) | [git cherry-pick](#git-cherry-pick) | [git clean](#git-clean) | [git clone](#git-clone) |
-| ------------------------- | ------------------------- | ----------------------------------- | --------------------------- | ----------------------- | ------------------------- |
+| :------------------------ | :------------------------ | :---------------------------------- | :-------------------------- | :---------------------- | :------------------------ |
 | [git commit](#git-commit) | [git config](#git-config) | [git diff](#git-diff) | [git fetch](#git-fetch) | [git init](#git-init) | [git log](#git-log) |
 | [git merge](#git-merge) | [git mv](#git-mv)               | [git pull](#git-pull)         | [git push](#git-push)               | [git rebase](#git-rebase) | [git reflog](#git-reflog) |
 | [git remote](#git-remote) | [git reset](#git-reset)         | [git restore](#git-restore)   | [git revert](#git-revert)           | [git rm](#git-rm)         | [git show](#git-show) |
