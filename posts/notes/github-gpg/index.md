@@ -3,7 +3,7 @@
 
 如何使用GPG对Commit进行签名，并配置Github。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 概述
 
@@ -21,8 +21,8 @@
 brew install gpg
 ```
 
-&gt; [!Note]
-&gt; 下述步骤基于`gpg (GnuPG) 2.4.5;`
+> [!Note]
+> 下述步骤基于`gpg (GnuPG) 2.4.5;`
 
 ### 生成GPG密钥对
 
@@ -37,20 +37,20 @@ gpg --full-generate-key
 ---------
 sec   ed25519/39395E89396199AD 2024-09-22 [SC]
       D0A0C14574AD709997634CE439395E89396199AD
-uid                   [ 绝对 ] Huxley &lt;1469025384@example.com&gt;
+uid                   [ 绝对 ] Huxley <1469025384@example.com>
 ssb   cv25519/1823F843E3B49C5F 2024-09-22 [E]
 ```
 
 其中`39395E89396199AD`即为私钥，`1823F843E3B49C5F`即为公钥。
 
 ```shell
-gpg --armor --export &lt;私钥id&gt;
+gpg --armor --export <私钥id>
 ```
 
 再运行该命令即可看到以`-----BEGIN PGP PUBLIC KEY BLOCK-----`开头、以`-----END PGP PUBLIC KEY BLOCK-----`结尾的一段内容。
 
-&gt; [!Note]
-&gt; 要求你输入电子邮件地址时，请确保输入 GitHub 帐户的经过验证的电子邮件地址。
+> [!Note]
+> 要求你输入电子邮件地址时，请确保输入 GitHub 帐户的经过验证的电子邮件地址。
 
 ### 检查现有GPG密钥
 
@@ -70,13 +70,13 @@ gpg --list-secret-keys --keyid-format=long
 
 ![github-gpg-2](./image/github-gpg-2.png)
 
-`Title`自定义取个名字，将`gpg --armor --export &lt;私钥id&gt;`的内容复制到`Key`中，保存。
+`Title`自定义取个名字，将`gpg --armor --export <私钥id>`的内容复制到`Key`中，保存。
 
 ### 将签名密钥告知 Git
 
 ```shell
 git config --global --unset gpg.format
-git config --global user.signingkey &lt;私钥id&gt;
+git config --global user.signingkey <私钥id>
 ```
 
 若要将Git配置为默认对所有提交进行签名，请输入以下命令：
@@ -92,8 +92,8 @@ git config --global commit.gpgsign true
 ### 删除GPG密钥对
 
 ```shell
-gpg --delete-secret-keys  &lt;私钥id&gt;  # 删除私钥
-gpg --delete-keys &lt;公钥id&gt;  # 删除公钥
+gpg --delete-secret-keys  <私钥id>  # 删除私钥
+gpg --delete-keys <公钥id>  # 删除公钥
 ```
 
 先删除了私钥，才能删除公钥
@@ -101,17 +101,17 @@ gpg --delete-keys &lt;公钥id&gt;  # 删除公钥
 ### 修改GPG密码
 
 ```shell
-gpg --edit-key &lt;私钥id&gt;
+gpg --edit-key <私钥id>
 ```
 
 执行上述命令进入GPG命令行。在GPG命令行执行`passwd`命令可修改密码。
 
 ## 报错
 
-&gt; [!Failure]
-&gt; error: gpg failed to sign the data:
-&gt;
-&gt; gpg: signing failed: Inappropriate ioctl for device
+> [!Failure]
+> error: gpg failed to sign the data:
+>
+> gpg: signing failed: Inappropriate ioctl for device
 
 直接在命令行或在终端配置文件(如`.zshrc`)中设置变量`GPG_TTY`
 
@@ -119,9 +119,9 @@ gpg --edit-key &lt;私钥id&gt;
 export GPG_TTY=$(tty)
 ```
 
-&gt; [!IMPORTANT]
-&gt;
-&gt; 如果使用了zsh的powerlevel10k主题，在zsh配置文件中`export GPG_TTY=$(tty)`可能会失效，打开终端输出`GPG_TTY`变量可能是`not a tty`。需要改成`export GPG_TTY=$TTY`，详见[not a tty when loading terminal with powerlevel10k #524](https://github.com/romkatv/powerlevel10k/issues/524)
+> [!IMPORTANT]
+>
+> 如果使用了zsh的powerlevel10k主题，在zsh配置文件中`export GPG_TTY=$(tty)`可能会失效，打开终端输出`GPG_TTY`变量可能是`not a tty`。需要改成`export GPG_TTY=$TTY`，详见[not a tty when loading terminal with powerlevel10k #524](https://github.com/romkatv/powerlevel10k/issues/524)
 
 ## 参考
 

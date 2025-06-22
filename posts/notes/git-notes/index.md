@@ -3,7 +3,7 @@
 
 `Git`相关介绍、常用命令总结及使用过程中的遇到的相关问题记录
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## Git相关知识
 
@@ -11,26 +11,26 @@
 
 ```mermaid
 flowchart LR
-work[[&#34;`Workspace
-工作区`&#34;]]
-stage[(&#34;`Stage
-暂存区`&#34;)]
-repo[(&#34;`Repository
-版本库`&#34;)]
-remote[(&#34;`Remote
-远程仓库`&#34;)]
+work[["`Workspace
+工作区`"]]
+stage[("`Stage
+暂存区`")]
+repo[("`Repository
+版本库`")]
+remote[("`Remote
+远程仓库`")]
 
-work--&gt;|git add|stage
-stage--&gt;|&#34;`git commit
-git commit --amend`&#34;|repo
-stage--&gt;|git restore --staged|work
-repo--&gt;|git push|remote
-repo--&gt;|git reset --soft|stage
-repo--&gt;|git reset --mixed|work
-repo--&gt;|git commit --amend|repo
-remote--&gt;|git fetch|repo
-remote--&gt;|git pull| work
-remote--&gt;|git clone| work
+work-->|git add|stage
+stage-->|"`git commit
+git commit --amend`"|repo
+stage-->|git restore --staged|work
+repo-->|git push|remote
+repo-->|git reset --soft|stage
+repo-->|git reset --mixed|work
+repo-->|git commit --amend|repo
+remote-->|git fetch|repo
+remote-->|git pull| work
+remote-->|git clone| work
 ```
 
 - **工作区**：就是在电脑里能看到的目录。
@@ -43,22 +43,22 @@ remote--&gt;|git clone| work
 ```mermaid
 flowchart LR
 untracked([untracked])
-modified([&#34;`modified
-tracked`&#34;])
+modified(["`modified
+tracked`"])
 staged([staged])
 committed([committed])
 delete[Deletion]
-undo[&#34;`Undo changes to
-modified files`&#34;]
+undo["`Undo changes to
+modified files`"]
 
-untracked &amp; modified--&gt;|git add|staged
-staged--&gt;|git commit|committed
-staged--&gt;|git restore --staged|untracked &amp; modified
-modified-.-&gt;|git restore|undo
-untracked-.-&gt;|git clean|delete
-committed-.-&gt;|git rm|delete
-modified &amp; staged-.-&gt;|git rm -f |delete
-modified &amp; staged &amp; committed --&gt;|git rm --cached|untracked
+untracked & modified-->|git add|staged
+staged-->|git commit|committed
+staged-->|git restore --staged|untracked & modified
+modified-.->|git restore|undo
+untracked-.->|git clean|delete
+committed-.->|git rm|delete
+modified & staged-.->|git rm -f |delete
+modified & staged & committed -->|git rm --cached|untracked
 ```
 
 
@@ -101,8 +101,8 @@ git config -l  # 查看所有配置
 git config --local -l # 查看仓库配置
 git config --global -l  # 用户全局配置
 git config --system -l  # 系统配置
-git config --global user.name &lt;name&gt;  # 设置用户名
-git config --global user.email &lt;email&gt;  # 设置邮箱
+git config --global user.name <name>  # 设置用户名
+git config --global user.email <email>  # 设置邮箱
 git config --unset config_name  # 删除某个配置
 git config --global -e/--edit  # 编辑配置文件，该命令会显示配置文件的路径
 git config --global init.defaultBranch main # 修改默认分支
@@ -110,9 +110,9 @@ git config --global log.date local  # 配置git log以本地时区显示时间
 git config pull.rebase false
 ```
 
-&gt; [!Note]
-&gt;
-&gt; 使用`git config`设置或者删除某个配置时，不带`--system`和`--global`参数，配置的就是仓库级别
+> [!Note]
+>
+> 使用`git config`设置或者删除某个配置时，不带`--system`和`--global`参数，配置的就是仓库级别
 
 ### git init
 
@@ -127,8 +127,8 @@ git init -b branch_name  # 初始化，并指定分支名称
 
 ```shell
 git clone url # 克隆某个仓库
-git clone url &lt;local_path&gt;  # 克隆的文件放在指定文件夹下
-git clone --branch &lt;branch_name/tag_name&gt; url # 克隆某个分支或标签
+git clone url <local_path>  # 克隆的文件放在指定文件夹下
+git clone --branch <branch_name/tag_name> url # 克隆某个分支或标签
 ```
 
 ```shell
@@ -159,7 +159,7 @@ git add file1 file2  # 将指定文件/文件夹放入暂存区
 将暂存区中文件提交到版本库
 
 ```shell
-git commit -m &lt;message&gt;  # 提交暂存区中的文件到版本库
+git commit -m <message>  # 提交暂存区中的文件到版本库
 git commit  # 以交互的方式填写提交信息
 git commit --amend  # 修改最近一次的提交信息，如果此时暂存区中有文件，则暂存区中的文件也会被提交到版本库
 # 该命令仅修改最新提交的用户名和邮箱，比如修改了配置中的 user.name 和 user.email 之后可使用该命令
@@ -173,7 +173,7 @@ git commit --amend --reset-author
 ```shell
 git push  # 将当前分支推到上游分支，当前与上游分支的名称一致才可以使用该命令，否则报错提醒名称不匹配
 git push origin branch_name  # 将本地main分支(注意不是当前分支)推到远程仓库指定分支
-git push origin &lt;local-branch&gt;:&lt;remote-branch&gt;  # 将本地的指定分支推送到远程仓库的指定分支
+git push origin <local-branch>:<remote-branch>  # 将本地的指定分支推送到远程仓库的指定分支
 git push -f  # 强制推到远程仓库，比如落后远程仓库时强制推到远程仓库，则会使远程仓库的版本回退
 git push origin :branch_name  # 删除远端分支
 git push origin v1.0.0  # 推送指定标签到远程仓库
@@ -200,20 +200,20 @@ git push -u origin local-branch:remote-branch
 
 将本地`local-branch`分支推到远程仓库的`remote-branch`分支上，并设置当前分支的上游分支为远程仓库的`branch_name`分支。
 
-&gt; [!Note]
-&gt; 先`git branch --set-upstream-to`再`git push`，与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
+> [!Note]
+> 先`git branch --set-upstream-to`再`git push`，与`git push -u`某些情况下等效。但是`git branch --set-upstream-to=origin/branch_name`要求`origin/branch_name`是已存在的分支。而`git push -u`对于空仓库也可以，它会为这个空仓库创建这个分支并将本地相关分支推上去，同时设置上游分支。
 
 ### git remote
 
 ```shell
-git remote add origin &lt;remote_repository_url&gt;  # 关联远端仓库
-git remote set-url origin &lt;remote_repository_url&gt;  # 更改远程仓库的链接
+git remote add origin <remote_repository_url>  # 关联远端仓库
+git remote set-url origin <remote_repository_url>  # 更改远程仓库的链接
 git remote remove origin  # 移除与远端仓库的关联
 git remote -v  # 查看远程仓库地址
 ```
 
-&gt; [!Note]
-&gt; `git remote add origin`只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行`git branch -r`就会发现为空（即使关联的是一个非空仓库），运行命令`git branch --set-upstream-to=origin/main`也会报错（即使远程仓库存在`main`分支）。
+> [!Note]
+> `git remote add origin`只是关联远程仓库地址，没有获取远程仓库分支的信息；此时运行`git branch -r`就会发现为空（即使关联的是一个非空仓库），运行命令`git branch --set-upstream-to=origin/main`也会报错（即使远程仓库存在`main`分支）。
 
 ### git fetch
 
@@ -242,18 +242,18 @@ git pull origin main  # 拉取指定远程仓库的指定分支的代码
 如果当前分支不存在上游分支，需要先设置一下上游分支再`git pull`，或者用`git pull origin main`指定远程仓库名称和远程分支名称。
 
 ```mermaid
-%%{init: {&#39;gitGraph&#39;: {&#39;mainBranchName&#39;: &#39;origin/main&#39;}} }%%
+%%{init: {'gitGraph': {'mainBranchName': 'origin/main'}} }%%
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch main
-commit id: &#34;C3&#34;
+commit id: "C3"
 checkout origin/main
-commit id: &#34;C5&#34;
+commit id: "C5"
 checkout main
-commit id: &#34;C4&#34;
+commit id: "C4"
 checkout origin/main
-commit id: &#34;C6&#34;
+commit id: "C6"
 checkout main
 ```
 
@@ -309,21 +309,21 @@ git log --graph --oneline  # --graph显示分支结构
 
 ```shell
 # 相当于 git log --graph --oneline 的进阶版
-git log --graph --pretty=&#34;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset&#34;
+git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset"
 ```
 
 
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
-commit id: &#34;C4&#34;
+commit id: "C3"
+commit id: "C4"
 checkout main
-commit id: &#34;C5&#34;
-commit id: &#34;C6&#34;
+commit id: "C5"
+commit id: "C6"
 ```
 
 ```shell
@@ -353,8 +353,8 @@ git branch -m new_banch_name  # 重命名当前分支，new_banch_name分支已�
 git branch -M new_banch_name  # 强制重命名当前分支，即使new_banch_name分时已存在
 ```
 
-&gt; [!Note]
-&gt; 远程分支不能像本地分支一样直接重命名，可先用`git push origin :branh_name`删除远程分支，再将本地分支推到远程仓库。
+> [!Note]
+> 远程分支不能像本地分支一样直接重命名，可先用`git push origin :branh_name`删除远程分支，再将本地分支推到远程仓库。
 
 ```shell
 git branch --set-upstream-to=origin/main  # 设置当前分支的上游分支
@@ -365,8 +365,8 @@ git branch -v  # 查看本地每个分支，包括分支名、分支最新提交
 git branch -vv  # 还会显示每个分支的上游分支名称
 ```
 
-&gt; [!Note]
-&gt; `git branch --set-upstream-to=origin/branch_name`要求远程仓库`branch_name`分支必须存在，并且本地有远程仓库`branch_name`分支的信息；也就是说比如通过`git remote add origin`关联了一个包含`branch_name`分支的远程仓库之后，还得使用`git fetch`命令获取`branch_name`分支的信息，这时`git branch --set-upstream-to=origin/branch_name`这条命令才会成功。
+> [!Note]
+> `git branch --set-upstream-to=origin/branch_name`要求远程仓库`branch_name`分支必须存在，并且本地有远程仓库`branch_name`分支的信息；也就是说比如通过`git remote add origin`关联了一个包含`branch_name`分支的远程仓库之后，还得使用`git fetch`命令获取`branch_name`分支的信息，这时`git branch --set-upstream-to=origin/branch_name`这条命令才会成功。
 
 ### git checkout
 
@@ -374,8 +374,8 @@ git branch -vv  # 还会显示每个分支的上游分支名称
 git checkout branch_name  # 切换分支
 ```
 
-&gt; [!Note]
-&gt; `git checkout branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
+> [!Note]
+> `git checkout branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
 
 ```shell
 git checkout -b branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
@@ -389,8 +389,8 @@ git checkout -b branch_name  # 创建并切换分支，不会设置上游分支�
 git switch branch_name
 ```
 
-&gt; [!Note]
-&gt; `git switch branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
+> [!Note]
+> `git switch branch_name`如果本地分支`branch_name`不存在，但远程仓库分支`branch_name`存在，则会自动创建本地分支`branch_name`并设置上游分支；但如果远程仓库分支`branch_name`也不存在，那么该命令就会报错。
 
 ```shell
 git switch -c branch_name  # 创建并切换分支，不会设置上游分支，即使远程仓库存在同名分支
@@ -401,13 +401,13 @@ git switch -c branch_name  # 创建并切换分支，不会设置上游分支，
 ```shell
 git tag  # 查看所有标签
 git tag v1.0.0  # 轻量级标签
-git tag -a v1.0.0 -m &#34;version 1.0.0&#34;  # 带注释的标签
+git tag -a v1.0.0 -m "version 1.0.0"  # 带注释的标签
 git tag -a v1.0.0  # 带注释的标签，接着Git会提示你输入标签消息
 git tag -d v1.0.0  # 删除本地标签
 ```
 
-&gt; [!Note]
-&gt; `git tag v1.0.0`给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。
+> [!Note]
+> `git tag v1.0.0`给当前分支的最新提交添加标签。添加标签时，工作区存在未跟踪的文件、已修改未暂存的文件、暂存区有未提交的文件都没有关系。
 
 ### git restore
 
@@ -483,28 +483,28 @@ git revert C2..C5  # 撤销 C2 到 C5 的更改，左开右闭区间
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
-commit id: &#34;C3&#34;
-commit id: &#34;C4&#34;
-commit id: &#34;C5&#34;
-commit id: &#34;C6&#34;
+commit id: "C1"
+commit id: "C2"
+commit id: "C3"
+commit id: "C4"
+commit id: "C5"
+commit id: "C6"
 ```
 
 如上图，当前分支处于`C6`处，执行`git revert C2^...C5`后，状态如下
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
-commit id: &#34;C3&#34;
-commit id: &#34;C4&#34;
-commit id: &#34;C5&#34;
-commit id: &#34;C6&#34;
-commit id: &#34;C5-1&#34;
-commit id: &#34;C4-1&#34;
-commit id: &#34;C3-1&#34;
-commit id: &#34;C2-1&#34;
+commit id: "C1"
+commit id: "C2"
+commit id: "C3"
+commit id: "C4"
+commit id: "C5"
+commit id: "C6"
+commit id: "C5-1"
+commit id: "C4-1"
+commit id: "C3-1"
+commit id: "C2-1"
 ```
 
 `git revert`过程中可能会遇到冲突，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git revert --continue`就可以；或者`git revert --abort`放弃`git revert`操作。
@@ -518,8 +518,8 @@ git diff branch_name file_path  # 查看当前分支指定文件与指定分支�
 git diff branch1 branch2 file_path  # 查看指定两个分支最新提交上指定文件的区别
 ```
 
-&gt; [!Note]
-&gt; `git diff`和`git diff file_path`是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。
+> [!Note]
+> `git diff`和`git diff file_path`是工作区中的文件与暂存区或版本库的比较，不包括暂存区与版本库的比较。
 
 `git diff branch1 branch2 file_path`是版本库上该文件的比较，`git diff branch_name file_path`是当前分支上的该文件(在版本库、工作区或暂存区都可以)与指定分支版本库之间的比较。
 
@@ -534,18 +534,18 @@ git show [branch_name origin/branch_name HEAD^ commit_id tag_name]
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
-commit id: &#34;C4&#34;
+commit id: "C3"
+commit id: "C4"
 checkout main
-commit id: &#34;C5&#34;
-commit id: &#34;C6&#34;
-merge dev id: &#34;C7&#34;
-commit id: &#34;C8&#34;
+commit id: "C5"
+commit id: "C6"
+merge dev id: "C7"
+commit id: "C8"
 checkout dev
-commit id: &#34;C9&#34;
+commit id: "C9"
 ```
 
 ```shell
@@ -560,18 +560,18 @@ git merge branch1 branch2  # 将branch1和branch2分支的更改合并到当前�
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
+commit id: "C3"
 checkout main
-commit id: &#34;C5&#34;
+commit id: "C5"
 checkout dev
-commit id: &#34;C4&#34;
+commit id: "C4"
 checkout main
-commit id: &#34;C6&#34;
-commit id: &#34;C3-1&#34;
-commit id: &#34;C4-1&#34;
+commit id: "C6"
+commit id: "C3-1"
+commit id: "C4-1"
 ```
 
 ```
@@ -588,18 +588,18 @@ git rebase branch_name
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
+commit id: "C3"
 checkout main
-commit id: &#34;C5&#34;
+commit id: "C5"
 checkout dev
-commit id: &#34;C4&#34;
+commit id: "C4"
 checkout main
-commit id: &#34;C6&#34;
-commit id: &#34;C7&#34;
-commit id: &#34;C8&#34;
+commit id: "C6"
+commit id: "C7"
+commit id: "C8"
 ```
 
 比如当前提交情况如上图，当前处于`dev`分支上
@@ -612,21 +612,21 @@ git cherry-pick C5 C7  # 一个或多个提交的 commit-id
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
+commit id: "C3"
 checkout main
-commit id: &#34;C5&#34;
+commit id: "C5"
 checkout dev
-commit id: &#34;C4&#34;
+commit id: "C4"
 checkout main
-commit id: &#34;C6&#34;
-commit id: &#34;C7&#34;
-commit id: &#34;C8&#34;
+commit id: "C6"
+commit id: "C7"
+commit id: "C8"
 checkout dev
-commit id: &#34;C5-1&#34;
-commit id: &#34;C7-1&#34;
+commit id: "C5-1"
+commit id: "C7-1"
 ```
 
 ```shell
@@ -637,22 +637,22 @@ git cherry-pick C5^..C7  # 某两个提交之间的所有提交都进行 git che
 
 ```mermaid
 gitGraph
-commit id: &#34;C1&#34;
-commit id: &#34;C2&#34;
+commit id: "C1"
+commit id: "C2"
 branch dev
-commit id: &#34;C3&#34;
+commit id: "C3"
 checkout main
-commit id: &#34;C5&#34;
+commit id: "C5"
 checkout dev
-commit id: &#34;C4&#34;
+commit id: "C4"
 checkout main
-commit id: &#34;C6&#34;
-commit id: &#34;C7&#34;
-commit id: &#34;C8&#34;
+commit id: "C6"
+commit id: "C7"
+commit id: "C8"
 checkout dev
-commit id: &#34;C5-1&#34;
-commit id: &#34;C6-1&#34;
-commit id: &#34;C7-1&#34;
+commit id: "C5-1"
+commit id: "C6-1"
+commit id: "C7-1"
 ```
 
 `git cherry-pick`过程中可能会遇到冲突，会提示冲突的文件，手动修改完冲突文件的内容后，再`git add`和`git cherry-pick --continue`就可以；或者`git cherry-pick --abort`放弃`git cherry-pick`操作。
@@ -664,17 +664,17 @@ git stash  # 保存当前工作进度
 git stash -u/--include-untracked  # 只有未跟踪的文件时，需要加该参数才能保存
 ```
 
-&gt; [!Note]
-&gt; 未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要`--include-untracked`参数才能保存，否则会提示没有要保存的文件。
+> [!Note]
+> 未跟踪的文件、已修改未暂存的文件、暂存区中的文件都会保存。但是如果当前只有未跟踪的文件，需要`--include-untracked`参数才能保存，否则会提示没有要保存的文件。
 
 ```shell
-git stash save &#34;&lt;message&gt;&#34;  # 保存并附带信息
+git stash save "<message>"  # 保存并附带信息
 git stash list  # 查看所有stash，每个stash前面都有一个编号
 # 可以使用stash的编号来应用一个特定的stash，这会将更改应用到你的工作目录，但不会从stash列表中删除它
 # 没指定stash编号则应用最新的stash
-git stash apply &lt;stash&gt;
+git stash apply <stash>
 git stash pop  # 应用最新的stash并删除
-git stash drop &lt;stash&gt;  # 删除一个特定的stash
+git stash drop <stash>  # 删除一个特定的stash
 git stash clear  # 删除所有stash
 ```
 
@@ -690,11 +690,11 @@ git submodule add [-b dev] https://github.com/hugo-fixit/FixIt.git [themes/FixIt
 当在git仓库中添加子模块后，仓库根目录下会新增文件`.gitmodules`，该文件记录了每个子模块的信息，示例如下。此外`.git/config`和`.git/modules`也会有相应的改变。
 
 ```ini
-[submodule &#34;themes/FixIt&#34;]
+[submodule "themes/FixIt"]
 	path = themes/FixIt
 	url = https://github.com/hugo-fixit/FixIt.git
 	branch = dev
-[submodule &#34;submodule/star927&#34;]
+[submodule "submodule/star927"]
 	path = submodule/star927
 	url = git@github.com:star927/star927.github.io.git
 ```
@@ -721,7 +721,7 @@ git rm [-f] submodule/star927  # 在 .gitmodules 中删除了指定子模块
 
 ## Git LFS
 
-将大文件从本地提交到Github仓库需要使用`git-lfs`，见官网：&lt;https://git-lfs.github.com&gt;
+将大文件从本地提交到Github仓库需要使用`git-lfs`，见官网：<https://git-lfs.github.com>
 
 ## .gitignore
 
@@ -736,14 +736,14 @@ test/  # 忽略名为test的文件夹
 /test/  # 根目录下名为test的文件
 ```
 
-更多详细内容见官网：&lt;https://git-scm.com/docs/gitignore&gt;
+更多详细内容见官网：<https://git-scm.com/docs/gitignore>
 
 ## 常见报错
 
 ### Failed to connect
 
-&gt; [!Failure]
-&gt; Failed to connect to github.com port 443 after 75002 ms: Couldn&#39;t connect to server
+> [!Failure]
+> Failed to connect to github.com port 443 after 75002 ms: Couldn't connect to server
 
 在使用了VPN时，配置http代理，如下，`7890`是代理的端口号，打开`ClashX`可以查看使用的端口号
 
@@ -754,14 +754,14 @@ git config --global https.proxy 127.0.0.1:7890
 
 ### RPC failed
 
-&gt; [!Failure]
-&gt; RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
+> [!Failure]
+> RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
 
 - `git clone`遇到该问题时，有时再运行一遍`git clone`命令就可以
 - 指定使用`http 1.1`，`git config --global http.version HTTP/1.1`
 
-&gt; [!Failure]
-&gt; RPC failed; curl 18 transfer closed with outstanding read data remaining
+> [!Failure]
+> RPC failed; curl 18 transfer closed with outstanding read data remaining
 
 - 使用`git clone`时，可加参数`--depth 1`
 - 将仓库链接由HTTPS方式改成SSH

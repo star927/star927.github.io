@@ -1,7 +1,7 @@
 # Jekyll博客中添加Gitalk评论系统
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 Gitalk评论系统的效果图如下：
 
@@ -16,11 +16,11 @@ Gitalk每篇文章的评论对应于Github上的一个Issues，配置完Gitalk�
 ![github-oauth-app](./images/github-oauth-app.png)
 
 - Application name: 应用的名字，自定义
-- Homepage URL: 填写自己博客的URL，如&lt;https://star927.github.io&gt;
+- Homepage URL: 填写自己博客的URL，如<https://star927.github.io>
 - Application description: 应用描述，选填项
 - Authorization callback URL: 与Homepage URL一样即可
 
-如果Github Pages已经绑定了个人域名，则`Homepage URL`和`Authorization callback URL`需要填写自己的域名，如&lt;https://huxinme.top&gt;
+如果Github Pages已经绑定了个人域名，则`Homepage URL`和`Authorization callback URL`需要填写自己的域名，如<https://huxinme.top>
 
 ## 在Jekyll中配置Gitalk
 
@@ -54,11 +54,11 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 ### head.html
 
-找到自己博客`&lt;head&gt;`标签所在的文件，如`_includes/head.html`，在`&lt;/head&gt;`标签前添加以下代码。
+找到自己博客`<head>`标签所在的文件，如`_includes/head.html`，在`</head>`标签前添加以下代码。
 
 ```html
-{% raw %}{% if page.layout == &#39;post&#39; and site.gitalk.enable %}{% endraw %}
-  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&#34;&gt;
+{% raw %}{% if page.layout == 'post' and site.gitalk.enable %}{% endraw %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 {% raw %}{% endif %}{% endraw %}
 ```
 
@@ -67,20 +67,20 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 在`_layouts/post.html`文件的适当位置添加以下代码，这样每篇博客最后都会有Gitalk评论区。
 
 ```html
-&lt;div id=&#34;gitalk-container&#34;&gt;&lt;/div&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
+<div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
     const gitalk  = new Gitalk ({
         id: window.location.pathname,
-        clientID: &#39;{% raw %}{{ site.gitalk.clientId }}{% endraw %}&#39;,
-        clientSecret: &#39;{% raw %}{{ site.gitalk.clientSecret }}{% endraw %}&#39;,
-        repo: &#39;{% raw %}{{ site.gitalk.repo }}{% endraw %}&#39;,
-        owner: &#39;{% raw %}{{ site.gitalk.owner }}{% endraw %}&#39;,
-        admin: [&#39;{% raw %}{{ site.gitalk.admin }}{% endraw %}&#39;],
-        distractionFreeMode: &#39;{% raw %}{{ site.gitalk.distractionFreeMode }}{% endraw %}&#39;
+        clientID: '{% raw %}{{ site.gitalk.clientId }}{% endraw %}',
+        clientSecret: '{% raw %}{{ site.gitalk.clientSecret }}{% endraw %}',
+        repo: '{% raw %}{{ site.gitalk.repo }}{% endraw %}',
+        owner: '{% raw %}{{ site.gitalk.owner }}{% endraw %}',
+        admin: ['{% raw %}{{ site.gitalk.admin }}{% endraw %}'],
+        distractionFreeMode: '{% raw %}{{ site.gitalk.distractionFreeMode }}{% endraw %}'
     });
-    gitalk.render(&#39;gitalk-container&#39;);
-&lt;/script&gt; 
+    gitalk.render('gitalk-container');
+</script> 
 ```
 
 上述步骤完成后，在评论区如果出现问题 **Error: Not Found.**（如下图），请仔细检查代码是否有误。
@@ -91,7 +91,7 @@ repo是自己博客对应的仓库的名称，如`star927.github.io`，而不是
 
 正确完成上述步骤后，在评论区可看到以下内容，点击`使用Github登录`即可。
 
-&gt; 必须将上述代码的修改提交到Github上，通过&lt;https://your-user-name.github.io&gt;或者自己已绑定的域名访问自己的博客，再点击`使用Github登录`，而不是在本地服务器&lt;http://127.0.0.1:4000/&gt;点击`使用Github登录`。
+> 必须将上述代码的修改提交到Github上，通过<https://your-user-name.github.io>或者自己已绑定的域名访问自己的博客，再点击`使用Github登录`，而不是在本地服务器<http://127.0.0.1:4000/>点击`使用Github登录`。
 
 ![gitalk-init](./images/gitalk-init.png)
 

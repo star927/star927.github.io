@@ -3,7 +3,7 @@
 
 `Hugo`博客的配置文件介绍
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 配置文件说明
 
@@ -16,84 +16,84 @@
 
 `hugo.toml`文件和`config/_default`文件夹至少存在一个，二者都存在则依据优先级。
 
-&gt; [!Tip]
-&gt;
-&gt; `hugo server`命令的运行结果中，会列出当前博客所使用的配置文件，如下
-&gt;
-&gt; ```
-&gt; Watching for config changes in /Users/star/Github/Blog/config/_default, /Users/star/Github/Blog/themes/FixIt/hugo.toml
-&gt; ```
+> [!Tip]
+>
+> `hugo server`命令的运行结果中，会列出当前博客所使用的配置文件，如下
+>
+> ```
+> Watching for config changes in /Users/star/Github/Blog/config/_default, /Users/star/Github/Blog/themes/FixIt/hugo.toml
+> ```
 
 ## 示例
 
 比如当前配置如下：
 
-```toml {title=&#34;hugo.toml&#34;}
-baseURL = &#34;https://star927.github.io/&#34;
-title = &#34;Huxley&#39;s Blog&#34;
-theme = &#34;FixIt&#34;
+```toml {title="hugo.toml"}
+baseURL = "https://star927.github.io/"
+title = "Huxley's Blog"
+theme = "FixIt"
 
 [menu]
   [[menu.main]]
-    identifier = &#34;categories&#34;
-    name = &#34;分类&#34;
-    url = &#34;/categories/&#34;
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
     weight = 2
     [menu.main.params]
-      icon = &#34;fa-solid fa-folder-open&#34;
+      icon = "fa-solid fa-folder-open"
   [[menu.main]]
-    identifier = &#34;tags&#34;
-    name = &#34;标签&#34;
-    url = &#34;/tags/&#34;
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
     weight = 3
     [menu.main.params]
-      icon = &#34;fa-solid fa-tags&#34;
+      icon = "fa-solid fa-tags"
 
 [params]
   # FixIt theme version
-  version = &#34;0.3.X&#34; # e.g. &#34;0.2.X&#34;, &#34;0.2.15&#34;, &#34;v0.2.15&#34; etc.
-  description = &#34;This is my new Hugo FixIt site&#34;
+  version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
+  description = "This is my new Hugo FixIt site"
   [params.author]
-    name = &#34;Huxley&#34;
-    email = &#34;&#34;
-    link = &#34;https://star927.github.io/&#34;
-    avatar = &#34;/images/avatar.svg&#34;
+    name = "Huxley"
+    email = ""
+    link = "https://star927.github.io/"
+    avatar = "/images/avatar.svg"
 ```
 
 将所有配置都放在`hugo.toml`文件中，该文件就会太长，可删除该文件，并创建`config/_default/hugo.toml`、`config/_default/menu.toml`、`config/_default/params.toml`文件，如下所示：
 
-```toml {title=&#34;config/_default/hugo.toml&#34;}
-baseURL = &#34;https://star927.github.io/&#34;
-title = &#34;Huxley&#39;s Blog&#34;
-theme = &#34;FixIt&#34;
+```toml {title="config/_default/hugo.toml"}
+baseURL = "https://star927.github.io/"
+title = "Huxley's Blog"
+theme = "FixIt"
 ```
 
-```toml {title=&#34;config/_default/menu.toml&#34;}
+```toml {title="config/_default/menu.toml"}
 [[main]]
-identifier = &#34;categories&#34;
-name = &#34;分类&#34;
-url = &#34;/categories/&#34;
+identifier = "categories"
+name = "分类"
+url = "/categories/"
 weight = 2
 [main.params]
-  icon = &#34;fa-solid fa-folder-open&#34;
+  icon = "fa-solid fa-folder-open"
 [[main]]
-identifier = &#34;tags&#34;
-name = &#34;标签&#34;
-url = &#34;/tags/&#34;
+identifier = "tags"
+name = "标签"
+url = "/tags/"
 weight = 3
 [main.params]
-  icon = &#34;fa-solid fa-tags&#34;
+  icon = "fa-solid fa-tags"
 ```
 
-```toml {title=&#34;config/_default/params.toml&#34;}
+```toml {title="config/_default/params.toml"}
 # FixIt theme version
-version = &#34;0.3.X&#34; # e.g. &#34;0.2.X&#34;, &#34;0.2.15&#34;, &#34;v0.2.15&#34; etc.
-description = &#34;This is my new Hugo FixIt site&#34;
+version = "0.3.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
+description = "This is my new Hugo FixIt site"
 [author]
-name = &#34;Huxley&#34;
-email = &#34;&#34;
-link = &#34;https://star927.github.io/&#34;
-avatar = &#34;/images/avatar.svg&#34;
+name = "Huxley"
+email = ""
+link = "https://star927.github.io/"
+avatar = "/images/avatar.svg"
 ```
 
 使用这三个文件与使用上面的`hugo.toml`文件是等效的。

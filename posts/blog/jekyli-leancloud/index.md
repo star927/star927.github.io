@@ -1,11 +1,11 @@
 # Jekyll博客中基于LeanCloud统计文章阅读量
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 配置LeanCloud
 
-- 进入LeanCloud官网&lt;https://www.leancloud.cn/&gt;，注册或登录账号。
+- 进入LeanCloud官网<https://www.leancloud.cn/>，注册或登录账号。
 
 - 创建应用，应用名称可自行设定。
 
@@ -58,74 +58,74 @@ leancloud:
 
 创建`leancloud-analytics.html`文件，放在`_includes`文件夹下，代码如下：
 
-&gt; 代码参考于&lt;https://blog.csdn.net/u013553529/article/details/63357382&gt;
+> 代码参考于<https://blog.csdn.net/u013553529/article/details/63357382>
 
 ```html
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;AV.initialize(&#34;{{site.leancloud.app_id}}&#34;, &#34;{{site.leancloud.app_key}}&#34;);&lt;/script&gt;
-&lt;script&gt;
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("{{site.leancloud.app_id}}", "{{site.leancloud.app_key}}");</script>
+<script>
   function showHitCount(Counter) {
     var query = new AV.Query(Counter);
     var entries = [];
-    var $visitors = $(&#34;.leancloud_visitors&#34;);
+    var $visitors = $(".leancloud_visitors");
 
     $visitors.each(function () {
-      entries.push( $(this).attr(&#34;id&#34;).trim() );
+      entries.push( $(this).attr("id").trim() );
     });
 
-    query.containedIn(&#39;url&#39;, entries);
+    query.containedIn('url', entries);
     query.find()
       .done(function (results) {
-        var COUNT_CONTAINER_REF = &#39;.leancloud-visitors-count&#39;;
+        var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
         if (results.length === 0) {
           $visitors.find(COUNT_CONTAINER_REF).text(0);
           return;
         }
 
-        for (var i = 0; i &lt; results.length; i&#43;&#43;) {
+        for (var i = 0; i < results.length; i++) {
           var item = results[i];
-          var url = item.get(&#39;url&#39;);
-          var hits = item.get(&#39;hits&#39;);
+          var url = item.get('url');
+          var hits = item.get('hits');
           var element = document.getElementById(url);
 
           $(element).find(COUNT_CONTAINER_REF).text(hits);
         }
-        for(var i = 0; i &lt; entries.length; i&#43;&#43;) {
+        for(var i = 0; i < entries.length; i++) {
           var url = entries[i];
           var element = document.getElementById(url);
           var countSpan = $(element).find(COUNT_CONTAINER_REF);
-          if( countSpan.text() == &#39;&#39;) {
+          if( countSpan.text() == '') {
             countSpan.text(0);
           }
         }
       })
       .fail(function (object, error) {
-        console.log(&#34;Error: &#34; &#43; error.code &#43; &#34; &#34; &#43; error.message);
+        console.log("Error: " + error.code + " " + error.message);
       });
   }
 
   function addCount(Counter) {
-    var $visitors = $(&#34;.leancloud_visitors&#34;);
-    var url = $visitors.attr(&#39;id&#39;).trim();
-    var title = $visitors.attr(&#39;data-flag-title&#39;).trim();
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
     var query = new AV.Query(Counter);
 
-    query.equalTo(&#34;url&#34;, url);
+    query.equalTo("url", url);
     query.find({
       success: function(results) {
-        if (results.length &gt; 0) {
+        if (results.length > 0) {
           var counter = results[0];
           counter.fetchWhenSave(true);
-          counter.increment(&#34;hits&#34;);
+          counter.increment("hits");
           counter.save(null, {
             success: function(counter) {
               var $element = $(document.getElementById(url));
-              $element.find(&#39;.leancloud-visitors-count&#39;).text(counter.get(&#39;hits&#39;));
+              $element.find('.leancloud-visitors-count').text(counter.get('hits'));
             },
             error: function(counter, error) {
-              console.log(&#39;Failed to save Visitor num, with error message: &#39; &#43; error.message);
+              console.log('Failed to save Visitor num, with error message: ' + error.message);
             }
           });
         } else {
@@ -136,34 +136,34 @@ leancloud:
           acl.setPublicWriteAccess(true);
           newcounter.setACL(acl);
           /* End Set ACL */
-          newcounter.set(&#34;title&#34;, title);
-          newcounter.set(&#34;url&#34;, url);
-          newcounter.set(&#34;hits&#34;, 1);
+          newcounter.set("title", title);
+          newcounter.set("url", url);
+          newcounter.set("hits", 1);
           newcounter.save(null, {
             success: function(newcounter) {
               var $element = $(document.getElementById(url));
-              $element.find(&#39;.leancloud-visitors-count&#39;).text(newcounter.get(&#39;hits&#39;));
+              $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
             },
             error: function(newcounter, error) {
-              console.log(&#39;Failed to create&#39;);
+              console.log('Failed to create');
             }
           });
         }
       },
       error: function(error) {
-        console.log(&#39;Error:&#39; &#43; error.code &#43; &#34; &#34; &#43; error.message);
+        console.log('Error:' + error.code + " " + error.message);
       }
     });
   }
 
   $(function() {
-    var Counter = AV.Object.extend(&#34;Counter&#34;);
-    if ($(&#39;.leancloud_visitors&#39;).length == 1) {
+    var Counter = AV.Object.extend("Counter");
+    if ($('.leancloud_visitors').length == 1) {
       /* in post.html, so add 1 to hit counts */
       addCount(Counter);
     }
   });
-&lt;/script&gt;
+</script>
 ```
 
 ### default.html
@@ -182,12 +182,12 @@ leancloud:
 
 ```html
 {% raw %}{% if site.leancloud.enable %}{% endraw %}
-  &lt;span&gt;|&lt;/span&gt;
-  &lt;i class=&#34;far fa-eye&#34;&gt;&lt;/i&gt;
-  &lt;span id=&#34;{{ page.url }}&#34; class=&#34;leancloud_visitors&#34; data-flag-title=&#34;{{ page.title }}&#34;&gt;
-    &lt;span class=&#34;leancloud-visitors-count&#34;&gt;&lt;/span&gt;
-    &lt;span class=&#34;post-meta-item-text&#34;&gt;次阅读&lt;/span&gt;
-  &lt;/span&gt;
+  <span>|</span>
+  <i class="far fa-eye"></i>
+  <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+    <span class="leancloud-visitors-count"></span>
+    <span class="post-meta-item-text">次阅读</span>
+  </span>
 {% raw %}{% endif %}{% endraw %}
 ```
 

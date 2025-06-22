@@ -1,7 +1,7 @@
 # GitHub Pages绑定个人域名
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 购买域名
 
@@ -17,7 +17,7 @@
 
 进入自己博客对应的仓库，打开【Settings】-【 Pages】， 在`Custom domain`下填写自己的域名后点击`Save`，`Enforce HTTPS`选项可以勾选上，强制使用`HTTPS`。
 
-&gt; 点击`Save`后可能提示绑定不成功，十几分钟后再试一下即可，域名解析需要等待一定的时间。
+> 点击`Save`后可能提示绑定不成功，十几分钟后再试一下即可，域名解析需要等待一定的时间。
 
 ![github-custom-domain](./images/github-custom-domain.png)
 

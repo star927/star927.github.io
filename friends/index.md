@@ -1,11 +1,11 @@
 # 友情链接
 
 
-&lt;!-- The `friends.yml` file placed in the `yourProject/data/` directory will be loaded automatically here. --&gt;
+<!-- The `friends.yml` file placed in the `yourProject/data/` directory will be loaded automatically here. -->
 
 ---
 
-&lt;!-- You can define additional content below for this page. --&gt;
+<!-- You can define additional content below for this page. -->
 
 
 ## 我的友链信息
@@ -20,6 +20,6 @@
 
 ---
 
-> 作者:   
+> 作者: <no value>  
 > URL: https://huxinme.top/friends/  
 

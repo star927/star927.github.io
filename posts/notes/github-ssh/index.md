@@ -3,11 +3,11 @@
 
 本文介绍了如何在Github上配置SSH，以及当有多个Github账号时又该如何进行配置。
 
-&lt;!--more--&gt;
+<!--more-->
 
-&gt; [!Note]
-&gt;
-&gt; 本文在于介绍与Github相关的SSH配置，关于SSH本身，比如SSH密钥的生成、本地SSH相关文件等，详见：[SSH Notes](../ssh-notes)，本文不赘述。
+> [!Note]
+>
+> 本文在于介绍与Github相关的SSH配置，关于SSH本身，比如SSH密钥的生成、本地SSH相关文件等，详见：[SSH Notes](../ssh-notes)，本文不赘述。
 
 ## Github配置SSH
 
@@ -37,8 +37,8 @@ ssh-keygen
 
 ## 报错
 
-&gt; [!Failure]
-&gt; ssh: connect to host github.com port 22: Operation timed out
+> [!Failure]
+> ssh: connect to host github.com port 22: Operation timed out
 
 在`SSH`的配置文件`~/.ssh/config`添加如下配置
 
@@ -69,7 +69,7 @@ ssh-keygen -f ~/.ssh/id_ed25519_github_bob
 
 在SSH配置文件`~/.ssh/config`中添加以下内容：
 
-```shell {title=&#34;~/.ssh/config&#34;}
+```shell {title="~/.ssh/config"}
 Host github-alan
 HostName github.com
 User git
@@ -83,7 +83,7 @@ IdentityFile ~/.ssh/id_ed25519_github_bob
 
 如果遇到了上面提到的问题`ssh: connect to host github.com port 22: Operation timed out`，可将上述内容修改成下面内容：
 
-```shell {title=&#34;~/.ssh/config&#34;}
+```shell {title="~/.ssh/config"}
 Host github-alan
 HostName ssh.github.com
 User git
