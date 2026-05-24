@@ -20,6 +20,6 @@
 
 ---
 
-> 作者: <no value>  
+> 作者: [Huxley](https://huxinme.top)  
 > URL: https://huxinme.top/friends/  
 
