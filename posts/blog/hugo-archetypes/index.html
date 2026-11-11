@@ -7,27 +7,27 @@
     <title>Hugo博客文章模板-Archetypes - Huxley&#39;s Blog</title><meta name="author" content="Huxley">
 <meta name="description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。
 "><meta name="keywords" content='Blog, Hugo, Archetypes'>
-  <meta itemprop="name" content="Hugo博客文章模板-Archetypes">
-  <meta itemprop="description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
-  <meta itemprop="datePublished" content="2024-09-04T14:33:53+08:00">
-  <meta itemprop="dateModified" content="2024-09-04T14:33:53+08:00">
-  <meta itemprop="wordCount" content="598">
-  <meta itemprop="keywords" content="Blog,Hugo,Archetypes"><meta property="og:url" content="https://huxinme.top/posts/blog/hugo-archetypes/">
-  <meta property="og:site_name" content="Huxley&#39;s Blog">
-  <meta property="og:title" content="Hugo博客文章模板-Archetypes">
-  <meta property="og:description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-09-04T14:33:53+08:00">
-    <meta property="article:modified_time" content="2024-09-04T14:33:53+08:00">
-    <meta property="article:tag" content="Blog">
-    <meta property="article:tag" content="Hugo">
-    <meta property="article:tag" content="Archetypes">
+	<meta itemprop="name" content="Hugo博客文章模板-Archetypes">
+	<meta itemprop="description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
+	<meta itemprop="datePublished" content="2024-09-04T14:33:53+08:00">
+	<meta itemprop="dateModified" content="2024-09-04T14:33:53+08:00">
+	<meta itemprop="wordCount" content="598">
+	<meta itemprop="keywords" content="Blog,Hugo,Archetypes"><meta property="og:url" content="https://huxinme.top/posts/blog/hugo-archetypes/">
+	<meta property="og:site_name" content="Huxley&#39;s Blog">
+	<meta property="og:title" content="Hugo博客文章模板-Archetypes">
+	<meta property="og:description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2024-09-04T14:33:53+08:00">
+		<meta property="article:modified_time" content="2024-09-04T14:33:53+08:00">
+		<meta property="article:tag" content="Blog">
+		<meta property="article:tag" content="Hugo">
+		<meta property="article:tag" content="Archetypes">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hugo博客文章模板-Archetypes">
-  <meta name="twitter:description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Hugo博客文章模板-Archetypes">
+	<meta name="twitter:description" content="用hugo new content命令可以创建一篇文章，Archetypes就是新建文章的模板。">
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -298,18 +298,18 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: {{ replace .TranslationBaseName &#34;-&#34; &#34; &#34; | title }}
-</span></span><span class="line"><span class="cl">subtitle:
-</span></span><span class="line"><span class="cl">date: {{ .Date }}
-</span></span><span class="line"><span class="cl">lastmod:
-</span></span><span class="line"><span class="cl">categories:
-</span></span><span class="line"><span class="cl">tags:
-</span></span><span class="line"><span class="cl">collections:
-</span></span><span class="line"><span class="cl">draft: true
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&lt;!--more--&gt;</span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">replace .TranslationBaseName &#34;-&#34; &#34; &#34; | title }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">subtitle</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">.Date }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">lastmod</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">categories</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">collections</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;!--more--&gt;</span></span></span></code></pre></td></tr></table></div><div class="code-expand-btn" aria-label="展开或折叠代码块" role="button"><i class="fa-solid fa-angles-down" aria-hidden="true"></i></div>
 </div>
 </div></div><hr class="awesome-hr" />
     <h2 id="see-also">相关内容</h2>
@@ -369,7 +369,7 @@
 </nav></div>
       </div>
     </dialog></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.169.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.5"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">
               <a href="https://huxinme.top" target="_blank" rel="external nofollow noopener noreferrer">Huxley</a></span></div><div class="footer-line visitor">
