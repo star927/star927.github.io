@@ -4,11 +4,10 @@
     <title>JsDelivr - 标签 - Huxley&#39;s Blog</title>
     <link>https://huxinme.top/tags/jsdelivr/</link>
     <description>This is my new Hugo FixIt site</description>
-    <generator>Hugo 0.169.0 &amp; FixIt v0.4.5</generator>
-    <language>zh-cn</language>
+    <generator>Hugo 0.169.0 &amp; FixIt v1.0.0-rc.2</generator>
+    <language>zh-CN</language>
     <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://huxinme.top/tags/jsdelivr/index.xml" rel="self" type="application/rss+xml" />
-    <item>
+    <atom:link href="https://huxinme.top/tags/jsdelivr/index.xml" rel="self" type="application/rss+xml" /><item>
       <title>GitHub&#43;jsDelivr&#43;PicGo搭建免费图床</title>
       <link>https://huxinme.top/posts/blog/jsdelivr-image-hosting/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>

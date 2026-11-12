@@ -4,11 +4,10 @@
     <title>GPG - 标签 - Huxley&#39;s Blog</title>
     <link>https://huxinme.top/tags/gpg/</link>
     <description>This is my new Hugo FixIt site</description>
-    <generator>Hugo 0.169.0 &amp; FixIt v0.4.5</generator>
-    <language>zh-cn</language>
+    <generator>Hugo 0.169.0 &amp; FixIt v1.0.0-rc.2</generator>
+    <language>zh-CN</language>
     <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://huxinme.top/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
-    <item>
+    <atom:link href="https://huxinme.top/tags/gpg/index.xml" rel="self" type="application/rss+xml" /><item>
       <title>Github使用GPG对Commit进行签名</title>
       <link>https://huxinme.top/posts/notes/github-gpg/</link>
       <pubDate>Sun, 22 Sep 2024 22:42:18 +0800</pubDate>
